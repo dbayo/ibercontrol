@@ -37,6 +37,8 @@ class Bill
   field :fecha_cobrada, type: String
   field :abonada, type: String
   field :morosa, type: String
+
+  belongs_to :contract
 end
 
 

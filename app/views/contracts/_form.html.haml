@@ -1,0 +1,23 @@
+= form_for @contract, :html => { :class => "form-horizontal", :role => "form" } do |f|
+  -if @contract.errors.any?
+    .alert.alert-danger.alert-dismissable{:role => "alert"}
+      %button.close{:type => "button", :data => {:dismiss => "alert"} }
+        span{:aria => {:hidden => "true"} } &times;
+        span.sr-only Close
+      %h4= "#{pluralize(@contract.errors.count, "error")} prohibited this contract from being saved:"
+
+      %ul
+        - @contract.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :plazos, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :plazos, :class => 'form-control'
+  .form-group
+    = f.label :price, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :price, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => 'btn btn-primary'
