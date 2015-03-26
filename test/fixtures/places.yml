@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero_cliente: MyString
+  numero_de_orden: MyString
+  nombre: MyString
+  dirección: MyString
+  población: MyString
+  provincia: MyString
+  dpostal: MyString
+  zona: MyString
+  teléfono: MyString
+  fax: MyString
+  preguntar_por: MyString
+  reclamación: MyString
+  actividad: MyString
+  plaga: MyString
+  area: MyString
+  observaciones: MyString
+  plano: MyString
+  aplicador1: MyString
+  aplicador2: MyString
+
+two:
+  numero_cliente: MyString
+  numero_de_orden: MyString
+  nombre: MyString
+  dirección: MyString
+  población: MyString
+  provincia: MyString
+  dpostal: MyString
+  zona: MyString
+  teléfono: MyString
+  fax: MyString
+  preguntar_por: MyString
+  reclamación: MyString
+  actividad: MyString
+  plaga: MyString
+  area: MyString
+  observaciones: MyString
+  plano: MyString
+  aplicador1: MyString
+  aplicador2: MyString

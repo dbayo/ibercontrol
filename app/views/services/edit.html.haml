@@ -1,0 +1,10 @@
+.page-header
+  = link_to client_place_services_path(@client, @place), :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to [@client, @place, @service], :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-info-sign
+    Show
+  %h1 Editing service
+
+= render 'form'

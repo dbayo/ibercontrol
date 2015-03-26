@@ -1,0 +1,51 @@
+.page-header
+  = link_to client_places_path(@client), :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_client_place_path(@client, @place), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  = link_to new_client_place_service_path(@client, @place), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    New Service
+  %h1 Show place
+
+%dl.dl-horizontal
+  %dt Numero cliente:
+  %dd= @place.numero_cliente
+  %dt Numero de orden:
+  %dd= @place.numero_de_orden
+  %dt Nombre:
+  %dd= @place.nombre
+  %dt Dirección:
+  %dd= @place.dirección
+  %dt Población:
+  %dd= @place.población
+  %dt Provincia:
+  %dd= @place.provincia
+  %dt Dpostal:
+  %dd= @place.dpostal
+  %dt Zona:
+  %dd= @place.zona
+  %dt Teléfono:
+  %dd= @place.teléfono
+  %dt Fax:
+  %dd= @place.fax
+  %dt Preguntar por:
+  %dd= @place.preguntar_por
+  %dt Reclamación:
+  %dd= @place.reclamación
+  %dt Actividad:
+  %dd= @place.actividad
+  %dt Plaga:
+  %dd= @place.plaga
+  %dt Area:
+  %dd= @place.area
+  %dt Observaciones:
+  %dd= @place.observaciones
+  %dt Plano:
+  %dd= @place.plano
+  %dt Aplicador1:
+  %dd= @place.aplicador1
+  %dt Aplicador2:
+  %dd= @place.aplicador2

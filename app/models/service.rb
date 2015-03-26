@@ -1,5 +1,6 @@
 class Service
   include Mongoid::Document
   field :name, type: String
-end
 
+  belongs_to :place
+end

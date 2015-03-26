@@ -1,0 +1,91 @@
+= form_for [@client, @place], :html => { :class => "form-horizontal", :role => "form" } do |f|
+  -if @place.errors.any?
+    .alert.alert-danger.alert-dismissable{:role => "alert"}
+      %button.close{:type => "button", :data => {:dismiss => "alert"} }
+        span{:aria => {:hidden => "true"} } &times;
+        span.sr-only Close
+      %h4= "#{pluralize(@place.errors.count, "error")} prohibited this place from being saved:"
+
+      %ul
+        - @place.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :numero_cliente, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :numero_cliente, :class => 'form-control'
+  .form-group
+    = f.label :numero_de_orden, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :numero_de_orden, :class => 'form-control'
+  .form-group
+    = f.label :nombre, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :nombre, :class => 'form-control'
+  .form-group
+    = f.label :dirección, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :dirección, :class => 'form-control'
+  .form-group
+    = f.label :población, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :población, :class => 'form-control'
+  .form-group
+    = f.label :provincia, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :provincia, :class => 'form-control'
+  .form-group
+    = f.label :dpostal, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :dpostal, :class => 'form-control'
+  .form-group
+    = f.label :zona, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :zona, :class => 'form-control'
+  .form-group
+    = f.label :teléfono, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :teléfono, :class => 'form-control'
+  .form-group
+    = f.label :fax, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :fax, :class => 'form-control'
+  .form-group
+    = f.label :preguntar_por, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :preguntar_por, :class => 'form-control'
+  .form-group
+    = f.label :reclamación, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :reclamación, :class => 'form-control'
+  .form-group
+    = f.label :actividad, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :actividad, :class => 'form-control'
+  .form-group
+    = f.label :plaga, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :plaga, :class => 'form-control'
+  .form-group
+    = f.label :area, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :area, :class => 'form-control'
+  .form-group
+    = f.label :observaciones, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :observaciones, :class => 'form-control'
+  .form-group
+    = f.label :plano, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :plano, :class => 'form-control'
+  .form-group
+    = f.label :aplicador1, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :aplicador1, :class => 'form-control'
+  .form-group
+    = f.label :aplicador2, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :aplicador2, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => 'btn btn-primary'

@@ -1,0 +1,25 @@
+.page-header
+  = link_to new_client_place_service_path(@client, @place), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Service
+  = link_to [@client, @place], :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  %h1 Listing services
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th
+        %th
+        %th
+
+    %tbody
+      - @services.each do |service|
+        %tr
+          %td= service.name
+          %td= link_to 'Show', [@client, @place, service]
+          %td= link_to 'Edit', edit_client_place_service_path(@client, @place, service)
+          %td= link_to 'Destroy', [@client, @place, service], :data => { confirm: 'Are you sure?' }, :method => :delete

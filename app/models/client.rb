@@ -12,8 +12,6 @@ class Client
   field :fecha_de_baja, type: String
   field :fecha_ultimo_aumento, type: String
   field :cantidad_aumentada, type: String
-  # field :representante, type: String
-  # field :comisión, type: String
   field :banco, type: String
   field :agencia, type: String
   field :ccc, type: String
@@ -26,4 +24,6 @@ class Client
   field :observaciones, type: String
   field :web, type: String
   field :email, type: String
+
+  has_many :place
 end

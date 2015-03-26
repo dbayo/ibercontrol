@@ -1,0 +1,12 @@
+.page-header
+  = link_to client_place_services_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_client_place_service_path(@client, @place, @service), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show service
+
+%dl.dl-horizontal
+  %dt Name:
+  %dd= @service.name

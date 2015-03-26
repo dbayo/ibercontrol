@@ -1,0 +1,111 @@
+= form_for @client, :html => { :class => "form-horizontal", :role => "form" } do |f|
+  -if @client.errors.any?
+    .alert.alert-danger.alert-dismissable{:role => "alert"}
+      %button.close{:type => "button", :data => {:dismiss => "alert"} }
+        span{:aria => {:hidden => "true"} } &times;
+        span.sr-only Close
+      %h4= "#{pluralize(@client.errors.count, "error")} prohibited this client from being saved:"
+
+      %ul
+        - @client.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :nombre_fiscal, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :nombre_fiscal, :class => 'form-control'
+  .form-group
+    = f.label :direccion_fiscal, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :direccion_fiscal, :class => 'form-control'
+  .form-group
+    = f.label :poblacion_fiscal, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :poblacion_fiscal, :class => 'form-control'
+  .form-group
+    = f.label :telefono_fiscal, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :telefono_fiscal, :class => 'form-control'
+  .form-group
+    = f.label :codigo_postal, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :codigo_postal, :class => 'form-control'
+  .form-group
+    = f.label :fax, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :fax, :class => 'form-control'
+  .form-group
+    = f.label :preguntar_por, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :preguntar_por, :class => 'form-control'
+  .form-group
+    = f.label :fecha_contrato, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :fecha_contrato, :class => 'form-control'
+  .form-group
+    = f.label :cuota_contrato, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :cuota_contrato, :class => 'form-control'
+  .form-group
+    = f.label :fecha_de_baja, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :fecha_de_baja, :class => 'form-control'
+  .form-group
+    = f.label :fecha_ultimo_aumento, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :fecha_ultimo_aumento, :class => 'form-control'
+  .form-group
+    = f.label :cantidad_aumentada, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :cantidad_aumentada, :class => 'form-control'
+  .form-group
+    = f.label :banco, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :banco, :class => 'form-control'
+  .form-group
+    = f.label :agencia, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :agencia, :class => 'form-control'
+  .form-group
+    = f.label :ccc, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :ccc, :class => 'form-control'
+  .form-group
+    = f.label :nif, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :nif, :class => 'form-control'
+  .form-group
+    = f.label :día_de_factura, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :día_de_factura, :class => 'form-control'
+  .form-group
+    = f.label :días_aplazado, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :días_aplazado, :class => 'form-control'
+  .form-group
+    = f.label :iva, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :iva, :class => 'form-control'
+  .form-group
+    = f.label :descuento, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :descuento, :class => 'form-control'
+  .form-group
+    = f.label :tipo_de_servicio, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :tipo_de_servicio, :class => 'form-control'
+  .form-group
+    = f.label :observaciones, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :observaciones, :class => 'form-control'
+  .form-group
+    = f.label :web, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :web, :class => 'form-control'
+  .form-group
+    = f.label :email, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :email, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => 'btn btn-primary'

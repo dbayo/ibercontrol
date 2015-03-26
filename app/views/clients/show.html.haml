@@ -1,0 +1,61 @@
+.page-header
+  = link_to clients_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_client_path(@client), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  = link_to new_client_place_path(@client), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    New Place
+  %h1 Show client
+
+%dl.dl-horizontal
+  %dt Nombre fiscal:
+  %dd= @client.nombre_fiscal
+  %dt Direccion fiscal:
+  %dd= @client.direccion_fiscal
+  %dt Poblacion fiscal:
+  %dd= @client.poblacion_fiscal
+  %dt Telefono fiscal:
+  %dd= @client.telefono_fiscal
+  %dt Codigo postal:
+  %dd= @client.codigo_postal
+  %dt Fax:
+  %dd= @client.fax
+  %dt Preguntar por:
+  %dd= @client.preguntar_por
+  %dt Fecha contrato:
+  %dd= @client.fecha_contrato
+  %dt Cuota contrato:
+  %dd= @client.cuota_contrato
+  %dt Fecha de baja:
+  %dd= @client.fecha_de_baja
+  %dt Fecha ultimo aumento:
+  %dd= @client.fecha_ultimo_aumento
+  %dt Cantidad aumentada:
+  %dd= @client.cantidad_aumentada
+  %dt Banco:
+  %dd= @client.banco
+  %dt Agencia:
+  %dd= @client.agencia
+  %dt Ccc:
+  %dd= @client.ccc
+  %dt Nif:
+  %dd= @client.nif
+  %dt Día de factura:
+  %dd= @client.día_de_factura
+  %dt Días aplazado:
+  %dd= @client.días_aplazado
+  %dt Iva:
+  %dd= @client.iva
+  %dt Descuento:
+  %dd= @client.descuento
+  %dt Tipo de servicio:
+  %dd= @client.tipo_de_servicio
+  %dt Observaciones:
+  %dd= @client.observaciones
+  %dt Web:
+  %dd= @client.web
+  %dt Email:
+  %dd= @client.email

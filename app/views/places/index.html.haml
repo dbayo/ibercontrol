@@ -1,0 +1,61 @@
+.page-header
+  = link_to new_client_place_path(@client), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Place
+  = link_to @client, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  %h1 Listing places
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Numero cliente
+        %th Numero de orden
+        %th Nombre
+        %th Dirección
+        %th Población
+        %th Provincia
+        %th Dpostal
+        %th Zona
+        %th Teléfono
+        %th Fax
+        %th Preguntar por
+        %th Reclamación
+        %th Actividad
+        %th Plaga
+        %th Area
+        %th Observaciones
+        %th Plano
+        %th Aplicador1
+        %th Aplicador2
+        %th
+        %th
+        %th
+
+    %tbody
+      - @places.each do |place|
+        %tr
+          %td= place.numero_cliente
+          %td= place.numero_de_orden
+          %td= place.nombre
+          %td= place.dirección
+          %td= place.población
+          %td= place.provincia
+          %td= place.dpostal
+          %td= place.zona
+          %td= place.teléfono
+          %td= place.fax
+          %td= place.preguntar_por
+          %td= place.reclamación
+          %td= place.actividad
+          %td= place.plaga
+          %td= place.area
+          %td= place.observaciones
+          %td= place.plano
+          %td= place.aplicador1
+          %td= place.aplicador2
+          %td= link_to 'Show', [@client, place]
+          %td= link_to 'Edit', edit_client_place_path(@client, place)
+          %td= link_to 'Destroy', [@client, place], :data => { confirm: 'Are you sure?' }, :method => :delete

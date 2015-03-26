@@ -1,0 +1,68 @@
+.page-header
+  = link_to new_client_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Client
+  %h1 Listing clients
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Nombre fiscal
+        %th Direccion fiscal
+        %th Poblacion fiscal
+        %th Telefono fiscal
+        %th Codigo postal
+        %th Fax
+        %th Preguntar por
+        %th Fecha contrato
+        %th Cuota contrato
+        %th Fecha de baja
+        %th Fecha ultimo aumento
+        %th Cantidad aumentada
+        %th Banco
+        %th Agencia
+        %th Ccc
+        %th Nif
+        %th Día de factura
+        %th Días aplazado
+        %th Iva
+        %th Descuento
+        %th Tipo de servicio
+        %th Observaciones
+        %th Web
+        %th Email
+        %th
+        %th
+        %th
+
+    %tbody
+      - @clients.each do |client|
+        %tr
+          %td= client.nombre_fiscal
+          %td= client.direccion_fiscal
+          %td= client.poblacion_fiscal
+          %td= client.telefono_fiscal
+          %td= client.codigo_postal
+          %td= client.fax
+          %td= client.preguntar_por
+          %td= client.fecha_contrato
+          %td= client.cuota_contrato
+          %td= client.fecha_de_baja
+          %td= client.fecha_ultimo_aumento
+          %td= client.cantidad_aumentada
+          %td= client.banco
+          %td= client.agencia
+          %td= client.ccc
+          %td= client.nif
+          %td= client.día_de_factura
+          %td= client.días_aplazado
+          %td= client.iva
+          %td= client.descuento
+          %td= client.tipo_de_servicio
+          %td= client.observaciones
+          %td= client.web
+          %td= client.email
+          %td= link_to 'Show', client
+          %td= link_to 'Edit', edit_client_path(client)
+          %td= link_to 'Destroy', client, :data => { confirm: 'Are you sure?' }, :method => :delete
