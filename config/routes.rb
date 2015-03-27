@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  resources :contracts
-
   resources :clients do
     resources :places do
       resources :services
     end
+
+    resources :contracts
+    resources :bills
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

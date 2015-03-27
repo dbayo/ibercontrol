@@ -11,29 +11,28 @@
           %li= msg
 
   .form-group
-    = f.label :nombre_fiscal, :class => 'col-sm-2 control-label'
+    = f.label :nombre_fiscal, 'Nombre de la empresa', :class => 'col-sm-2 control-label'
     .col-sm-10
       = f.text_field :nombre_fiscal, :class => 'form-control'
   .form-group
-    = f.label :direccion_fiscal, :class => 'col-sm-2 control-label'
+    = f.label :direccion_fiscal, 'Direccion', :class => 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :direccion_fiscal, :class => 'form-control'
-  .form-group
-    = f.label :poblacion_fiscal, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :poblacion_fiscal, :class => 'form-control'
+      = f.text_field :direccion_fiscal, :class => 'form-control ui-autocomplete-input', :id => "geocomplete", :autocomplete=>"off"
+  .row
+    .col-sm-offset-2.col-sm-10
+      #my_map{style: "height: 300px;" }
+  %hr
+
   .form-group
     = f.label :telefono_fiscal, :class => 'col-sm-2 control-label'
     .col-sm-10
       = f.text_field :telefono_fiscal, :class => 'form-control'
   .form-group
-    = f.label :codigo_postal, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :codigo_postal, :class => 'form-control'
-  .form-group
     = f.label :fax, :class => 'col-sm-2 control-label'
     .col-sm-10
       = f.text_field :fax, :class => 'form-control'
+  %hr
+
   .form-group
     = f.label :preguntar_por, :class => 'col-sm-2 control-label'
     .col-sm-10
