@@ -38,7 +38,7 @@
     .container-fluid
       .row
         .col-sm-3.col-md-2.sidebar
-
+          = render partial: 'sidebar'
         .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
           - flash.each do |name, msg|
             = content_tag :div, :class => "alert alert-#{name == :error ? "danger" : "success" } alert-dismissable", :role => "alert" do
