@@ -2,7 +2,7 @@
   = link_to new_client_path, :class => 'btn btn-primary' do
     %span.glyphicon.glyphicon-plus
     New Client
-  %h1 Lista de Clientes
+  %h1= "Lista de Clientes (#{@clients.count})"
 
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover

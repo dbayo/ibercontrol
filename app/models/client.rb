@@ -3,6 +3,7 @@ class Client
   field :nombre_fiscal, type: String
   field :direccion_fiscal, type: String
   field :poblacion_fiscal, type: String
+  field :provincia_fiscal, type: String
   field :telefono_fiscal, type: String
   field :codigo_postal, type: String
   field :fax, type: String
@@ -24,6 +25,7 @@ class Client
   field :observaciones, type: String
   field :web, type: String
   field :email, type: String
+  field :extras, type: Hash
 
   has_many :place
 end
