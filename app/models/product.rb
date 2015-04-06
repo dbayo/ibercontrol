@@ -1,4 +1,4 @@
-class Client
+class Product
   include Mongoid::Document
   field :numero, type: String
   field :producto, type: String

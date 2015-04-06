@@ -286,6 +286,7 @@ DEPENDENCIES
   jquery-rails
   mongoid (~> 4.0.0)
   mongoid-rspec (~> 2.0.0)
+  nokogiri
   phantomjs
   poltergeist
   rails (= 4.2.0)
