@@ -1,31 +1,10 @@
 Fran
-Fran y Jaime
-Fran y Manuel
-Fran y Marc
-Fran y Sara
-General
 Jaime
-Jaime y Manuel
-Jaime y Marc
 Manuel
-Manuel y Marc
 Marc
+General
 Martin
-Martin y Fran
-Martin y Jaime
-Martin y Manuel
-Martin y Marc
-Martin y Pascual
-Martin y Sara
 Pascual
-Pascual y Fran
-Pascual y Jaime
-Pascual y Manuel
-Pascual y Marc
-Pascual y Sara
 Ruben
 Sara
-Sara y Jaime
-Sara y Manuel
-Sara y Marc
 Todos
