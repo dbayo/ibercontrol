@@ -1,6 +1,8 @@
 namespace :import_database do
   desc "Importa clientes"
   task :all => :environment do
+    DatabaseCleaner.clean
+
     Plague.import_database
     Activity.import_database
     Employee.import_database

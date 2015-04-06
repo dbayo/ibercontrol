@@ -44,6 +44,7 @@ gem 'haml-rails'
 group :development do
   gem 'better_errors'
   gem 'nokogiri'
+  gem 'database_cleaner'
 end
 
 group :development, :test do
