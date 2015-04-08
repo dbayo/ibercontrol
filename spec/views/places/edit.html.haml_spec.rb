@@ -4,17 +4,16 @@ RSpec.describe "places/edit", type: :view do
   before(:each) do
     @place = assign(:place, Place.create!(
       :numero_cliente => "MyString",
-      :numero_de_orden => "MyString",
       :nombre => "MyString",
-      :dirección => "MyString",
-      :población => "MyString",
+      :direccion => "MyString",
+      :poblacion => "MyString",
       :provincia => "MyString",
       :dpostal => "MyString",
       :zona => "MyString",
-      :teléfono => "MyString",
+      :telefono => "MyString",
       :fax => "MyString",
       :preguntar_por => "MyString",
-      :reclamación => "MyString",
+      :reclamacion => "MyString",
       :actividad => "MyString",
       :plaga => "MyString",
       :area => "MyString",
@@ -32,13 +31,11 @@ RSpec.describe "places/edit", type: :view do
 
       assert_select "input#place_numero_cliente[name=?]", "place[numero_cliente]"
 
-      assert_select "input#place_numero_de_orden[name=?]", "place[numero_de_orden]"
-
       assert_select "input#place_nombre[name=?]", "place[nombre]"
 
-      assert_select "input#place_dirección[name=?]", "place[dirección]"
+      assert_select "input#place_direccion[name=?]", "place[direccion]"
 
-      assert_select "input#place_población[name=?]", "place[población]"
+      assert_select "input#place_poblacion[name=?]", "place[poblacion]"
 
       assert_select "input#place_provincia[name=?]", "place[provincia]"
 
@@ -46,13 +43,13 @@ RSpec.describe "places/edit", type: :view do
 
       assert_select "input#place_zona[name=?]", "place[zona]"
 
-      assert_select "input#place_teléfono[name=?]", "place[teléfono]"
+      assert_select "input#place_telefono[name=?]", "place[telefono]"
 
       assert_select "input#place_fax[name=?]", "place[fax]"
 
       assert_select "input#place_preguntar_por[name=?]", "place[preguntar_por]"
 
-      assert_select "input#place_reclamación[name=?]", "place[reclamación]"
+      assert_select "input#place_reclamacion[name=?]", "place[reclamacion]"
 
       assert_select "input#place_actividad[name=?]", "place[actividad]"
 

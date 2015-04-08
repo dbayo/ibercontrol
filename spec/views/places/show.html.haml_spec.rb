@@ -4,17 +4,16 @@ RSpec.describe "places/show", type: :view do
   before(:each) do
     @place = assign(:place, Place.create!(
       :numero_cliente => "Numero Cliente",
-      :numero_de_orden => "Numero De Orden",
       :nombre => "Nombre",
-      :dirección => "Dirección",
-      :población => "Población",
+      :direccion => "direccion",
+      :poblacion => "poblacion",
       :provincia => "Provincia",
       :dpostal => "Dpostal",
       :zona => "Zona",
-      :teléfono => "Teléfono",
+      :telefono => "telefono",
       :fax => "Fax",
       :preguntar_por => "Preguntar Por",
-      :reclamación => "Reclamación",
+      :reclamacion => "reclamacion",
       :actividad => "Actividad",
       :plaga => "Plaga",
       :area => "Area",
@@ -28,17 +27,16 @@ RSpec.describe "places/show", type: :view do
   it "renders attributes in <p>" do
     render
     expect(rendered).to match(/Numero Cliente/)
-    expect(rendered).to match(/Numero De Orden/)
     expect(rendered).to match(/Nombre/)
-    expect(rendered).to match(/Dirección/)
-    expect(rendered).to match(/Población/)
+    expect(rendered).to match(/direccion/)
+    expect(rendered).to match(/poblacion/)
     expect(rendered).to match(/Provincia/)
     expect(rendered).to match(/Dpostal/)
     expect(rendered).to match(/Zona/)
-    expect(rendered).to match(/Teléfono/)
+    expect(rendered).to match(/telefono/)
     expect(rendered).to match(/Fax/)
     expect(rendered).to match(/Preguntar Por/)
-    expect(rendered).to match(/Reclamación/)
+    expect(rendered).to match(/reclamacion/)
     expect(rendered).to match(/Actividad/)
     expect(rendered).to match(/Plaga/)
     expect(rendered).to match(/Area/)

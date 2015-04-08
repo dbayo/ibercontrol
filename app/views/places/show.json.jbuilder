@@ -1,1 +1,1 @@
-json.extract! @place, :id, :numero_cliente, :numero_de_orden, :nombre, :dirección, :población, :provincia, :dpostal, :zona, :teléfono, :fax, :preguntar_por, :reclamación, :actividad, :plaga, :area, :observaciones, :plano, :aplicador1, :aplicador2, :created_at, :updated_at
+json.extract! @place, :id, :numero_cliente, :nombre, :direccion, :poblacion, :provincia, :dpostal, :zona, :telefono, :fax, :preguntar_por, :reclamacion, :actividad, :plaga, :area, :observaciones, :plano, :aplicador1, :aplicador2, :created_at, :updated_at

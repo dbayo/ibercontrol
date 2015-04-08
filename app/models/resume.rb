@@ -1,16 +1,15 @@
 class Resume
   field :numero_de_hoja, type: String
   field :numero_cliente, type: String
-  field :numero_de_orden, type: String
   field :numero_de_servicio, type: String
   field :estado, type: String
   field :nombre_aplicación, type: String
-  field :dirección, type: String
-  field :población, type: String
+  field :direccion, type: String
+  field :poblacion, type: String
   field :provincia, type: String
   field :dpostal, type: String
   field :preguntar_por, type: String
-  field :teléfono, type: String
+  field :telefono, type: String
   field :tipo_servicio, type: String
   field :modo_servicio, type: String
   field :area, type: String
