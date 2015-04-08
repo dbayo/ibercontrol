@@ -29,6 +29,7 @@ class Client
   field :extras, type: Hash
 
   has_many :places
+  has_many :bills
 
   before_save :create_geolocalizacion
 
@@ -38,56 +39,102 @@ class Client
   end
 
   def create_geolocalizacion
-    out = self.direccion_fiscal.scan(/^\D*\d*/)
-    out << self.poblacion_fiscal
-    out << self.provincia_fiscal
-    out << self.codigo_postal
-    self.geolocalizacion = out.join(', ')
+    if self.direccion_fiscal
+      out = self.direccion_fiscal.scan(/^\D*\d*/)
+      out << self.poblacion_fiscal
+      out << self.provincia_fiscal
+      out << self.codigo_postal
+      self.geolocalizacion = out.join(', ')
+    end
   end
 
   def self.import_database
     xml = Nokogiri::XML(open(File.join(Rails.root, 'lib', 'old_database_json', 'Clientes.xml')))
-    xml.xpath("//Clientes").each do |factura|
-      json = Hash.from_xml(factura.to_xml).as_json
-      client = replace_fields(json['Clientes'])
-      client = find_or_create_by client
-      puts "Client #{client.id}"
-      byebug
+    xml.xpath("//Clientes").map do |cliente|
+      json = Hash.from_xml(cliente.to_xml).as_json
+      client = find_or_create_by_json json['Clientes']
+      puts "Client #{client.nombre_fiscal}"
     end
   end
 
-  def self.replace_fields(record)
-    new_record = {}
+  def self.find_or_create_by_json(record)
     extras = record
-    new_record["_id"] = record.delete "NUMCLIENTE"
-    new_record["nombre_fiscal"] = record.delete "NOMBRE_FIS"
-    new_record["direccion_fiscal"] = record.delete "DIREC_FIS"
-    new_record["poblacion_fiscal"] = (record.delete "POBLAC_FIS").capitalize
-    new_record["provincia_fiscal"] = (record.delete "PROVIN_FIS").capitalize
-    new_record["codigo_postal"] = record.delete "DIST_P_FIS"
-    new_record["telefono_fiscal"] = record.delete "TELF_FIS"
-    new_record["fax"] = record.delete "FAX"
-    new_record["preguntar_por"] = record.delete "PREGUN_FIS"
-    new_record["fecha_contrato"] = record.delete "FECHA_CONT"
-    new_record["cuota_contrato"] = record.delete "CUOTA_CONT"
-    new_record["fecha_de_baja"] = record.delete "FECHA_BAJA"
-    # new_record["???"] = record.delete "REPRESEN"
-    # new_record["???"] = record.delete "COMISION"
-    new_record["banco"] = record.delete "BANCO"
-    new_record["agencia"] = record.delete "AGENCIA"
-    new_record["ccc"] = record.delete "CCC"
-    new_record["nif"] = record.delete "NIF"
-    new_record["dia_de_factura"] = record.delete "DIA_FACT"
-    new_record["dias_aplazado"] = record.delete "DIA_APLAZ"
-    new_record["iva"] = record.delete "IVA"
-    new_record["descuento"] = record.delete "Descuento"
-    new_record["tipo_de_servicio"] = record.delete "TIPOSERV"
-    new_record["observaciones"] = record.delete "OBSERVFIS"
-    new_record["web"] = record.delete "Web"
-    new_record["fecha_ultimo_aumento"] = record.delete "Fecha_Ult_Aum"
-    new_record["email"] = record.delete "EMail"
-    new_record["extras"] = extras
 
-    new_record
+    client = Client.find_or_create_by record.delete("NUMCLIENTE")
+    client._id = record.delete "NUMCLIENTE"
+    client.nombre_fiscal = record.delete "NOMBRE_FIS"
+    client.direccion_fiscal = record.delete "DIREC_FIS"
+    client.poblacion_fiscal = (record.delete "POBLAC_FIS").to_s.capitalize
+    client.provincia_fiscal = (record.delete "PROVIN_FIS").to_s.capitalize
+    client.codigo_postal = record.delete "DIST_P_FIS"
+    client.telefono_fiscal = record.delete "TELF_FIS"
+    client.fax = record.delete "FAX"
+    client.preguntar_por = record.delete "PREGUN_FIS"
+    client.fecha_contrato = record.delete "FECHA_CONT"
+    client.cuota_contrato = record.delete "CUOTA_CONT"
+    client.fecha_de_baja = record.delete "FECHA_BAJA"
+    # client.???" record.delete "REPRESEN"
+    # client.???" record.delete "COMISION"
+    client.banco = record.delete "BANCO"
+    client.agencia = record.delete "AGENCIA"
+    client.ccc = record.delete "CCC"
+    client.nif = record.delete "NIF"
+    client.dia_de_factura = record.delete "DIA_FACT"
+    client.dias_aplazado = record.delete "DIA_APLAZ"
+    client.iva = record.delete "IVA"
+    client.descuento = record.delete "Descuento"
+    client.tipo_de_servicio = record.delete "TIPOSERV"
+    client.observaciones = record.delete "OBSERVFIS"
+    client.web = record.delete "Web"
+    client.fecha_ultimo_aumento = record.delete "Fecha_Ult_Aum"
+    client.email = record.delete "EMail"
+    client.extras = extras
+
+    client.save
+
+    client
   end
 end
+
+
+# <Clientes>
+# <Auto>2523</Auto>
+# <NUMCLIENTE>2380</NUMCLIENTE>
+# <NOMBRE_FIS>UTE ESPAIS SINGULARS</NOMBRE_FIS>
+# <DIREC_FIS>Wold Trade Center Edif. Norte, 7ª Planta</DIREC_FIS>
+# <POBLAC_FIS>BARCELONA</POBLAC_FIS>
+# <PROVIN_FIS>Barcelona       @#+T</PROVIN_FIS>
+# <DIST_P_FIS>08039</DIST_P_FIS>
+# <TELF_FIS>93/419.87.59/639.721.496</TELF_FIS>
+# <FAX>93/419.87.53</FAX>
+# <PREGUN_FIS>Belén Nuñez/David M.Gomez</PREGUN_FIS>
+# <FECHA_CONT>2006-08-01T00:00:00</FECHA_CONT>
+# <CUOTA_CONT>387.5</CUOTA_CONT>
+# <FECHA_BAJA>2007-03-01T00:00:00</FECHA_BAJA>
+# <NIF>G/64.244.056</NIF>
+# <DIA_FACT>25</DIA_FACT>
+# <DIA_APLAZ>90</DIA_APLAZ>
+# <IVA>21</IVA>
+# <Descuento>0</Descuento>
+# <TIPOSERV>Baja Dr</TIPOSERV>
+# <OBSERVFIS>UTE ESPAIS SINGULARS
+# Av. Josep Tarradellas, 97 Entresuelo 2ª
+# 08029 BARCELONA</OBSERVFIS>
+# </Clientes>
+
+# <Clientes>
+# <Auto>2699</Auto>
+# <NUMCLIENTE>2380</NUMCLIENTE>
+# <NOMBRE_FIS>UTE ESPAIS SINGULARS</NOMBRE_FIS>
+# <DIREC_FIS>c/ Cataluña, 55</DIREC_FIS>
+# <POBLAC_FIS>EL PRAT DE LLOBREGAT</POBLAC_FIS>
+# <PROVIN_FIS>Barcelona</PROVIN_FIS>
+# <DIST_P_FIS>08820</DIST_P_FIS>
+# <TELF_FIS>93/370.93.59</TELF_FIS>
+# <PREGUN_FIS>Sra.Mª Carmen/Mª Mar</PREGUN_FIS>
+# <NIF>G-63.626.196</NIF>
+# <DIA_FACT>1</DIA_FACT>
+# <IVA>21</IVA>
+# <Descuento>0</Descuento>
+# <TIPOSERV>Baja Control</TIPOSERV>
+# </Clientes>

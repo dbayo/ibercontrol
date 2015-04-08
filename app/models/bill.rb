@@ -2,7 +2,6 @@
 class Bill
   include Mongoid::Document
 
-  field :numero_cliente, type: String
   field :numero_factura, type: String
   field :estado, type: String
   field :fecha_factura, type: String
@@ -41,63 +40,108 @@ class Bill
   field :extras, type: Hash
 
   belongs_to :contract
+  belongs_to :client
 
   def self.import_database
     xml = Nokogiri::XML(open(File.join(Rails.root, 'lib', 'old_database_json', 'Facturas.xml')))
     xml.xpath("//Facturas").each do |factura|
       json = Hash.from_xml(factura.to_xml).as_json
-      bill = replace_fields(json['Facturas'])
-      bill = find_or_create_by bill
-
-      puts "Bill #{bill.id}"
+      find_or_create_by_json(json['Facturas'])
     end
   end
 
-  def self.replace_fields(record)
-    new_record = {}
+  def self.find_or_create_by_json(record)
     extras = record
-    new_record["_id"] = record.delete "Auto"
-    new_record["numero_cliente"] = record.delete "NUMCLIENTE"
-    new_record["numero_factura"] = record.delete "NUMFACT"
-    new_record["estado"] = record.delete "ESTADO"
-    new_record["fecha_factura"] = record.delete "FECHAFACT"
-    new_record["year"] = record.delete "ANYO"
-    new_record["nif"] = record.delete "NIF"
-    new_record["nombre_fis"] = record.delete "NOMBRE_FIS"
-    new_record["direccion_fis"] = record.delete "DIREC_FIS"
-    new_record["poblacion_fis"] = record.delete "POBLAC_FIS"
-    new_record["provincia_fis"] = record.delete "PROVIN_FIS"
-    new_record["dpostal_fis"] = record.delete "DIST_P_FIS"
-    new_record["periodo_desde"] = record.delete "PERIODESDE"
-    new_record["periodo_hasta"] = record.delete "PERIOHASTA"
-    new_record["tipo_servicio"] = record.delete "TIPOSERV"
-    new_record["nombre_apl"] = record.delete "NOMBRE_APL"
-    new_record["direccion_apl"] = record.delete "DIREC_APL"
-    new_record["poblacion_apl"] = record.delete "POBLAC_APL"
-    new_record["provincia_apl"] = record.delete "PROVIN_APL"
-    new_record["dpostal_apl"] = record.delete "DIST_P_APL"
-    # new_record["numero_cliente"] = record.delete "Euro"
-    new_record["base_imponible"] = record.delete "BASEIMP"
-    new_record["base_impuestos_sin_descuentos"] = record.delete "BaseImpSDesc"
-    new_record["descuento"] = record.delete "Descuento"
-    new_record["total_descuento"] = record.delete "TotalDescuento"
-    new_record["iva"] = record.delete "IVA"
-    new_record["total_iva"] = record.delete "TOTALIVA"
-    new_record["total_factura"] = record.delete "TOTALFACT"
-    new_record["numero_recibo"] = record.delete "NUMRECIBO"
-    new_record["fecha_vencimiento"] = record.delete "FECHAVENC"
-    new_record["banco"] = record.delete "BANCO"
-    new_record["agencia"] = record.delete "AGENCIA"
-    new_record["ccc"] = record.delete "CCC"
-    new_record["cobrada"] = record.delete "Cobrada"
-    new_record["observaciones"] = record.delete "OBSERV"
-    new_record["abonada"] = record.delete "Abonada"
-    # new_record["fecha_cobrada"] = record.delete "???"
-    new_record["morosa"] = record.delete "Morosa"
-    new_record["extras"] = extras
+    client_id = record.delete("NUMCLIENTE")
 
-    new_record
+    client = Client.where(id: client_id).first
+    if client
+      bill = client.bills.new
+      bill._id = record.delete "Auto"
+      bill.numero_factura = record.delete "NUMFACT"
+      bill.estado = record.delete "ESTADO"
+      bill.fecha_factura = record.delete "FECHAFACT"
+      bill.year = record.delete "ANYO"
+      bill.nif = record.delete "NIF"
+      bill.nombre_fis = record.delete "NOMBRE_FIS"
+      bill.direccion_fis = record.delete "DIREC_FIS"
+      bill.poblacion_fis = record.delete "POBLAC_FIS"
+      bill.provincia_fis = record.delete "PROVIN_FIS"
+      bill.dpostal_fis = record.delete "DIST_P_FIS"
+      bill.periodo_desde = record.delete "PERIODESDE"
+      bill.periodo_hasta = record.delete "PERIOHASTA"
+      bill.tipo_servicio = record.delete "TIPOSERV"
+      bill.nombre_apl = record.delete "NOMBRE_APL"
+      bill.direccion_apl = record.delete "DIREC_APL"
+      bill.poblacion_apl = record.delete "POBLAC_APL"
+      bill.provincia_apl = record.delete "PROVIN_APL"
+      bill.dpostal_apl = record.delete "DIST_P_APL"
+      # bill.??? = record.delete "Euro"
+      bill.base_imponible = record.delete "BASEIMP"
+      bill.base_impuestos_sin_descuentos = record.delete "BaseImpSDesc"
+      bill.descuento = record.delete "Descuento"
+      bill.total_descuento = record.delete "TotalDescuento"
+      bill.iva = record.delete "IVA"
+      bill.total_iva = record.delete "TOTALIVA"
+      bill.total_factura = record.delete "TOTALFACT"
+      bill.numero_recibo = record.delete "NUMRECIBO"
+      bill.fecha_vencimiento = record.delete "FECHAVENC"
+      bill.banco = record.delete "BANCO"
+      bill.agencia = record.delete "AGENCIA"
+      bill.ccc = record.delete "CCC"
+      bill.cobrada = record.delete "Cobrada"
+      bill.observaciones = record.delete "OBSERV"
+      bill.abonada = record.delete "Abonada"
+      # bill.fecha_cobrada = record.delete "???"
+      bill.morosa = record.delete "Morosa"
+      bill.extras = extras
+      bill.save
+
+      puts "Bill #{bill.id}"
+    else
+      puts "Client not found #{client_id}"
+    end
+
+    bill
   end
 end
 
 
+# <Facturas>
+#   <Auto>1</Auto>
+#   <NUMCLIENTE>1</NUMCLIENTE>
+#   <NUMFACT>525</NUMFACT>
+#   <ESTADO>0</ESTADO>
+#   <FECHAFACT>1998-06-01T00:00:00</FECHAFACT>
+#   <ANYO>98</ANYO>
+#   <NIF>B/58-665555</NIF>
+#   <NOMBRE_FIS>BONA COMPRA, S.L.</NOMBRE_FIS>
+#   <DIREC_FIS>Pl. Reis Catolics, 1</DIREC_FIS>
+#   <POBLAC_FIS>PINEDA-PUEBLO NUEVO</POBLAC_FIS>
+#   <PROVIN_FIS>Barcelona</PROVIN_FIS>
+#   <DIST_P_FIS>08397</DIST_P_FIS>
+#   <PERIODESDE>1998-04-01T00:00:00</PERIODESDE>
+#   <PERIOHASTA>1998-05-01T00:00:00</PERIOHASTA>
+#   <TIPOSERV>Desratización</TIPOSERV>
+#   <NOMBRE_APL>SUPERMERCADO ROSA</NOMBRE_APL>
+#   <DIREC_APL>Selva, 10</DIREC_APL>
+#   <POBLAC_APL>PINEDA-PUEBLO NUEVO</POBLAC_APL>
+#   <PROVIN_APL>Barcelona</PROVIN_APL>
+#   <DIST_P_APL>08397</DIST_P_APL>
+#   <Euro>No</Euro>
+#   <BASEIMP>6525</BASEIMP>
+#   <BaseImpSDesc>0</BaseImpSDesc>
+#   <Descuento>0</Descuento>
+#   <TotalDescuento>0</TotalDescuento>
+#   <IVA>16</IVA>
+#   <TOTALIVA>1044</TOTALIVA>
+#   <TOTALFACT>7569</TOTALFACT>
+#   <NUMRECIBO>126</NUMRECIBO>
+#   <FECHAVENC>1998-06-20T00:00:00</FECHAVENC>
+#   <BANCO>CAIXA LAIETANA</BANCO>
+#   <AGENCIA>Ent.2242 Of.0042 DC 55</AGENCIA>
+#   <CCC>3300005003</CCC>
+#   <Cobrada>No</Cobrada>
+#   <Abonada>No</Abonada>
+#   <Morosa>No</Morosa>
+# </Facturas>

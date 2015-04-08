@@ -17,8 +17,8 @@ one:
   agencia: MyString
   ccc: MyString
   nif: MyString
-  día_de_factura: MyString
-  días_aplazado: MyString
+  dia_de_factura: MyString
+  dias_aplazado: MyString
   iva: MyString
   descuento: MyString
   tipo_de_servicio: MyString
@@ -43,8 +43,8 @@ two:
   agencia: MyString
   ccc: MyString
   nif: MyString
-  día_de_factura: MyString
-  días_aplazado: MyString
+  dia_de_factura: MyString
+  dias_aplazado: MyString
   iva: MyString
   descuento: MyString
   tipo_de_servicio: MyString

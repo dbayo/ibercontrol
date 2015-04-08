@@ -1036,23 +1036,6 @@ Fina - 93.844.63.79</Observ_apl>
 <Aplicador1>Martin</Aplicador1>
 </Aplica>
 <Aplica>
-<Auto>63</Auto>
-<NumCliente>59</NumCliente>
-<NumOrden>1</NumOrden>
-<Nombre_Apl>FORN SANT HONORAT, S.L.</Nombre_Apl>
-<Direc_Apl>Nuria, 14</Direc_Apl>
-<Poblac_Apl>SANTA COLOMA DE GRAMANET</Poblac_Apl>
-<Provin_Apl>Barcelona</Provin_Apl>
-<Dist_P_Apl>08923</Dist_P_Apl>
-<Zona>ZONA 2</Zona>
-<Telf_Apl>466.22.21</Telf_Apl>
-<Reclamacio>1</Reclamacio>
-<Actividad>PANADERÍA</Actividad>
-<Plaga>Mus Musculus y Rattus Norvegicus</Plaga>
-<Area>Obrador, tienda y almacén (18)</Area>
-<Plano>No</Plano>
-</Aplica>
-<Aplica>
 <Auto>64</Auto>
 <NumCliente>60</NumCliente>
 <NumOrden>1</NumOrden>
@@ -12809,27 +12792,6 @@ SE LE HACEN TRATAMIENTOS PUNTUALES</Observ_apl>
 <Plano>No</Plano>
 </Aplica>
 <Aplica>
-<Auto>777</Auto>
-<NumCliente>3163</NumCliente>
-<NumOrden>1</NumOrden>
-<Nombre_Apl>ESCOLA AMAT TARGA</Nombre_Apl>
-<Direc_Apl>Av. Roureda, 12</Direc_Apl>
-<Poblac_Apl>VILADECANS</Poblac_Apl>
-<Provin_Apl>Barcelona</Provin_Apl>
-<Dist_P_Apl>08840</Dist_P_Apl>
-<Zona>ZONA 1</Zona>
-<Telf_Apl>93/658.96.53-627.803.346</Telf_Apl>
-<Fax>93/658.96.53</Fax>
-<Pregun_Apl>Teo (Conserge)</Pregun_Apl>
-<Reclamacio>2</Reclamacio>
-<Actividad>COLEGIO</Actividad>
-<Plaga>Blattella Germanica y Oriental</Plaga>
-<Area>Interior y exterior del colegio</Area>
-<Plano>Si</Plano>
-<Aplicador1>Fran</Aplicador1>
-<Aplicador2>e-mail</Aplicador2>
-</Aplica>
-<Aplica>
 <Auto>779</Auto>
 <NumCliente>689</NumCliente>
 <NumOrden>1</NumOrden>
@@ -13021,17 +12983,6 @@ SE LE HACEN TRATAMIENTOS PUNTUALES</Observ_apl>
 <Area>Supermercado, almacén y patio</Area>
 <Plano>No</Plano>
 <Aplicador1>Fran</Aplicador1>
-</Aplica>
-<Aplica>
-<Auto>795</Auto>
-<NumCliente>716</NumCliente>
-<NumOrden>1</NumOrden>
-<Nombre_Apl>GENERAL DE RESTAURANTES, S.A.</Nombre_Apl>
-<Direc_Apl>Areas: Maresme-Medol</Direc_Apl>
-<Provin_Apl>BARCELONA</Provin_Apl>
-<Dist_P_Apl>08015</Dist_P_Apl>
-<Reclamacio>0</Reclamacio>
-<Plano>No</Plano>
 </Aplica>
 <Aplica>
 <Auto>796</Auto>
@@ -15989,23 +15940,6 @@ SE LE HACEN TRATAMIENTOS PUNTUALES</Observ_apl>
 <Dist_P_Apl>08860</Dist_P_Apl>
 <Zona>CASTELLDEFELS</Zona>
 <Reclamacio>0</Reclamacio>
-<Plano>No</Plano>
-</Aplica>
-<Aplica>
-<Auto>994</Auto>
-<NumCliente>929</NumCliente>
-<NumOrden>1</NumOrden>
-<Nombre_Apl>HAITIANA VERONICA LARA PERERA</Nombre_Apl>
-<Direc_Apl>Monturiol, 17 4º 2ª</Direc_Apl>
-<Poblac_Apl>RUBI</Poblac_Apl>
-<Provin_Apl>Barcelona</Provin_Apl>
-<Dist_P_Apl>08191</Dist_P_Apl>
-<Zona>ZONA 4</Zona>
-<Telf_Apl>662.384.517</Telf_Apl>
-<Reclamacio>0</Reclamacio>
-<Actividad>VIVIENDA</Actividad>
-<Plaga>Blattella Germanica y Oriental</Plaga>
-<Area>Vivienda</Area>
 <Plano>No</Plano>
 </Aplica>
 <Aplica>
@@ -71519,23 +71453,6 @@ PARC PETANCA:  8 PORTACEBOS</Observ_apl>
 <Aplicador1>Pascual</Aplicador1>
 </Aplica>
 <Aplica>
-<Auto>4837</Auto>
-<NumCliente>929</NumCliente>
-<NumOrden>2</NumOrden>
-<Nombre_Apl>RAYMOND JEAN-CHARLES ALEXIS</Nombre_Apl>
-<Direc_Apl>Monturiol, 17 6º 4ª</Direc_Apl>
-<Poblac_Apl>RUBI</Poblac_Apl>
-<Provin_Apl>Barcelona</Provin_Apl>
-<Dist_P_Apl>08191</Dist_P_Apl>
-<Telf_Apl>666.926.946</Telf_Apl>
-<Pregun_Apl>Sr. Raymond</Pregun_Apl>
-<Reclamacio>1</Reclamacio>
-<Actividad>VIVIENDA</Actividad>
-<Plaga>Blattella Germanica y Oriental</Plaga>
-<Area>Toda el área de la vivienda.</Area>
-<Plano>No</Plano>
-</Aplica>
-<Aplica>
 <Auto>4838</Auto>
 <NumCliente>1345</NumCliente>
 <NumOrden>3</NumOrden>
@@ -74375,24 +74292,6 @@ Mª Cinta 678.718.906
 <Area>Almacén de banderas</Area>
 <Plano>No</Plano>
 <Aplicador1>Fran</Aplicador1>
-</Aplica>
-<Aplica>
-<Auto>5048</Auto>
-<NumCliente>929</NumCliente>
-<NumOrden>3</NumOrden>
-<Nombre_Apl>VICTORIA CLAVERO</Nombre_Apl>
-<Direc_Apl>Pl. Constitución, 1 6º 3ª</Direc_Apl>
-<Poblac_Apl>RUBI</Poblac_Apl>
-<Provin_Apl>Barcelona</Provin_Apl>
-<Dist_P_Apl>08191</Dist_P_Apl>
-<Telf_Apl>620.779.801</Telf_Apl>
-<Pregun_Apl>Sra. Victoria</Pregun_Apl>
-<Reclamacio>0</Reclamacio>
-<Actividad>VIVIENDA</Actividad>
-<Plaga>Blattella Germanica y Oriental</Plaga>
-<Area>Toda el área de la vivienda</Area>
-<Plano>No</Plano>
-<Aplicador1>Pascual</Aplicador1>
 </Aplica>
 <Aplica>
 <Auto>5049</Auto>

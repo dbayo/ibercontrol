@@ -16,6 +16,7 @@ namespace :import_database do
     Place.import_database
     puts 'Finalizado Locales...'
 
+    byebug
     puts 'Importando Facturas...'
     Bill.import_database
     puts 'Finalizado Facturas...'

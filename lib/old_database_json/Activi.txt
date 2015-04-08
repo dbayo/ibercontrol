@@ -1,37 +1,36 @@
-ALIMENTACIÓN
-ALMACEN
-AYUNTAMIENTO
-BAR
-CAFETERIA
-CARNICERIA
-CLINICA
-COLEGIO
-COMERCIO
-COMUNIDAD
-CONGELADOS
-DISCOTECA
-EDIFICIO
-FARMACIA NATURALISTA
-FINCA
-FRUTERIA
-GASOLINERA
-GRANJA
-MERCADO
-NAVE INDUSTRIAL
-OCIO
-OFICINAS
-PANADERIA
-PARQUE
-PASTELERIA
-PESCADERIA
-PIZZERIA
-RESIDENCIA
-RESTAURANTE
-ROSTISERIA
-SOLAR
-SUPERMERCADO
-TALLER MECANICO
-TIENDA
-VIA PUBLICA
-Vía Pública
-VIVIENDA
+AlimentaciÃ³n
+Almacen
+Ayuntamiento
+Bar
+Cafeteria
+Carniceria
+Clinica
+Colegio
+Comercio
+Comunidad
+Congelados
+Discoteca
+Edificio
+Farmacia naturalista
+Finca
+Fruteria
+Gasolinera
+Granja
+Mercado
+Nave industrial
+Ocio
+Oficinas
+Panaderia
+Parque
+Pasteleria
+Pescaderia
+Pizzeria
+Residencia
+Restaurante
+Rostiseria
+Solar
+Supermercado
+Taller mecanico
+Tienda
+Via publica
+Vivienda

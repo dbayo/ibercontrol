@@ -19,8 +19,8 @@ RSpec.describe "clients/edit", type: :view do
       :agencia => "MyString",
       :ccc => "MyString",
       :nif => "MyString",
-      :día_de_factura => "MyString",
-      :días_aplazado => "MyString",
+      :dia_de_factura => "MyString",
+      :dias_aplazado => "MyString",
       :iva => "MyString",
       :descuento => "MyString",
       :tipo_de_servicio => "MyString",
@@ -67,9 +67,9 @@ RSpec.describe "clients/edit", type: :view do
 
       assert_select "input#client_nif[name=?]", "client[nif]"
 
-      assert_select "input#client_día_de_factura[name=?]", "client[día_de_factura]"
+      assert_select "input#client_dia_de_factura[name=?]", "client[dia_de_factura]"
 
-      assert_select "input#client_días_aplazado[name=?]", "client[días_aplazado]"
+      assert_select "input#client_dias_aplazado[name=?]", "client[dias_aplazado]"
 
       assert_select "input#client_iva[name=?]", "client[iva]"
 
