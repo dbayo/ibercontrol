@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe "services/new", type: :view do
   before(:each) do
     assign(:service, Service.new(
-      :name => "MyString"
+      :fecha_servicio => "MyString",
+      :emitida => "MyString",
+      :aplicada => "MyString"
     ))
   end
 
@@ -12,7 +14,11 @@ RSpec.describe "services/new", type: :view do
 
     assert_select "form[action=?][method=?]", services_path, "post" do
 
-      assert_select "input#service_name[name=?]", "service[name]"
+      assert_select "input#service_fecha_servicio[name=?]", "service[fecha_servicio]"
+
+      assert_select "input#service_emitida[name=?]", "service[emitida]"
+
+      assert_select "input#service_aplicada[name=?]", "service[aplicada]"
     end
   end
 end

@@ -21,7 +21,8 @@ class Place
   field :extras, type: Hash
 
   belongs_to :client
-  has_many :services
+  has_and_belongs_to_many :services
+  has_and_belongs_to_many :services_types
   has_and_belongs_to_many :plagues
   has_and_belongs_to_many :activities
   has_and_belongs_to_many :employees

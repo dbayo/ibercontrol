@@ -8,61 +8,26 @@
   = link_to new_client_place_path(@client), :class => 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
     New Place
-  %h1 Show client
-
-%dl.dl-horizontal
-  %dt Nombre fiscal:
-  %dd= @client.nombre_fiscal
-  %dt Direccion fiscal:
-  %dd= @client.direccion_fiscal
-  %dt Poblacion fiscal:
-  %dd= @client.poblacion_fiscal
-  %dt Telefono fiscal:
-  %dd= @client.telefono_fiscal
-  %dt Codigo postal:
-  %dd= @client.codigo_postal
-  %dt Fax:
-  %dd= @client.fax
-  %dt Preguntar por:
-  %dd= @client.preguntar_por
-  %dt Fecha contrato:
-  %dd= @client.fecha_contrato
-  %dt Cuota contrato:
-  %dd= @client.cuota_contrato
-  %dt Fecha de baja:
-  %dd= @client.fecha_de_baja
-  %dt Fecha ultimo aumento:
-  %dd= @client.fecha_ultimo_aumento
-  %dt Cantidad aumentada:
-  %dd= @client.cantidad_aumentada
-  %dt Banco:
-  %dd= @client.banco
-  %dt Agencia:
-  %dd= @client.agencia
-  %dt Ccc:
-  %dd= @client.ccc
-  %dt Nif:
-  %dd= @client.nif
-  %dt Día de factura:
-  %dd= @client.dia_de_factura
-  %dt Días aplazado:
-  %dd= @client.dias_aplazado
-  %dt Iva:
-  %dd= @client.iva
-  %dt Descuento:
-  %dd= @client.descuento
-  %dt Tipo de servicio:
-  %dd= @client.tipo_de_servicio
-  %dt Observaciones:
-  %dd= @client.observaciones
-  %dt Web:
-  %dd= @client.web
-  %dt Email:
-  %dd= @client.email
+  %h1= "Cliente #{@client.nombre_fiscal}"
 
 .row
   .col-md-12
-    %h1 Listing places
+    %h1 Fecha facturas
+    = render partial: 'bill_dates', locals: { client: @client }
+.row
+  .col-md-12
+    %h1 Listado de Aplicaciones
+
+    #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+      - @places.each_with_index do |place, index|
+        .panel.panel-default
+          .panel-heading{:role => "tab", id: "heading#{index}"}
+            %h4.panel-title
+              %a{"aria-controls" => "collapse#{index}", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse#{index}"}
+                = place.nombre
+          .panel-collapse.collapse{"aria-labelledby" => "heading#{index}", :role => "tabpanel", id: "collapse#{index}", class: "#{'in' if index == 0}"}
+            .panel-body
+              = render partial: 'places', locals: { place: place }
 
     .table-responsive
       %table.table.table-striped.table-bordered.table-hover
@@ -116,3 +81,32 @@
               %td= link_to 'Show', [@client, place]
               %td= link_to 'Edit', edit_client_place_path(@client, place)
               %td= link_to 'Destroy', [@client, place], :data => { confirm: 'Are you sure?' }, :method => :delete
+
+
+
+
+#accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+  .panel.panel-default
+    #headingOne.panel-heading{:role => "tab"}
+      %h4.panel-title
+        %a{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseOne"}
+          Collapsible Group Item #1
+    #collapseOne.panel-collapse.collapse.in{"aria-labelledby" => "headingOne", :role => "tabpanel"}
+      .panel-body
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+  .panel.panel-default
+    #headingTwo.panel-heading{:role => "tab"}
+      %h4.panel-title
+        %a.collapsed{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseTwo"}
+          Collapsible Group Item #2
+    #collapseTwo.panel-collapse.collapse{"aria-labelledby" => "headingTwo", :role => "tabpanel"}
+      .panel-body
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+  .panel.panel-default
+    #headingThree.panel-heading{:role => "tab"}
+      %h4.panel-title
+        %a.collapsed{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseThree"}
+          Collapsible Group Item #3
+    #collapseThree.panel-collapse.collapse{"aria-labelledby" => "headingThree", :role => "tabpanel"}
+      .panel-body
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.

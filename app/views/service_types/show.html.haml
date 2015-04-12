@@ -1,0 +1,12 @@
+.page-header
+  = link_to service_types_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_service_type_path(@service_type), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show service_type
+
+%dl.dl-horizontal
+  %dt Name:
+  %dd= @service_type.name

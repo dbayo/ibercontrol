@@ -1,0 +1,12 @@
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        / %th Numero cliente
+        %th Fecha factura
+        %th Emitida
+    %tbody
+      - client.bill_dates.each do |bill_date|
+        %tr
+          %td= bill_date.fecha_de_factura
+          %td= bill_date.emitida

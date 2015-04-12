@@ -1,0 +1,22 @@
+.row
+  .col-md-4
+    %dl.dl-horizontal
+      %dt
+        %i.fa.fa-map-marker.fa-lg
+      %dd= place.direccion
+      %dt
+        %i.fa.fa-phone.fa-lg
+      %dd= place.telefono
+  .col-md-8
+    .table-responsive
+      %table.table.table-striped.table-bordered.table-hover
+        %thead
+          %tr
+            %th Fecha de servicio
+            %th Emitida
+            %th Aplicado
+        %tbody
+          - place.services.each do |service|
+            %tr
+              %td= service.nombre
+              %td= service.direccion

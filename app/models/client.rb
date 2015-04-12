@@ -30,6 +30,7 @@ class Client
 
   has_many :places
   has_many :bills
+  has_many :bill_dates
 
   before_save :create_geolocalizacion
 
