@@ -15,8 +15,7 @@ class Place
   # field :actividad, type: String
   # field :plaga, type: String
   field :area, type: String
-  field :observaciones_apl, type: String
-  field :observaciones_parti, type: String
+  field :observaciones, type: String
   field :plano, type: String
   field :extras, type: Hash
 
@@ -24,7 +23,7 @@ class Place
   has_and_belongs_to_many :services
   has_and_belongs_to_many :services_types
   has_and_belongs_to_many :plagues
-  has_and_belongs_to_many :activities
+  belongs_to :activity
   has_and_belongs_to_many :employees
 
   def self.import_database
@@ -54,8 +53,8 @@ class Place
       place.preguntar_por = record.delete "Pregun_Apl"
       place.reclamacion = record.delete "Reclamacio"
       place.area = record.delete "Area"
-      place.observaciones_apl = record.delete "Observ_apl"
-      place.observaciones_parti = record.delete "ObserParti"
+      place.observaciones = record.delete "Observ_apl"
+      # place.observaciones_parti = record.delete "ObserParti"
       place.plano = record.delete "Plano"
 
       if record["Plaga"]

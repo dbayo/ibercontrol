@@ -11,10 +11,6 @@
           %li= msg
 
   .form-group
-    = f.label :numero_cliente, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :numero_cliente, :class => 'form-control'
-  .form-group
     = f.label :nombre, :class => 'col-sm-2 control-label'
     .col-sm-10
       = f.text_field :nombre, :class => 'form-control'
@@ -55,13 +51,9 @@
     .col-sm-10
       = f.text_field :reclamacion, :class => 'form-control'
   .form-group
-    = f.label :actividad, :class => 'col-sm-2 control-label'
+    = f.label :activity, :class => 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :actividad, :class => 'form-control'
-  .form-group
-    = f.label :plaga, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :plaga, :class => 'form-control'
+      = f.text_field :activity, :class => 'form-control'
   .form-group
     = f.label :area, :class => 'col-sm-2 control-label'
     .col-sm-10
@@ -75,13 +67,9 @@
     .col-sm-10
       = f.text_field :plano, :class => 'form-control'
   .form-group
-    = f.label :aplicador1, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :aplicador1, :class => 'form-control'
-  .form-group
-    = f.label :aplicador2, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :aplicador2, :class => 'form-control'
-  .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit :class => 'btn btn-primary'
+
+
+/ TODO!!
+/ Add plagua, activities and aplicators (employees)

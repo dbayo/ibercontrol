@@ -22,13 +22,9 @@
         %th Fax
         %th Preguntar por
         %th reclamacion
-        %th Actividad
-        %th Plaga
         %th Area
         %th Observaciones
         %th Plano
-        %th Aplicador1
-        %th Aplicador2
         %th
         %th
         %th
@@ -47,13 +43,9 @@
           %td= place.fax
           %td= place.preguntar_por
           %td= place.reclamacion
-          %td= place.actividad
-          %td= place.plaga
           %td= place.area
           %td= place.observaciones
           %td= place.plano
-          %td= place.aplicador1
-          %td= place.aplicador2
           %td= link_to 'Show', [@client, place]
           %td= link_to 'Edit', edit_client_place_path(@client, place)
           %td= link_to 'Destroy', [@client, place], :data => { confirm: 'Are you sure?' }, :method => :delete

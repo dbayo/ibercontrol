@@ -2,7 +2,7 @@ class Activity
   include Mongoid::Document
   field :name, type: String
 
-  has_and_belongs_to_many :place
+  has_many :places
 
   def self.import_database
     File.readlines(File.join(Rails.root, 'lib', 'old_database_json', 'Activi.txt')).map do |line|
