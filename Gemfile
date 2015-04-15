@@ -44,10 +44,11 @@ gem 'haml-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'nokogiri'
+gem 'database_cleaner'
+
 group :development do
   gem 'better_errors'
-  gem 'nokogiri'
-  gem 'database_cleaner'
 end
 
 group :development, :test do
