@@ -44,6 +44,8 @@ gem 'haml-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'postgresql'
+
 gem 'nokogiri'
 gem 'database_cleaner'
 
