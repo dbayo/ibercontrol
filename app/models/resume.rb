@@ -1,9 +1,11 @@
 class Resume
+  include Mongoid::Document
+
   field :numero_de_hoja, type: String
   field :numero_cliente, type: String
   field :numero_de_servicio, type: String
   field :estado, type: String
-  field :nombre_aplicación, type: String
+  field :nombre_aplicacion, type: String
   field :direccion, type: String
   field :poblacion, type: String
   field :provincia, type: String
@@ -39,13 +41,13 @@ class Resume
   field :material_activo_5, type: String
   field :material_activo_6, type: String
   field :material_activo_7, type: String
-  field :disolución_1, type: String
-  field :disolución_2, type: String
-  field :disolución_3, type: String
-  field :disolución_4, type: String
-  field :disolución_5, type: String
-  field :disolución_6, type: String
-  field :disolución_7, type: String
+  field :disolucion_1, type: String
+  field :disolucion_2, type: String
+  field :disolucion_3, type: String
+  field :disolucion_4, type: String
+  field :disolucion_5, type: String
+  field :disolucion_6, type: String
+  field :disolucion_7, type: String
   field :cantidad_1, type: String
   field :cantidad_2, type: String
   field :cantidad_3, type: String
@@ -53,12 +55,12 @@ class Resume
   field :cantidad_5, type: String
   field :cantidad_6, type: String
   field :cantidad_7, type: String
-  field :tipo_aplicación_1, type: String
-  field :tipo_aplicación_2, type: String
-  field :tipo_aplicación_3, type: String
-  field :tipo_aplicación_4, type: String
-  field :tipo_aplicación_5, type: String
-  field :tipo_aplicación_6, type: String
-  field :tipo_aplicación_7, type: String
+  field :tipo_aplicacion_1, type: String
+  field :tipo_aplicacion_2, type: String
+  field :tipo_aplicacion_3, type: String
+  field :tipo_aplicacion_4, type: String
+  field :tipo_aplicacion_5, type: String
+  field :tipo_aplicacion_6, type: String
+  field :tipo_aplicacion_7, type: String
   field :plazo_de_seguridad, type: String
 end
