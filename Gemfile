@@ -43,6 +43,7 @@ gem 'haml-rails'
 gem 'nokogiri'
 gem 'better_errors'
 gem 'byebug'
+gem 'database_cleaner'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -59,7 +60,6 @@ group :test do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', platforms: :ruby
   # gem 'rspec-its'
-  gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'mongoid-rspec', '~> 2.0.0'
