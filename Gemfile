@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem "mongoid", git: 'https://github.com/mongoid/mongoid.git'
+gem "mongoid", "~> 4.0.0"
 
 gem 'bootstrap-generators', '~> 3.3.1'
 gem 'bootstrap-sass', '3.2.0.2'
