@@ -41,14 +41,11 @@ gem 'haml-rails'
 # gem 'capistrano-rails', group: :development
 
 gem 'nokogiri'
-
-group :development do
-  gem 'better_errors'
-end
+gem 'better_errors'
+gem 'byebug'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
