@@ -95,6 +95,16 @@ class Client
 
     client
   end
+
+  def self.join_duplicates_clients
+    self.all.group_by(&:nif).values.each do |clients_array|
+      final_client = clients_array.shift
+      clients_array.each do |client|
+        final_client.places.concat(client.places)
+        client.delete
+      end
+    end
+  end
 end
 
 
