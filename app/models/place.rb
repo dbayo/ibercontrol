@@ -21,8 +21,8 @@ class Place
 
   belongs_to :client
   has_and_belongs_to_many :services
-  has_and_belongs_to_many :services_types
   has_and_belongs_to_many :plagues
+  has_many :service_types
   belongs_to :activity
   has_and_belongs_to_many :employees
 

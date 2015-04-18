@@ -1,1 +1,1 @@
-Mongoid.load!("/app/config/mongoid.yml", :production)
+# Mongoid.load!("/app/config/mongoid.yml", :production)

@@ -26,7 +26,7 @@ class Service
       place = client.places.where("extras.NumOrden" => place_id).first
 
       if place
-        service = place.services.create(_id: record.delete("Auto") )
+        service = place.services.new(_id: record.delete("Auto"), place: place )
         service.fecha_servicio = record.delete "Emitida"
         service.aplicada = record.delete "Aplicada"
 
@@ -40,6 +40,8 @@ class Service
 
         service.extras = extras
         service.save
+
+        place.save
 
         puts "Service #{service.id}"
       else

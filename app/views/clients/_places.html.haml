@@ -15,8 +15,11 @@
             %th Fecha de servicio
             %th Emitida
             %th Aplicado
+            %th Products
         %tbody
           - place.services.each do |service|
             %tr
-              %td= service.nombre
-              %td= service.direccion
+              %td= service.fecha_servicio
+              %td= service.emitida
+              %td= service.aplicada
+              %td= service.products.map(&:producto)

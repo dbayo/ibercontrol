@@ -39,3 +39,28 @@
   %dd= @place.observaciones
   %dt Plano:
   %dd= @place.plano
+
+.page-header
+  %h1 Listing services
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Fecha servicio
+        %th Emitida
+        %th Aplicada
+        %th
+        %th
+        %th
+
+    %tbody
+      - @services.each do |service|
+        %tr
+          %td= service.fecha_servicio
+          %td= service.emitida
+          %td= service.aplicada
+          %td= link_to 'Show', [@client, @place, service]
+          %td= link_to 'Edit', edit_service_path(service)
+          %td= link_to 'Destroy', [@client, @place, service], :data => { confirm: 'Are you sure?' }, :method => :delete
+
