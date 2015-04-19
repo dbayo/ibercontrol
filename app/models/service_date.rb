@@ -28,7 +28,8 @@ class ServiceDate
       if place
         service = place.services.first
         service_date = service.service_dates.new(_id: record.delete("Auto"), service: service )
-        service_date.fecha_servicio = record.delete "Emitida"
+        service_date.fecha_servicio = record.delete "FechaServ"
+        service_date.emitida = record.delete "Emitida"
         service_date.aplicada = record.delete "Aplicada"
 
         service_date.products << Product.find_by(record.delete("Produc1")) unless record["Produc1"].nil? || record["Produc1"] == '0'
@@ -44,7 +45,7 @@ class ServiceDate
 
         place.save
 
-        puts "Service #{service_date.id}"
+        puts "Service date #{service_date.id}"
       else
         puts "Place #{place_id} not found for client #{client_id}"
       end

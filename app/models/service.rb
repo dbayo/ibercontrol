@@ -7,9 +7,11 @@ class Service
   has_many :service_dates
 
   def self.create_services
-    Places.all.each do |place|
-      service=place.services.new
-      case place.client.tipo_de_servicio
+    Place.all.each do |place|
+      service = place.services.new
+      service_name = place.client.tipo_de_servicio
+
+      case service_name
       when "Baja Dr"
         service.nombre = "Desratización"
         service.baja = true
@@ -29,10 +31,12 @@ class Service
         service.nombre = "Legionela"
         service.baja = true
       else
-        service.nombre = place.client.tipo_de_servicio
+        service.nombre = service_name
         service.baja = false
       end
       service.save
+      place.save
+      puts "Service #{service.id}"
     end
   end
 end

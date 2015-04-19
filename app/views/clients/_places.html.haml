@@ -12,14 +12,12 @@
       %table.table.table-striped.table-bordered.table-hover
         %thead
           %tr
-            %th Fecha de servicio
-            %th Emitida
-            %th Aplicado
-            %th Products
+            %th Nombre
+            %th Baja?
+            %th Numero Services date
         %tbody
           - place.services.each do |service|
             %tr
-              %td= service.fecha_servicio
-              %td= service.emitida
-              %td= service.aplicada
-              %td= service.products.map(&:producto)
+              %td= service.nombre
+              %td= service.baja
+              %td= service.service_dates.count
