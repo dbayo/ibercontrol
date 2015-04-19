@@ -17,9 +17,9 @@ namespace :import_database do
     Place.import_database
     puts 'Finalizado Locales...'
 
-    puts 'Importando Locales...'
+    puts 'Importando Services...'
     Service.import_database
-    puts 'Finalizado Locales...'
+    puts 'Finalizado Services...'
 
     puts 'Importando Facturas...'
     Bill.import_database
