@@ -3,8 +3,8 @@ class Service
   field :nombre, type: String
   field :baja, type: Boolean
 
-  belongs_to :place
   has_many :service_dates
+  belongs_to :place
 
   def self.create_services
     Place.all.each do |place|

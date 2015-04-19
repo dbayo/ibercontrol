@@ -1,44 +1,15 @@
 .page-header
-  = link_to client_places_path(@client), :class => 'btn btn-default' do
+  = link_to client_path(@client), :class => 'btn btn-default' do
     %span.glyphicon.glyphicon-list-alt
-    Back
+    Atras
   = link_to edit_client_place_path(@client, @place), :class => 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
-    Edit
+    Editar
   = link_to new_client_place_service_path(@client, @place), :class => 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
-    New Service
-  %h1 Show place
+    Nuevo Service
+  %h1= "Local #{@place.nombre}"
 
-%dl.dl-horizontal
-  %dt Numero cliente:
-  %dd= @place.numero_cliente
-  %dt Nombre:
-  %dd= @place.nombre
-  %dt direccion:
-  %dd= @place.direccion
-  %dt poblacion:
-  %dd= @place.poblacion
-  %dt Provincia:
-  %dd= @place.provincia
-  %dt Dpostal:
-  %dd= @place.dpostal
-  %dt Zona:
-  %dd= @place.zona
-  %dt telefono:
-  %dd= @place.telefono
-  %dt Fax:
-  %dd= @place.fax
-  %dt Preguntar por:
-  %dd= @place.preguntar_por
-  %dt reclamacion:
-  %dd= @place.reclamacion
-  %dt Area:
-  %dd= @place.area
-  %dt Observaciones:
-  %dd= @place.observaciones
-  %dt Plano:
-  %dd= @place.plano
 
 .page-header
   %h1 Listing services
@@ -47,20 +18,12 @@
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
-        %th Fecha servicio
-        %th Emitida
-        %th Aplicada
-        %th
-        %th
-        %th
+        %th Nombre servicio
+        %th Baja?
 
     %tbody
       - @services.each do |service|
         %tr
-          %td= service.fecha_servicio
-          %td= service.emitida
-          %td= service.aplicada
-          %td= link_to 'Show', [@client, @place, service]
-          %td= link_to 'Edit', edit_service_path(service)
-          %td= link_to 'Destroy', [@client, @place, service], :data => { confirm: 'Are you sure?' }, :method => :delete
+          %td= link_to service.nombre, [@client, @place, service]
+          %td= service.baja
 

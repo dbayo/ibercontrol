@@ -2,12 +2,6 @@ class PlacesController < ApplicationController
   before_action :set_client
   before_action :set_place, only: [:show, :edit, :update, :destroy]
 
-  # GET /places
-  # GET /places.json
-  def index
-    @places = @client.places
-  end
-
   # GET /places/1
   # GET /places/1.json
   def show

@@ -41,12 +41,16 @@ class Client
 
   def create_geolocalizacion
     if self.direccion_fiscal
-      out = self.direccion_fiscal.scan(/^\D*\d*/)
-      out << self.poblacion_fiscal
-      out << self.provincia_fiscal
-      out << self.codigo_postal
-      self.geolocalizacion = out.join(', ')
+      self.geolocalizacion = self.full_address
     end
+  end
+
+  def full_address
+    out = [self.direccion_fiscal.scan(/^\D*\d*/)]
+    out << self.poblacion_fiscal
+    out << self.provincia_fiscal
+    out << self.codigo_postal
+    out.join(', ')
   end
 
   def self.import_database

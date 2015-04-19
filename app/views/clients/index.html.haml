@@ -11,10 +11,7 @@
         %th Empresa
         %th Direccion
         %th Telefono
-        %th Tipo de Servicio
-        %th
-        %th
-        %th
+        %th Numero locales
 
     %tbody
       - @clients.each do |client|
@@ -22,7 +19,4 @@
           %td= link_to client.nombre_fiscal, client
           %td= client.direccion_fiscal
           %td= client.telefono_fiscal
-          %td= client.tipo_de_servicio
-          %td= link_to 'Show', client
-          %td= link_to 'Edit', edit_client_path(client)
-          %td= link_to 'Destroy', client, :data => { confirm: 'Are you sure?' }, :method => :delete
+          %td= client.places.count

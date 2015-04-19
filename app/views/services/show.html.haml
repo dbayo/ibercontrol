@@ -1,16 +1,16 @@
 .page-header
-  = link_to services_path, :class => 'btn btn-default' do
+  = link_to [@client, @place], :class => 'btn btn-default' do
     %span.glyphicon.glyphicon-list-alt
-    Back
+    Atras
   = link_to edit_service_path(@service), :class => 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
-    Edit
-  %h1 Show service
+    Editar
+  %h1= "Servicio #{@service.nombre}"
 
 %dl.dl-horizontal
-  %dt Fecha servicio:
-  %dd= @service.fecha_servicio
-  %dt Emitida:
-  %dd= @service.emitida
-  %dt Aplicada:
-  %dd= @service.aplicada
+  %dt Nombre:
+  %dd= @service.nombre
+  %dt Baja?:
+  %dd= @service.baja
+  %dt Fecha aplicaciones:
+  %dd= @service.service_dates.count

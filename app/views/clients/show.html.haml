@@ -1,13 +1,13 @@
 .page-header
   = link_to clients_path, :class => 'btn btn-default' do
     %span.glyphicon.glyphicon-list-alt
-    Back
+    Atras
   = link_to edit_client_path(@client), :class => 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
-    Edit
+    Editar
   = link_to new_client_place_path(@client), :class => 'btn btn-primary' do
-    %span.glyphicon.glyphicon-pencil
-    New Place
+    %span.glyphicon.glyphicon-plus
+    Nuevo local
   %h1= "Cliente #{@client.nombre_fiscal}"
 
 .row
@@ -16,66 +16,6 @@
     = render partial: 'bill_dates', locals: { client: @client }
 .row
   .col-md-12
-    %h1 Listado de Aplicaciones
+    %h1 Locales
+    = render partial: 'places'
 
-    #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
-      - @places.each_with_index do |place, index|
-        .panel.panel-default
-          .panel-heading{:role => "tab", id: "heading#{index}"}
-            %h4.panel-title
-              %a{"aria-controls" => "collapse#{index}", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse#{index}"}
-                = place.nombre
-          .panel-collapse.collapse{"aria-labelledby" => "heading#{index}", :role => "tabpanel", id: "collapse#{index}", class: "#{'in' if index == 0}"}
-            .panel-body
-              = render partial: 'places', locals: { place: place }
-
-    .table-responsive
-      %table.table.table-striped.table-bordered.table-hover
-        %thead
-          %tr
-            / %th Numero cliente
-            %th Nombre
-            %th Direccion
-            %th Poblacion
-            %th Provincia
-            %th Dpostal
-            %th Zona
-            %th Telefono
-            %th Fax
-            %th Preguntar por
-            %th reclamacion
-            / %th Actividad
-            / %th Plaga
-            %th Area
-            %th Observaciones
-            %th Plano
-            / %th Aplicador1
-            / %th Aplicador2
-            %th
-            %th
-            %th
-
-        %tbody
-          - @places.each do |place|
-            %tr
-              / %td= place.numero_cliente
-              %td= place.nombre
-              %td= place.direccion
-              %td= place.poblacion
-              %td= place.provincia
-              %td= place.dpostal
-              %td= place.zona
-              %td= place.telefono
-              %td= place.fax
-              %td= place.preguntar_por
-              %td= place.reclamacion
-              / %td= place.actividad
-              / %td= place.plaga
-              %td= place.area
-              %td= place.observaciones
-              %td= place.plano
-              / %td= place.aplicador1
-              / %td= place.aplicador2
-              %td= link_to 'Show', [@client, place]
-              %td= link_to 'Edit', edit_client_place_path(@client, place)
-              %td= link_to 'Destroy', [@client, place], :data => { confirm: 'Are you sure?' }, :method => :delete

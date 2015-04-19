@@ -1,11 +1,7 @@
 class ServicesController < ApplicationController
+  before_action :set_client
+  before_action :set_place
   before_action :set_service, only: [:show, :edit, :update, :destroy]
-
-  # GET /services
-  # GET /services.json
-  def index
-    @services = Service.all
-  end
 
   # GET /services/1
   # GET /services/1.json
@@ -62,6 +58,15 @@ class ServicesController < ApplicationController
   end
 
   private
+
+    def set_client
+      @client = Client.find(params[:client_id])
+    end
+
+    def set_place
+      @place = Place.find(params[:place_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_service
       @service = Service.find(params[:id])

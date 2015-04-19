@@ -26,6 +26,14 @@ class Place
   belongs_to :activity
   has_and_belongs_to_many :employees
 
+  def full_address
+    out = [self.direccion.scan(/^\D*\d*/)]
+    out << self.poblacion
+    out << self.provincia
+    out << self.dpostal
+    out.join(', ')
+  end
+
   def self.import_database
     xml = Nokogiri::XML(open(File.join(Rails.root, 'lib', 'old_database_json', 'Locales.xml')))
     xml.xpath("//Aplica").each do |place|

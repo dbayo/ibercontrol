@@ -1,23 +1,23 @@
-.row
-  .col-md-4
-    %dl.dl-horizontal
-      %dt
-        %i.fa.fa-map-marker.fa-lg
-      %dd= place.direccion
-      %dt
-        %i.fa.fa-phone.fa-lg
-      %dd= place.telefono
-  .col-md-8
-    .table-responsive
-      %table.table.table-striped.table-bordered.table-hover
-        %thead
-          %tr
-            %th Nombre
-            %th Baja?
-            %th Numero Services date
-        %tbody
-          - place.services.each do |service|
-            %tr
-              %td= service.nombre
-              %td= service.baja
-              %td= service.service_dates.count
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        / %th Numero cliente
+        %th Nombre
+        %th Direccion
+        %th Telefono
+        %th Total Servicios
+        %th
+        %th
+        %th
+
+    %tbody
+      - @places.each do |place|
+        %tr
+          %td= place.nombre
+          %td= place.full_address
+          %td= place.telefono
+          %td= place.services.count
+          %td= link_to 'Show', [@client, place]
+          %td= link_to 'Edit', edit_client_place_path(@client, place)
+          %td= link_to 'Destroy', [@client, place], :data => { confirm: 'Are you sure?' }, :method => :delete
