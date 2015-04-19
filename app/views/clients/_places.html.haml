@@ -8,16 +8,12 @@
         %th Telefono
         %th Total Servicios
         %th
-        %th
-        %th
 
     %tbody
       - @places.each do |place|
         %tr
-          %td= place.nombre
+          %td= link_to place.nombre, [@client, place]
           %td= place.full_address
           %td= place.telefono
           %td= place.services.count
-          %td= link_to 'Show', [@client, place]
-          %td= link_to 'Edit', edit_client_place_path(@client, place)
           %td= link_to 'Destroy', [@client, place], :data => { confirm: 'Are you sure?' }, :method => :delete
