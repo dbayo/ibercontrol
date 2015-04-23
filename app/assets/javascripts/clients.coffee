@@ -4,10 +4,10 @@
 
 $ ->
   $('#geocomplete').geocomplete
-    details: 'form'
+    details: '.details'
+    detailsAttribute: "data-geo"
     types: [
       'geocode'
       'establishment'
     ]
     map: "#my_map"
-  return

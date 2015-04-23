@@ -32,7 +32,7 @@ class Client
   has_many :bills
   has_many :bill_dates
 
-  before_save :create_geolocalizacion
+  # before_save :create_geolocalizacion
 
   def self.search(search)
     search_condition = /#{search}/i
