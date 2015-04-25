@@ -1,5 +1,5 @@
 class ServiceDatesController < ApplicationController
-  before_action :set_service_date, only: [:show, :edit, :update, :destroy]
+  before_action :set_service_date, only: [:show, :edit, :update, :destroy, :remove_product, :add_product]
   before_action :set_client
   before_action :set_place
   before_action :set_service
@@ -52,6 +52,19 @@ class ServiceDatesController < ApplicationController
   def destroy
     @service_date.destroy
     redirect_to service_dates_url, notice: 'Service date was successfully destroyed.'
+  end
+
+  def remove_product
+    product = Product.find params[:product_id]
+    @service_date.products.delete(product)
+
+    redirect_to [@client, @place, @service, @service_date], notice: 'Product was successfully destroyed.'
+  end
+
+  def add_product
+    @service_date.add_product(params[:product_id])
+
+    redirect_to [@client, @place, @service, @service_date], notice: 'Product was successfully added.'
   end
 
   private

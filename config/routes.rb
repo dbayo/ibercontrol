@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   resources :clients do
     resources :places do
       resources :services do
-        resources :service_dates
+        resources :service_dates do
+          member do
+            delete 'remove_product/:product_id' => 'service_dates#remove_product'
+            post 'add_product'
+          end
+        end
       end
     end
 

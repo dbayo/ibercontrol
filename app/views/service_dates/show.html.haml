@@ -5,7 +5,7 @@
   = link_to edit_client_place_service_service_date_path(@client, @place, @service, @service_date), :class => 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
     Editar
-  %h1 Show service_date
+  %h1 Show Fecha aplicacion
 
 %dl.dl-horizontal
   %dt Fecha servicio:
@@ -14,3 +14,44 @@
   %dd= @service_date.emitida
   %dt Aplicada:
   %dd= @service_date.aplicada
+
+
+.page-header
+  %h1 Listing productos
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th ID
+        %th Producto
+        %th Numero Registro
+        %th Material Activo
+        %th Disolucion
+        %th Tecnica
+        %th Plazo Seguridad
+        %th
+
+    %tbody
+      - @service_date.products.each do |product|
+        %tr
+          %td= product.id
+          %td= product.producto
+          %td= product.numero_registro
+          %td= product.material_activo
+          %td= product.disolucion
+          %td= product.tecnica
+          %td= product.plazo_seguridad
+          %td= link_to 'Destroy', "/clients/#{@client.id}/places/#{@place.id}/services/#{@service.id}/service_dates/#{@service_date.id}/remove_product/#{product.id}", :data => { confirm: 'Are you sure?' }, :method => :delete
+
+.page-header
+  %h3 Añadir nuevo producto
+
+= form_tag "/clients/#{@client.id}/places/#{@place.id}/services/#{@service.id}/service_dates/#{@service_date.id}/add_product", :class => "form-horizontal", :role => "form" do
+  .form-group
+    = label_tag :product, :id, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = text_field_tag :product_id, nil, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = submit_tag 'Añadir', :class => 'btn btn-primary'
