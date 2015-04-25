@@ -22,7 +22,6 @@ class Client
   field :dias_aplazado, type: String
   field :iva, type: String
   field :descuento, type: String
-  field :tipo_de_servicio, type: String
   field :observaciones, type: String
   field :web, type: String
   field :email, type: String
@@ -65,8 +64,7 @@ class Client
   def self.find_or_create_by_json(record)
     extras = record
 
-    client = Client.find_or_create_by record.delete("NUMCLIENTE")
-    client._id = record.delete "NUMCLIENTE"
+    client = Client.find_or_create_by(id: record.delete("NUMCLIENTE"))
     client.nombre_fiscal = record.delete "NOMBRE_FIS"
     client.direccion_fiscal = record.delete "DIREC_FIS"
     client.poblacion_fiscal = (record.delete "POBLAC_FIS").to_s.capitalize
@@ -88,7 +86,6 @@ class Client
     client.dias_aplazado = record.delete "DIA_APLAZ"
     client.iva = record.delete "IVA"
     client.descuento = record.delete "Descuento"
-    client.tipo_de_servicio = record.delete "TIPOSERV"
     client.observaciones = record.delete "OBSERVFIS"
     client.web = record.delete "Web"
     client.fecha_ultimo_aumento = record.delete "Fecha_Ult_Aum"
@@ -100,7 +97,7 @@ class Client
     client
   end
 
-  def self.join_duplicates_clients
+  def self.join_duplicates
     self.all.group_by(&:nif).values.each do |clients_array|
       final_client = clients_array.shift
       clients_array.each do |client|

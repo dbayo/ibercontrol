@@ -6,7 +6,7 @@
         %th Nombre
         %th Direccion
         %th Telefono
-        %th Total Servicios
+        %th Servicios
         %th
 
     %tbody
@@ -15,5 +15,5 @@
           %td= link_to place.nombre, [@client, place]
           %td= place.full_address
           %td= place.telefono
-          %td= place.services.count
+          %td= place.services.map(&:nombre).join(', ')
           %td= link_to 'Destroy', [@client, place], :data => { confirm: 'Are you sure?' }, :method => :delete

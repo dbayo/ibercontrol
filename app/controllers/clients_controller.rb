@@ -63,6 +63,6 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:nombre_fiscal, :geolocalizacion, :direccion_fiscal, :poblacion_fiscal, :telefono_fiscal, :codigo_postal, :fax, :preguntar_por, :fecha_contrato, :cuota_contrato, :fecha_de_baja, :fecha_ultimo_aumento, :cantidad_aumentada, :banco, :agencia, :ccc, :nif, :dia_de_factura, :dias_aplazado, :iva, :descuento, :tipo_de_servicio, :observaciones, :web, :email)
+      params.require(:client).permit(:nombre_fiscal, :geolocalizacion, :direccion_fiscal, :poblacion_fiscal, :telefono_fiscal, :codigo_postal, :fax, :preguntar_por, :fecha_contrato, :cuota_contrato, :fecha_de_baja, :fecha_ultimo_aumento, :cantidad_aumentada, :banco, :agencia, :ccc, :nif, :dia_de_factura, :dias_aplazado, :iva, :descuento, :observaciones, :web, :email)
     end
 end

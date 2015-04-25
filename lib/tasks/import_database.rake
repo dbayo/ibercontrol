@@ -26,7 +26,8 @@ namespace :import_database do
     Bill.import_database
     puts 'Finalizado Facturas...'
 
-    Client.join_duplicates_clients
+    Client.join_duplicates
+    Place.join_duplicates
 
     puts 'Base de datos importada!'
   end
@@ -37,8 +38,8 @@ namespace :import_database do
   end
 
   desc "Importa locales"
-  task :places => :environment do
-    Client.join_duplicates_clients
+  task :clients_dup => :environment do
+    Client.join_duplicates
   end
 
   desc "Importa facturas"
@@ -54,13 +55,21 @@ namespace :import_database do
 
   desc "Importa locales"
   task :places => :environment do
+    Place.delete_all
     Place.import_database
+  end
+
+  desc "Importa locales"
+  task :places_dup => :environment do
+    Place.join_duplicates
   end
 
   desc "Importa locales"
   task :services => :environment do
     Service.delete_all
     Service.create_services
+
+    ServiceDate.delete_all
     ServiceDate.import_database
   end
 

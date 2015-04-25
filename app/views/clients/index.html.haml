@@ -8,6 +8,7 @@
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
+        %th Num Cliente
         %th Empresa
         %th Direccion
         %th Telefono
@@ -16,6 +17,7 @@
     %tbody
       - @clients.each do |client|
         %tr
+          %td= client.id
           %td= link_to client.nombre_fiscal, client
           %td= client.direccion_fiscal
           %td= client.telefono_fiscal

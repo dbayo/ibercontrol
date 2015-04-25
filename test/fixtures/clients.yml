@@ -21,7 +21,6 @@ one:
   dias_aplazado: MyString
   iva: MyString
   descuento: MyString
-  tipo_de_servicio: MyString
   observaciones: MyString
   web: MyString
   email: MyString
@@ -47,7 +46,6 @@ two:
   dias_aplazado: MyString
   iva: MyString
   descuento: MyString
-  tipo_de_servicio: MyString
   observaciones: MyString
   web: MyString
   email: MyString

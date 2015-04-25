@@ -23,7 +23,6 @@ RSpec.describe "clients/new", type: :view do
       :dias_aplazado => "MyString",
       :iva => "MyString",
       :descuento => "MyString",
-      :tipo_de_servicio => "MyString",
       :observaciones => "MyString",
       :web => "MyString",
       :email => "MyString"
@@ -74,8 +73,6 @@ RSpec.describe "clients/new", type: :view do
       assert_select "input#client_iva[name=?]", "client[iva]"
 
       assert_select "input#client_descuento[name=?]", "client[descuento]"
-
-      assert_select "input#client_tipo_de_servicio[name=?]", "client[tipo_de_servicio]"
 
       assert_select "input#client_observaciones[name=?]", "client[observaciones]"
 

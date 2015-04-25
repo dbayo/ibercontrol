@@ -23,7 +23,6 @@ RSpec.describe "clients/show", type: :view do
       :dias_aplazado => "Días Aplazado",
       :iva => "Iva",
       :descuento => "Descuento",
-      :tipo_de_servicio => "Tipo De Servicio",
       :observaciones => "Observaciones",
       :web => "Web",
       :email => "Email"
@@ -52,7 +51,6 @@ RSpec.describe "clients/show", type: :view do
     expect(rendered).to match(/Días Aplazado/)
     expect(rendered).to match(/Iva/)
     expect(rendered).to match(/Descuento/)
-    expect(rendered).to match(/Tipo De Servicio/)
     expect(rendered).to match(/Observaciones/)
     expect(rendered).to match(/Web/)
     expect(rendered).to match(/Email/)

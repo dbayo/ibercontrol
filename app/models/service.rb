@@ -9,7 +9,7 @@ class Service
   def self.create_services
     Place.all.each do |place|
       service = place.services.new
-      service_name = place.client.tipo_de_servicio
+      service_name = place.client.extras['TIPOSERV']
 
       case service_name
       when "Baja Dr"
@@ -35,7 +35,6 @@ class Service
         service.baja = false
       end
       service.save
-      place.save
       puts "Service #{service.id}"
     end
   end

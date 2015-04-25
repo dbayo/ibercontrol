@@ -24,7 +24,6 @@ RSpec.describe "clients/index", type: :view do
         :dias_aplazado => "Días Aplazado",
         :iva => "Iva",
         :descuento => "Descuento",
-        :tipo_de_servicio => "Tipo De Servicio",
         :observaciones => "Observaciones",
         :web => "Web",
         :email => "Email"
@@ -50,7 +49,6 @@ RSpec.describe "clients/index", type: :view do
         :dias_aplazado => "Días Aplazado",
         :iva => "Iva",
         :descuento => "Descuento",
-        :tipo_de_servicio => "Tipo De Servicio",
         :observaciones => "Observaciones",
         :web => "Web",
         :email => "Email"
@@ -80,7 +78,6 @@ RSpec.describe "clients/index", type: :view do
     assert_select "tr>td", :text => "Días Aplazado".to_s, :count => 2
     assert_select "tr>td", :text => "Iva".to_s, :count => 2
     assert_select "tr>td", :text => "Descuento".to_s, :count => 2
-    assert_select "tr>td", :text => "Tipo De Servicio".to_s, :count => 2
     assert_select "tr>td", :text => "Observaciones".to_s, :count => 2
     assert_select "tr>td", :text => "Web".to_s, :count => 2
     assert_select "tr>td", :text => "Email".to_s, :count => 2

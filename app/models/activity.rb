@@ -13,12 +13,12 @@ class Activity
 
   def self.parser_activity_type(activity)
     case activity
-    when "Vía Pública"
-      ["Via publica"]
+    when "Via publica"
+      "Vía Pública"
     when "PANADERÍA"
-      ["Panaderia"]
+      "Panadería"
     else
-      [activity.capitalize]
+      activity.capitalize
     end
   end
 end

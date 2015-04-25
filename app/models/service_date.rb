@@ -32,18 +32,16 @@ class ServiceDate
         service_date.emitida = record.delete "Emitida"
         service_date.aplicada = record.delete "Aplicada"
 
-        service_date.products << Product.find_by(record.delete("Produc1")) unless record["Produc1"].nil? || record["Produc1"] == '0'
-        service_date.products << Product.find_by(record.delete("Produc2")) unless record["Produc2"].nil? || record["Produc2"] == '0'
-        service_date.products << Product.find_by(record.delete("Produc3")) unless record["Produc3"].nil? || record["Produc3"] == '0'
-        service_date.products << Product.find_by(record.delete("Produc4")) unless record["Produc4"].nil? || record["Produc4"] == '0'
-        service_date.products << Product.find_by(record.delete("Produc5")) unless record["Produc5"].nil? || record["Produc5"] == '0'
-        service_date.products << Product.find_by(record.delete("Produc6")) unless record["Produc6"].nil? || record["Produc6"] == '0'
-        service_date.products << Product.find_by(record.delete("Produc7")) unless record["Produc7"].nil? || record["Produc7"] == '0'
+        service_date.add_product(record.delete("Produc1"))
+        service_date.add_product(record.delete("Produc2"))
+        service_date.add_product(record.delete("Produc3"))
+        service_date.add_product(record.delete("Produc4"))
+        service_date.add_product(record.delete("Produc5"))
+        service_date.add_product(record.delete("Produc6"))
+        service_date.add_product(record.delete("Produc7"))
 
         service_date.extras = extras
         service_date.save
-
-        place.save
 
         puts "Service date #{service_date.id}"
       else
@@ -54,6 +52,15 @@ class ServiceDate
     end
 
     service_date
+  end
+
+  def add_product(product_id)
+    product = Product.where(id: product_id).first
+    if product
+      self.products << Product.find(product_id)
+      product.service_dates << self
+      product.save
+    end
   end
 end
 

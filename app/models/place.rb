@@ -74,10 +74,8 @@ class Place
       end
 
       if record["Actividad"]
-        array_activities = Activity.parser_activity_type(record.delete("Actividad"))
-        array_activities.each do |activity_name|
-          place.activities << Activity.find_or_create_by(name: activity_name)
-        end
+        parsed_activity = Activity.parser_activity_type(record.delete("Actividad"))
+        place.activity = Activity.find_or_create_by(name: parsed_activity)
       end
 
       place.employees << Employee.find_or_create_by(name: record.delete("Aplicador1")) unless record["Aplicador1"].nil?
@@ -91,6 +89,18 @@ class Place
     end
 
     place
+  end
+
+  def self.join_duplicates
+    Client.each do |client|
+      client.places.group_by(&:direccion).values.each do |places_array|
+        final_place = places_array.shift
+        places_array.each do |place|
+          final_place.services.concat(place.services)
+          place.delete
+        end
+      end
+    end
   end
 end
 
