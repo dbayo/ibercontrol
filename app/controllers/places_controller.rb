@@ -43,17 +43,21 @@ class PlacesController < ApplicationController
   # DELETE /places/1.json
   def destroy
     @place.destroy
-    redirect_to client_places_url(@client), notice: 'Place was successfully destroyed.'
+    redirect_to [@client], notice: 'Place was successfully destroyed.'
   end
 
   private
     def set_client
       @client = Client.find(params[:client_id])
+      add_breadcrumb "Cliente"
+      add_breadcrumb @client.nombre_fiscal, [@client]
     end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_place
       @place = Place.find(params[:id])
+      add_breadcrumb "Local"
+      add_breadcrumb @place.nombre, [@client, @place]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

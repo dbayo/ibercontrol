@@ -33,6 +33,8 @@ gem 'font-awesome-rails'
 
 gem 'haml-rails'
 
+gem "breadcrumbs_on_rails"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

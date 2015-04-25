@@ -46,5 +46,6 @@
                 %span{:aria => {:hidden => "true"} } &times;
                 %span.sr-only Close
               = msg
-          = render partial: 'breadcrumb'
+          %ol.breadcrumb
+            = render_breadcrumbs tag: :li, separator: ""
           = yield

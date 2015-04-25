@@ -51,7 +51,7 @@ class ServiceDatesController < ApplicationController
   # DELETE /service_dates/1.json
   def destroy
     @service_date.destroy
-    redirect_to service_dates_url, notice: 'Service date was successfully destroyed.'
+    redirect_to [@client, @place, @service], notice: 'Service date was successfully destroyed.'
   end
 
   def remove_product
