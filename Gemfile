@@ -35,6 +35,8 @@ gem 'haml-rails'
 
 gem "breadcrumbs_on_rails"
 
+gem 'kaminari-bootstrap', '~> 3.0.1'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
