@@ -35,7 +35,7 @@ class Client
 
   def self.search(search)
     search_condition = /#{search}/i
-    where(nombre_fiscal: search_condition)
+    any_of({:nombre_fiscal => search_condition}, {:id => search_condition})
   end
 
   def create_geolocalizacion
