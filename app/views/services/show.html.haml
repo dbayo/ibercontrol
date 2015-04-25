@@ -2,9 +2,12 @@
   = link_to [@client, @place], :class => 'btn btn-default' do
     %span.glyphicon.glyphicon-list-alt
     Atras
-  = link_to edit_service_path(@service), :class => 'btn btn-primary' do
+  = link_to edit_client_place_service_path(@client, @place, @service), :class => 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
     Editar
+  = link_to new_client_place_service_service_date_path(@client, @place, @service), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Nuevo Service date
   %h1= "Servicio #{@service.nombre}"
 
 %dl.dl-horizontal
@@ -14,3 +17,23 @@
   %dd= @service.baja
   %dt Fecha aplicaciones:
   %dd= @service.service_dates.count
+
+
+.page-header
+  %h1 Listing Fecha aplicaciones
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th fecha_servicio
+        %th emitida
+        %th aplicada
+
+    %tbody
+      - @service.service_dates.each do |service_date|
+        %tr
+          %td= link_to service_date.fecha_servicio, [@client, @place, @service, service_date]
+          %td= service_date.emitida
+          %td= service_date.aplicada
+

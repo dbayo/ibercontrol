@@ -8,7 +8,7 @@ class Product
   field :plazo_seguridad, type: String
   field :extras, type: Hash
 
-  has_and_belongs_to_many :places
+  has_and_belongs_to_many :service_dates
 
   def self.import_database
     xml = Nokogiri::XML(open(File.join(Rails.root, 'lib', 'old_database_json', 'producto.xml')))

@@ -3,6 +3,7 @@ class Place
   field :numero_cliente, type: String
   # field :numero_de_orden, type: String
   field :nombre, type: String
+  field :geolocalizacion, type: String
   field :direccion, type: String
   field :poblacion, type: String
   field :provincia, type: String
@@ -20,7 +21,7 @@ class Place
   field :extras, type: Hash
 
   belongs_to :client
-  has_and_belongs_to_many :services
+  has_many :services
   has_and_belongs_to_many :plagues
   has_many :service_types
   belongs_to :activity

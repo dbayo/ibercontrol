@@ -1,0 +1,7 @@
+.page-header
+  = link_to [@client, @place, @service, @service_date], :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  %h1 Editing service_date
+
+= render 'form'

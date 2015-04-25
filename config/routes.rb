@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  resources :services
 
   resources :service_types
 
   resources :clients do
     resources :places do
-      resources :services
+      resources :services do
+        resources :service_dates
+      end
     end
 
     resources :contracts

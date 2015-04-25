@@ -20,21 +20,32 @@
           .col-sm-10
             = f.text_field :nombre, :class => 'form-control'
         .form-group
-          = f.label :direccion, :class => 'col-sm-2 control-label'
+          = f.label :geolocalizacion, 'Geolocalizacion', :class => 'col-sm-2 control-label'
           .col-sm-10
-            = f.text_field :direccion, :class => 'form-control'
-        .form-group
-          = f.label :poblacion, :class => 'col-sm-2 control-label'
-          .col-sm-10
-            = f.text_field :poblacion, :class => 'form-control'
-        .form-group
-          = f.label :provincia, :class => 'col-sm-2 control-label'
-          .col-sm-10
-            = f.text_field :provincia, :class => 'form-control'
-        .form-group
-          = f.label :dpostal, :class => 'col-sm-2 control-label'
-          .col-sm-10
-            = f.text_field :dpostal, :class => 'form-control'
+            = f.text_field :geolocalizacion, :class => 'form-control ui-autocomplete-input', :id => "geocomplete", :autocomplete => "off"
+        .row
+          .col-sm-offset-2.col-sm-10
+            #my_map{style: "height: 300px;" }
+        %hr
+
+        .details
+          .form-group
+            = f.label :direccion, :class => 'col-sm-2 control-label'
+            .col-sm-10
+              = f.text_field :direccion, :class => 'form-control', "data-geo" => "formatted_address"
+          .form-group
+            = f.label :poblacion, :class => 'col-sm-2 control-label'
+            .col-sm-10
+              = f.text_field :poblacion, :class => 'form-control', "data-geo" => "locality"
+          .form-group
+            = f.label :provincia, :class => 'col-sm-2 control-label'
+            .col-sm-10
+              = f.text_field :provincia, :class => 'form-control', "data-geo" => ""
+          .form-group
+            = f.label :dpostal, :class => 'col-sm-2 control-label'
+            .col-sm-10
+              = f.text_field :dpostal, :class => 'form-control', "data-geo" => "postal_code"
+
         .form-group
           = f.label :zona, :class => 'col-sm-2 control-label'
           .col-sm-10

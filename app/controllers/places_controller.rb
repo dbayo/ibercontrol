@@ -20,30 +20,22 @@ class PlacesController < ApplicationController
   # POST /places
   # POST /places.json
   def create
-    @place = Place.new(place_params)
+    @place = @client.places.new(place_params)
 
-    respond_to do |format|
-      if @place.save
-        format.html { redirect_to [@client, @place], notice: 'Place was successfully created.' }
-        format.json { render :show, status: :created, location: @place }
-      else
-        format.html { render :new }
-        format.json { render json: @place.errors, status: :unprocessable_entity }
-      end
+    if @place.save
+      redirect_to [@client], notice: 'Place was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /places/1
   # PATCH/PUT /places/1.json
   def update
-    respond_to do |format|
-      if @place.update(place_params)
-        format.html { redirect_to [@client, @place], notice: 'Place was successfully updated.' }
-        format.json { render :show, status: :ok, location: @place }
-      else
-        format.html { render :edit }
-        format.json { render json: @place.errors, status: :unprocessable_entity }
-      end
+    if @place.update(place_params)
+      redirect_to [@client, @place], notice: 'Place was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -51,10 +43,7 @@ class PlacesController < ApplicationController
   # DELETE /places/1.json
   def destroy
     @place.destroy
-    respond_to do |format|
-      format.html { redirect_to client_places_url(@client), notice: 'Place was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to client_places_url(@client), notice: 'Place was successfully destroyed.'
   end
 
   private

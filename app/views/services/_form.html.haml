@@ -1,4 +1,4 @@
-= form_for @service, :html => { :class => "form-horizontal", :role => "form" } do |f|
+= form_for [@client, @place, @service], :html => { :class => "form-horizontal", :role => "form" } do |f|
   -if @service.errors.any?
     .alert.alert-danger.alert-dismissable{:role => "alert"}
       %button.close{:type => "button", :data => {:dismiss => "alert"} }
@@ -11,17 +11,13 @@
           %li= msg
 
   .form-group
-    = f.label :fecha_servicio, :class => 'col-sm-2 control-label'
+    = f.label :nombre, :class => 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :fecha_servicio, :class => 'form-control'
+      = f.text_field :nombre, :class => 'form-control'
   .form-group
-    = f.label :emitida, :class => 'col-sm-2 control-label'
+    = f.label :baja, :class => 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :emitida, :class => 'form-control'
-  .form-group
-    = f.label :aplicada, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :aplicada, :class => 'form-control'
+      = f.text_field :baja, :class => 'form-control'
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit :class => 'btn btn-primary'
