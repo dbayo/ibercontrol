@@ -5,17 +5,19 @@
   = link_to edit_client_path(@client), :class => 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
     Editar
-  = link_to new_client_place_path(@client), :class => 'btn btn-primary' do
-    %span.glyphicon.glyphicon-plus
-    Nuevo local
   %h1= "Cliente #{@client.nombre_fiscal}"
 
 .row
   .col-md-12
-    %h1 Fecha facturas
+    .page-header
+      %h3 Fecha facturas
     = render partial: 'bill_dates', locals: { client: @client }
 .row
   .col-md-12
-    %h1 Locales
+    .page-header
+      = link_to new_client_place_path(@client), :class => 'btn btn-primary' do
+        %span.glyphicon.glyphicon-plus
+        Nuevo local
+      %h3 Locales
     = render partial: 'places'
 

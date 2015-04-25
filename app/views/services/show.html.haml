@@ -5,9 +5,6 @@
   = link_to edit_client_place_service_path(@client, @place, @service), :class => 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
     Editar
-  = link_to new_client_place_service_service_date_path(@client, @place, @service), :class => 'btn btn-primary' do
-    %span.glyphicon.glyphicon-pencil
-    Nuevo Service date
   %h1= "Servicio #{@service.nombre}"
 
 %dl.dl-horizontal
@@ -20,6 +17,9 @@
 
 
 .page-header
+  = link_to new_client_place_service_service_date_path(@client, @place, @service), :class => 'btn btn-primary pull-right' do
+    %span.glyphicon.glyphicon-pencil
+    Nuevo Service date
   %h1 Listing Fecha aplicaciones
 
 .table-responsive

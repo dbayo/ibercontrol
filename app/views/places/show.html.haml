@@ -5,14 +5,15 @@
   = link_to edit_client_place_path(@client, @place), :class => 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
     Editar
-  = link_to new_client_place_service_path(@client, @place), :class => 'btn btn-primary' do
-    %span.glyphicon.glyphicon-pencil
-    Nuevo Service
+
   %h1= "Local #{@place.nombre}"
 
 
 .page-header
-  %h1 Listing services
+  = link_to new_client_place_service_path(@client, @place), :class => 'btn btn-primary pull-right' do
+    %span.glyphicon.glyphicon-plus
+    Nuevo Service
+  %h3 Listing services
 
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover

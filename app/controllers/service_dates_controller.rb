@@ -1,8 +1,8 @@
 class ServiceDatesController < ApplicationController
-  before_action :set_service_date, only: [:show, :edit, :update, :destroy, :remove_product, :add_product]
   before_action :set_client
   before_action :set_place
   before_action :set_service
+  before_action :set_service_date, only: [:show, :edit, :update, :destroy, :remove_product, :add_product]
 
 
   # GET /service_dates
@@ -70,19 +70,27 @@ class ServiceDatesController < ApplicationController
   private
     def set_client
       @client = Client.find(params[:client_id])
+      add_breadcrumb "Cliente"
+      add_breadcrumb @client.nombre_fiscal, [@client]
     end
 
     def set_place
       @place = Place.find(params[:place_id])
+      add_breadcrumb "Local"
+      add_breadcrumb @place.nombre, [@client, @place]
     end
 
     def set_service
       @service = Service.find(params[:service_id])
+      add_breadcrumb "Service"
+      add_breadcrumb @service.nombre, [@client, @place, @service]
     end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_service_date
       @service_date = ServiceDate.find(params[:id])
+      add_breadcrumb "Fecha aplicacion"
+      add_breadcrumb @service_date.fecha_servicio, [@client, @place, @service, @service_date]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
