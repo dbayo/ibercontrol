@@ -9,19 +9,19 @@ class Client
   field :telefono_fiscal, type: String
   field :fax, type: String
   field :preguntar_por, type: String
-  field :fecha_contrato, type: String
-  field :cuota_contrato, type: String
-  field :fecha_de_baja, type: String
-  field :fecha_ultimo_aumento, type: String
+  field :fecha_contrato, type: Date
+  field :cuota_contrato, type: Integer
+  field :fecha_de_baja, type: Date
+  field :fecha_ultimo_aumento, type: Date
   field :cantidad_aumentada, type: String
   field :banco, type: String
   field :agencia, type: String
   field :ccc, type: String
   field :nif, type: String
-  field :dia_de_factura, type: String
-  field :dias_aplazado, type: String
-  field :iva, type: String
-  field :descuento, type: String
+  field :dia_de_factura, type: Integer
+  field :dias_aplazado, type: Integer
+  field :iva, type: Integer
+  field :descuento, type: Integer
   field :observaciones, type: String
   field :web, type: String
   field :email, type: String
@@ -73,9 +73,9 @@ class Client
     client.telefono_fiscal = record.delete "TELF_FIS"
     client.fax = record.delete "FAX"
     client.preguntar_por = record.delete "PREGUN_FIS"
-    client.fecha_contrato = record.delete "FECHA_CONT"
+    client.fecha_contrato = Date.parse(record.delete("FECHA_CONT"))
     client.cuota_contrato = record.delete "CUOTA_CONT"
-    client.fecha_de_baja = record.delete "FECHA_BAJA"
+    client.fecha_de_baja = Date.parse(record.delete("FECHA_BAJA"))
     # client.???" record.delete "REPRESEN"
     # client.???" record.delete "COMISION"
     client.banco = record.delete "BANCO"
@@ -88,7 +88,7 @@ class Client
     client.descuento = record.delete "Descuento"
     client.observaciones = record.delete "OBSERVFIS"
     client.web = record.delete "Web"
-    client.fecha_ultimo_aumento = record.delete "Fecha_Ult_Aum"
+    client.fecha_ultimo_aumento = Date.parse(record.delete("Fecha_Ult_Aum"))
     client.email = record.delete "EMail"
     client.extras = extras
 

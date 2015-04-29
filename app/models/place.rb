@@ -12,12 +12,12 @@ class Place
   field :telefono, type: String
   field :fax, type: String
   field :preguntar_por, type: String
-  field :reclamacion, type: String
+  field :reclamacion, type: Integer
   # field :actividad, type: String
   # field :plaga, type: String
   field :area, type: String
   field :observaciones, type: String
-  field :plano, type: String
+  field :plano, type: Boolean
   field :extras, type: Hash
 
   belongs_to :client
@@ -64,7 +64,7 @@ class Place
       place.area = record.delete "Area"
       place.observaciones = record.delete "Observ_apl"
       # place.observaciones_parti = record.delete "ObserParti"
-      place.plano = record.delete "Plano"
+      place.plano = record.delete("Plano") == 'Si'
 
       if record["Plaga"]
         array_plagues = Plague.parser_plague_type(record.delete("Plaga"))

@@ -1,8 +1,8 @@
 class ServiceDate
   include Mongoid::Document
-  field :fecha_servicio, type: String
-  field :emitida, type: String
-  field :aplicada, type: String
+  field :fecha_servicio, type: Date
+  field :emitida, type: Boolean
+  field :aplicada, type: Boolean
   field :extras, type: Hash
 
   has_and_belongs_to_many :products
@@ -28,9 +28,9 @@ class ServiceDate
       if place
         service = place.services.first
         service_date = service.service_dates.new(_id: record.delete("Auto"), service: service )
-        service_date.fecha_servicio = record.delete "FechaServ"
-        service_date.emitida = record.delete "Emitida"
-        service_date.aplicada = record.delete "Aplicada"
+        service_date.fecha_servicio = Date.parse(record.delete("FechaServ"))
+        service_date.emitida = record.delete("Emitida") == 'Si'
+        service_date.aplicada = record.delete("Aplicada") == 'Si'
 
         service_date.add_product(record.delete("Produc1"))
         service_date.add_product(record.delete("Produc2"))

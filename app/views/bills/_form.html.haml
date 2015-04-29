@@ -1,0 +1,163 @@
+= form_for [@client, @bill], :html => { :class => "form-horizontal", :role => "form" } do |f|
+  -if @bill.errors.any?
+    .alert.alert-danger.alert-dismissable{:role => "alert"}
+      %button.close{:type => "button", :data => {:dismiss => "alert"} }
+        span{:aria => {:hidden => "true"} } &times;
+        span.sr-only Close
+      %h4= "#{pluralize(@bill.errors.count, "error")} prohibited this bill from being saved:"
+
+      %ul
+        - @bill.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :numero_factura, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :numero_factura, :class => 'form-control'
+  .form-group
+    = f.label :estado, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :estado, :class => 'form-control'
+  .form-group
+    = f.label :fecha_factura, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :fecha_factura, :class => 'form-control'
+  .form-group
+    = f.label :year, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :year, :class => 'form-control'
+  .form-group
+    = f.label :nif, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :nif, :class => 'form-control'
+  .form-group
+    = f.label :nombre_fis, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :nombre_fis, :class => 'form-control'
+  .form-group
+    = f.label :direccion_fis, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :direccion_fis, :class => 'form-control'
+  .form-group
+    = f.label :poblacion_fis, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :poblacion_fis, :class => 'form-control'
+  .form-group
+    = f.label :provincia_fis, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :provincia_fis, :class => 'form-control'
+  .form-group
+    = f.label :dpostal_fis, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :dpostal_fis, :class => 'form-control'
+  .form-group
+    = f.label :periodo_desde, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :periodo_desde, :class => 'form-control'
+  .form-group
+    = f.label :periodo_hasta, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :periodo_hasta, :class => 'form-control'
+  .form-group
+    = f.label :tipo_servicio, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :tipo_servicio, :class => 'form-control'
+  .form-group
+    = f.label :nombre_apl, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :nombre_apl, :class => 'form-control'
+  .form-group
+    = f.label :direccion_apl, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :direccion_apl, :class => 'form-control'
+  .form-group
+    = f.label :poblacion_apl, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :poblacion_apl, :class => 'form-control'
+  .form-group
+    = f.label :provincia_apl, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :provincia_apl, :class => 'form-control'
+  .form-group
+    = f.label :dpostal_apl, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :dpostal_apl, :class => 'form-control'
+  .form-group
+    = f.label :base_imponible, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :base_imponible, :class => 'form-control'
+  .form-group
+    = f.label :base_impuestos_sin_descuentos, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :base_impuestos_sin_descuentos, :class => 'form-control'
+  .form-group
+    = f.label :descuento, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :descuento, :class => 'form-control'
+  .form-group
+    = f.label :total_descuento, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :total_descuento, :class => 'form-control'
+  .form-group
+    = f.label :iva, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :iva, :class => 'form-control'
+  .form-group
+    = f.label :total_iva, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :total_iva, :class => 'form-control'
+  .form-group
+    = f.label :total_factura, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :total_factura, :class => 'form-control'
+  .form-group
+    = f.label :numero_recibo, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :numero_recibo, :class => 'form-control'
+  .form-group
+    = f.label :fecha_vencimiento, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :fecha_vencimiento, :class => 'form-control'
+  .form-group
+    = f.label :banco, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :banco, :class => 'form-control'
+  .form-group
+    = f.label :agencia, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :agencia, :class => 'form-control'
+  .form-group
+    = f.label :ccc, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :ccc, :class => 'form-control'
+  .form-group
+    = f.label :observaciones, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :observaciones, :class => 'form-control'
+  .form-group
+    = f.label :cobrada, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :cobrada, :class => 'form-control'
+  .form-group
+    = f.label :fecha_cobrada, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :fecha_cobrada, :class => 'form-control'
+  .form-group
+    = f.label :abonada, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :abonada, :class => 'form-control'
+  .form-group
+    = f.label :morosa, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :morosa, :class => 'form-control'
+  .form-group
+    = f.label :extras, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :extras, :class => 'form-control'
+  .form-group
+    = f.label :client, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :client, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => 'btn btn-primary'
