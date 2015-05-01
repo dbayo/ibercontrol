@@ -1,7 +1,6 @@
 class Place
   include Mongoid::Document
-  field :numero_cliente, type: String
-  # field :numero_de_orden, type: String
+
   field :nombre, type: String
   field :geolocalizacion, type: String
   field :direccion, type: String
@@ -13,8 +12,6 @@ class Place
   field :fax, type: String
   field :preguntar_por, type: String
   field :reclamacion, type: Integer
-  # field :actividad, type: String
-  # field :plaga, type: String
   field :area, type: String
   field :observaciones, type: String
   field :plano, type: Boolean
@@ -22,10 +19,8 @@ class Place
 
   belongs_to :client
   has_many :services
-  has_and_belongs_to_many :plagues
   has_many :service_types
   belongs_to :activity
-  has_and_belongs_to_many :employees
 
   def full_address
     out = [self.direccion.to_s.scan(/^\D*\d*/)]
@@ -66,20 +61,10 @@ class Place
       # place.observaciones_parti = record.delete "ObserParti"
       place.plano = record.delete("Plano") == 'Si'
 
-      if record["Plaga"]
-        array_plagues = Plague.parser_plague_type(record.delete("Plaga"))
-        array_plagues.each do |plague_name|
-          place.plagues << Plague.find_or_create_by(name: plague_name)
-        end
-      end
-
       if record["Actividad"]
         parsed_activity = Activity.parser_activity_type(record.delete("Actividad"))
         place.activity = Activity.find_or_create_by(name: parsed_activity)
       end
-
-      place.employees << Employee.find_or_create_by(name: record.delete("Aplicador1")) unless record["Aplicador1"].nil?
-      place.employees << Employee.find_or_create_by(name: record.delete("Aplicador2")) unless record["Aplicador2"].nil?
 
       place.extras = extras
       place.save
@@ -95,12 +80,40 @@ class Place
     Client.each do |client|
       client.places.group_by(&:direccion).values.each do |places_array|
         final_place = places_array.shift
+
+        final_place.move_plague_to_service
+        final_place.move_employee_to_service
+
         places_array.each do |place|
+          place.move_plague_to_service
+          place.move_employee_to_service
+
           final_place.services.concat(place.services)
           place.delete
         end
       end
     end
+  end
+
+  def move_plague_to_service
+    plaga = self.extras['Plaga']
+    service = self.services.first
+
+    if plaga
+      array_plagues = Plague.parser_plague_type(plaga)
+      array_plagues.each do |plague_name|
+        service.plagues << Plague.find_or_create_by(name: plague_name)
+      end
+    end
+  end
+
+  def move_employee_to_service
+    aplicador1 = self.extras['Aplicador1']
+    aplicador2 = self.extras['Aplicador2']
+    service = self.services.first
+
+    service.employees << Employee.find_or_create_by(name: aplicador1) unless aplicador1.blank?
+    service.employees << Employee.find_or_create_by(name: aplicador2) unless aplicador2.blank?
   end
 end
 

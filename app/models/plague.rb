@@ -3,7 +3,7 @@ class Plague
   field :name, type: String
   field :plagues, type: Array
 
-  has_and_belongs_to_many :places
+  has_and_belongs_to_many :services
 
   def self.import_database
 
