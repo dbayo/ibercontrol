@@ -28,7 +28,7 @@ class ServiceDate
       if place
         service = place.services.first
         service_date = service.service_dates.new(_id: record.delete("Auto"), service: service )
-        service_date.fecha_servicio = Date.parse(record.delete("FechaServ"))
+        service_date.fecha_servicio = Date.parse(record.delete("FechaServ")) unless record["FechaServ"].blank?
         service_date.emitida = record.delete("Emitida") == 'Si'
         service_date.aplicada = record.delete("Aplicada") == 'Si'
 

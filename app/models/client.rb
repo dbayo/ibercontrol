@@ -73,9 +73,9 @@ class Client
     client.telefono_fiscal = record.delete "TELF_FIS"
     client.fax = record.delete "FAX"
     client.preguntar_por = record.delete "PREGUN_FIS"
-    client.fecha_contrato = Date.parse(record.delete("FECHA_CONT"))
+    client.fecha_contrato = Date.parse(record.delete("FECHA_CONT")) unless record["FECHA_CONT"].blank?
     client.cuota_contrato = record.delete "CUOTA_CONT"
-    client.fecha_de_baja = Date.parse(record.delete("FECHA_BAJA"))
+    client.fecha_de_baja = Date.parse(record.delete("FECHA_BAJA")) unless record["FECHA_BAJA"].blank?
     # client.???" record.delete "REPRESEN"
     # client.???" record.delete "COMISION"
     client.banco = record.delete "BANCO"
@@ -88,7 +88,7 @@ class Client
     client.descuento = record.delete "Descuento"
     client.observaciones = record.delete "OBSERVFIS"
     client.web = record.delete "Web"
-    client.fecha_ultimo_aumento = Date.parse(record.delete("Fecha_Ult_Aum"))
+    client.fecha_ultimo_aumento = Date.parse(record.delete("Fecha_Ult_Aum")) unless record["Fecha_Ult_Aum"].blank?
     client.email = record.delete "EMail"
     client.extras = extras
 
