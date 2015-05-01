@@ -22,3 +22,5 @@
       = link_to 'Crear nuevo fecha de servicio', new_client_place_service_service_date_path(@client, @place, @service)
     %li
       = link_to 'Editar servicio', edit_client_place_service_path(@client, @place, @service)
+    %li
+      = link_to 'Generar DIT', generate_dit_client_place_service_path(@client, @place, @service)

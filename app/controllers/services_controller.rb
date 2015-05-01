@@ -1,7 +1,7 @@
 class ServicesController < ApplicationController
   before_action :set_client
   before_action :set_place
-  before_action :set_service, only: [:show, :edit, :update, :destroy]
+  before_action :set_service, only: [:show, :edit, :update, :destroy, :generate_dit]
 
   # GET /services/1
   # GET /services/1.json
