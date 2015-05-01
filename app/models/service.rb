@@ -5,6 +5,7 @@ class Service
 
   has_many :service_dates
   belongs_to :place
+  has_many :dits
 
   def self.create_services
     Place.all.each do |place|

@@ -1,9 +1,6 @@
-class Resume
+class Dit
   include Mongoid::Document
 
-  field :numero_de_hoja, type: String
-  field :numero_cliente, type: String
-  field :numero_de_servicio, type: String
   field :estado, type: String
   field :nombre_aplicacion, type: String
   field :direccion, type: String
@@ -63,4 +60,6 @@ class Resume
   field :tipo_aplicacion_6, type: String
   field :tipo_aplicacion_7, type: String
   field :plazo_de_seguridad, type: String
+
+  belongs_to :service
 end

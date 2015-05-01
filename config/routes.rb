@@ -10,6 +10,9 @@ Rails.application.routes.draw do
             post 'add_product'
           end
         end
+        member do
+          get 'generate_dit'
+        end
       end
     end
 

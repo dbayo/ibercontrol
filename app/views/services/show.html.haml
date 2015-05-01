@@ -37,3 +37,25 @@
           %td= service_date.emitida
           %td= service_date.aplicada
 
+
+.page-header
+  = link_to new_client_place_service_service_date_path(@client, @place, @service), :class => 'btn btn-primary pull-right' do
+    %span.glyphicon.glyphicon-pencil
+    Nuevo Service date
+  %h1 Listing DIT'S
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th fecha_servicio
+        %th emitida
+        %th aplicada
+
+    %tbody
+      - @service.service_dates.each do |service_date|
+        %tr
+          %td= link_to service_date.fecha_servicio, [@client, @place, @service, service_date]
+          %td= service_date.emitida
+          %td= service_date.aplicada
+

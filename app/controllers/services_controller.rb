@@ -46,6 +46,15 @@ class ServicesController < ApplicationController
     redirect_to [@client, @place], notice: 'Service was successfully destroyed.'
   end
 
+  def generate_dit
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "test"   # Excluding ".pdf" extension.
+      end
+    end
+  end
+
   private
 
     def set_client
