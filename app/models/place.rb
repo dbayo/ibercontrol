@@ -28,7 +28,7 @@ class Place
   has_and_belongs_to_many :employees
 
   def full_address
-    out = [self.direccion.scan(/^\D*\d*/)]
+    out = [self.direccion.to_s.scan(/^\D*\d*/)]
     out << self.poblacion
     out << self.provincia
     out << self.dpostal
