@@ -19,3 +19,5 @@
           %td
             = link_to [@client, place], :data => { confirm: 'Are you sure?' }, :method => :delete do
               %span.glyphicon.glyphicon-trash.text-danger
+
+  = paginate @places, :param_name => :place_page

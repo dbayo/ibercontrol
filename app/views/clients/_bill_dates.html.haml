@@ -6,7 +6,9 @@
         %th Fecha factura
         %th Emitida
     %tbody
-      - client.bill_dates.each do |bill_date|
+      - @bill_dates.each do |bill_date|
         %tr
           %td= bill_date.fecha_de_factura
           %td= bill_date.emitida
+
+  = paginate @bill_dates, :param_name => :bill_date_page
