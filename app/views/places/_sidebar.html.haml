@@ -1,15 +1,21 @@
 %ul.nav.nav-sidebar
-  / %li.active
-  /   .row
-  /     .col-sm-12
-  /       = form_tag '/clients', method: 'GET' do
-  /         .input-group
-  /           %input.form-control{:placeholder => "Buscar cliente...", :type => "text", name: 'client_search'}
-  /             %span.input-group-btn
-  /               = submit_tag 'Buscar', class: "btn btn-default"
-  / %li
-  /   %a{:href => "#"} Reports
-  / %li
-  /   %a{:href => "#"} Analytics
-  / %li
-  /   %a{:href => "#"} Export
+  %li
+    .row
+      .col-sm-12
+        = form_tag '/clients', method: 'GET' do
+          .input-group{style: 'margin: 0 10px;'}
+            %input.form-control{:placeholder => "Buscar cliente...", :type => "text", name: 'client_search'}
+              %span.input-group-btn
+                = submit_tag 'Buscar', class: "btn btn-default"
+  %br
+  %li
+    = link_to 'Volver a cliente', [@client]
+  %hr
+  - if @place && @place.persisted?
+    %li
+      = link_to 'Informacion Local', [@client, @place]
+    %li
+      = link_to 'Editar Local', edit_client_place_path(@client, @place)
+    %hr
+    %li
+      = link_to 'Crear nuevo servicio', new_client_place_service_path(@client, @place)

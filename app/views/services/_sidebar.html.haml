@@ -1,3 +1,24 @@
+/ %ul.nav.nav-sidebar
+/   %li
+/     %a{:href => generate_dit_client_place_service_url(@client, @place, @service)} Generar DIT
+
+
 %ul.nav.nav-sidebar
   %li
-    %a{:href => generate_dit_client_place_service_url(@client, @place, @service)} Generar DIT
+    .row
+      .col-sm-12
+        = form_tag '/clients', method: 'GET' do
+          .input-group{style: 'margin: 0 10px;'}
+            %input.form-control{:placeholder => "Buscar cliente...", :type => "text", name: 'client_search'}
+              %span.input-group-btn
+                = submit_tag 'Buscar', class: "btn btn-default"
+  %br
+  %li
+    = link_to 'Volver a Local', [@client, @place]
+
+  - if @service && @service.persisted?
+    %hr
+    %li
+      = link_to 'Crear nuevo fecha de servicio', new_client_place_service_service_date_path(@client, @place, @service)
+    %li
+      = link_to 'Editar servicio', edit_client_place_service_path(@client, @place, @service)
