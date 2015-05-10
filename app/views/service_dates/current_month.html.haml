@@ -1,0 +1,19 @@
+.page-header
+  %h1 Servicios este mes
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Servicio
+        %th Emitida
+        %th Aplicada
+        %th
+
+    %tbody
+      - @service_dates.each do |service_date|
+        %tr
+          %td= service_date.service.nombre
+          %td= service_date.emitida
+          %td= service_date.aplicada
+          %td= link_to 'Show', [service_date.service.place.client, service_date.service.place, service_date.service, service_date]

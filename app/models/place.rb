@@ -88,6 +88,10 @@ class Place
           place.move_plague_to_service
           place.move_employee_to_service
 
+          place.services.each do |service|
+            service.place = final_place
+            service.save
+          end
           final_place.services.concat(place.services)
           place.delete
         end

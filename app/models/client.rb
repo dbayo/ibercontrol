@@ -101,6 +101,10 @@ class Client
     self.all.group_by(&:nif).values.each do |clients_array|
       final_client = clients_array.shift
       clients_array.each do |client|
+        client.places.each do |place|
+          place.client = final_client
+          place.save
+        end
         final_client.places.concat(client.places)
         client.delete
       end

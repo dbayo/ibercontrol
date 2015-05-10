@@ -43,6 +43,13 @@ class ServiceDate
         service_date.extras = extras
         service_date.save
 
+        unless record["FechaServ"].blank?
+          # Pone a true en servicio el mes equivalente a "fecha_servicio"
+          month_value = service_date.fecha_servicio.month
+          service.write_attribute(Conversion.month_number_to_name(month_value), true)
+          service.save
+        end
+
         puts "Service date #{service_date.id}"
       else
         puts "Place #{place_id} not found for client #{client_id}"
@@ -62,6 +69,8 @@ class ServiceDate
       product.save
     end
   end
+
+
 end
 
 # <Fch_Apl>

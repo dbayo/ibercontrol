@@ -29,10 +29,10 @@
           = link_to "Ibercontrol", clients_url, :class => "navbar-brand"
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
-            %li.active
+            %li{:class => ('active' if url_for(:only_path => false) == clients_url) }
               %a{:href => clients_url} Clientes
-            / %li
-            /   %a{:href => "#about"} About
+            %li{:class => ('active' if url_for(:only_path => false) == services_date_current_month_url) }
+              %a{:href => services_date_current_month_url} Servicio este mes
             / %li
             /   %a{:href => "#contact"} Contact
     .container-fluid

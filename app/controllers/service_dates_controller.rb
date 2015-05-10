@@ -1,7 +1,7 @@
 class ServiceDatesController < ApplicationController
-  before_action :set_client
-  before_action :set_place
-  before_action :set_service
+  before_action :set_client, except: [:current_month]
+  before_action :set_place, except: [:current_month]
+  before_action :set_service, except: [:current_month]
   before_action :set_service_date, only: [:show, :edit, :update, :destroy, :remove_product, :add_product]
 
 
@@ -65,6 +65,12 @@ class ServiceDatesController < ApplicationController
     @service_date.add_product(params[:product_id])
 
     redirect_to [@client, @place, @service, @service_date], notice: 'Product was successfully added.'
+  end
+
+  def current_month
+    start_month = Date.today.at_beginning_of_month
+    end_month = Date.today.at_end_of_month
+    @service_dates = ServiceDate.gte(fecha_servicio: start_month).lt(fecha_servicio: end_month)
   end
 
   private

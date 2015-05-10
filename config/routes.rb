@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   root 'clients#index'
 
+  get 'services_date/current_month' => 'service_dates#current_month'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
