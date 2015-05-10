@@ -78,9 +78,8 @@ class ServicesController < ApplicationController
       add_breadcrumb "Service"
       add_breadcrumb @service.nombre, [@client, @place, @service]
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:nombre, :baja)
+      params.require(:service).permit(:nombre, :baja, :enero, :febrero, :marzo, :abril, :mayo, :junio, :julio, :agosto, :septiembre, :octubre, :noviembre, :diciembre)
     end
 end

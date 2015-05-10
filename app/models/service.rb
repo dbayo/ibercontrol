@@ -3,6 +3,19 @@ class Service
   field :nombre, type: String
   field :baja, type: Boolean
 
+  field :enero, type: Boolean, default: false
+  field :febrero, type: Boolean, default: false
+  field :marzo, type: Boolean, default: false
+  field :abril, type: Boolean, default: false
+  field :mayo, type: Boolean, default: false
+  field :junio, type: Boolean, default: false
+  field :julio, type: Boolean, default: false
+  field :agosto, type: Boolean, default: false
+  field :septiembre, type: Boolean, default: false
+  field :octubre, type: Boolean, default: false
+  field :noviembre, type: Boolean, default: false
+  field :diciembre, type: Boolean, default: false
+
   has_many :service_dates
   belongs_to :place
   has_many :dits

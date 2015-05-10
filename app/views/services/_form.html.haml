@@ -18,6 +18,13 @@
     = f.label :baja, :class => 'col-sm-2 control-label'
     .col-sm-10
       = f.text_field :baja, :class => 'form-control'
+  - %w(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre).each_with_index do |month_title, index|
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        .checkbox
+          %label
+            = f.check_box month_title
+            = month_title.capitalize
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit :class => 'btn btn-primary'
