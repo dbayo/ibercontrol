@@ -49,9 +49,12 @@ class ServicesController < ApplicationController
   def generate_dit
     respond_to do |format|
       format.html
-      format.pdf do
-        render pdf: "test"   # Excluding ".pdf" extension.
-      end
+      format.pdf { render :layout => false }
+      # format.pdf do
+      #   send_data pdf.render, filename: "dit_#{@service.to_param}.pdf",
+      #                         type: "application/pdf",
+      #                         disposition: "inline"
+      # end
     end
   end
 
