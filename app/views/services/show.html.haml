@@ -20,13 +20,16 @@
 .row
   .col-md-12
     .page-header
-      %h3 Fecha facturas
+      = link_to generate_next_bills_client_place_service_path(@client, @place, @service), :class => 'btn btn-primary pull-right' do
+        %span.glyphicon.glyphicon-pencil
+        Generar facturas proximo año
+      %h1 Listing Facturas
     = render partial: 'bill_dates'
 
 .page-header
-  = link_to new_client_place_service_service_date_path(@client, @place, @service), :class => 'btn btn-primary pull-right' do
+  = link_to generate_next_service_dates_client_place_service_path(@client, @place, @service), :class => 'btn btn-primary pull-right' do
     %span.glyphicon.glyphicon-pencil
-    Nuevo Service date
+    Generar fechas aplicaciones proximo año
   %h1 Listing Fecha aplicaciones
 
 .table-responsive

@@ -27,6 +27,7 @@ class Service
   field :octubre, type: Boolean, default: false
   field :noviembre, type: Boolean, default: false
   field :diciembre, type: Boolean, default: false
+  field :total_months_service_dates, type: Integer, default: 0
 
   # Meses que se realiza facturacion
   field :factura_enero, type: Boolean, default: false
@@ -41,6 +42,7 @@ class Service
   field :factura_octubre, type: Boolean, default: false
   field :factura_noviembre, type: Boolean, default: false
   field :factura_diciembre, type: Boolean, default: false
+  field :total_months_bills, type: Integer, default: 0
 
   has_many :service_dates
   belongs_to :place
@@ -53,6 +55,8 @@ class Service
 
   after_create :generate_service_dates
   after_create :generate_bill_dates
+
+  before_save :calculate_total_months
 
   def self.create_services
     Place.all.each do |place|
@@ -99,15 +103,27 @@ class Service
     end
   end
 
+  def calculate_total_months
+    total_service_dates = 0
+    total_bill_dates = 0
+    %w(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre).each do |month|
+      total_service_dates += 1 if self[month]
+      total_bill_dates += 1 if self["factura_#{month}"]
+    end
+
+    self.total_months_service_dates = total_service_dates
+    self.total_months_bills = total_bill_dates
+  end
+
   def generate_service_dates
     %w(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre).each_with_index do |month, index|
-      self.service_dates.create(fecha_servicio: Date.new(Date.today.year, index - 1, 1)) if self[month]
+      self.service_dates.find_or_create_by(fecha_servicio: Date.new(Date.today.year, index + 1, 1)) if self[month]
     end
   end
 
   def generate_bill_dates
     %w(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre).each_with_index do |month, index|
-      self.service_dates.create(fecha_servicio: Date.new(Date.today.year, index - 1, 1)) if self[month]
+      self.bill_dates.find_or_create_by(fecha_de_factura: Date.new(Date.today.year, index + 1, 1), cuota_factura: (self.cuota_contrato.to_i / self.total_months_bills)) if self["factura_#{month}"]
     end
   end
 end

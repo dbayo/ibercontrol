@@ -12,6 +12,8 @@ Rails.application.routes.draw do
         end
         member do
           get 'generate_dit'
+          get 'generate_next_bills'
+          get 'generate_next_service_dates'
         end
       end
     end

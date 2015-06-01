@@ -26,8 +26,8 @@ namespace :import_database do
     puts 'Finalizado Fecha aplicaciones...'
 
     puts 'Importando Facturas...'
-    BillDate.import_database
     Bill.import_database
+    BillDate.import_database
     puts 'Finalizado Facturas...'
 
     Client.join_duplicates

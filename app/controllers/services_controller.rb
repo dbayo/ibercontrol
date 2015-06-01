@@ -1,7 +1,7 @@
 class ServicesController < ApplicationController
   before_action :set_client
   before_action :set_place
-  before_action :set_service, only: [:show, :edit, :update, :destroy, :generate_dit]
+  before_action :set_service, only: [:show, :edit, :update, :destroy, :generate_dit, :generate_next_bills, :generate_next_service_dates]
 
   # GET /services/1
   # GET /services/1.json
@@ -57,6 +57,16 @@ class ServicesController < ApplicationController
       #                         disposition: "inline"
       # end
     end
+  end
+
+  def generate_next_bills
+    @service.generate_bill_dates
+    redirect_to [@client, @place, @service], notice: 'Facturas generadas correctamente'
+  end
+
+  def generate_next_service_dates
+    @service.generate_service_dates
+    redirect_to [@client, @place, @service], notice: 'Fechas de servicio generadas correctamente'
   end
 
   private
