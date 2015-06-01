@@ -21,10 +21,14 @@
       %tr
         %th Nombre servicio
         %th Baja?
+        %th
 
     %tbody
       - @services.each do |service|
         %tr
           %td= link_to service.nombre, [@client, @place, service]
           %td= service.baja
+          %td
+            = link_to [@client, @place, service], :data => { confirm: 'Are you sure?' }, :method => :delete do
+              %span.glyphicon.glyphicon-trash.text-danger
 

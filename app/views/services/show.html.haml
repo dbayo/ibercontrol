@@ -29,6 +29,7 @@
         %th fecha_servicio
         %th emitida
         %th aplicada
+        %th
 
     %tbody
       - @service.service_dates.each do |service_date|
@@ -36,6 +37,9 @@
           %td= link_to service_date.fecha_servicio, [@client, @place, @service, service_date]
           %td= service_date.emitida
           %td= service_date.aplicada
+          %td
+            = link_to [@client, @place, @service, service_date], :data => { confirm: 'Are you sure?' }, :method => :delete do
+              %span.glyphicon.glyphicon-trash.text-danger
 
 
 .page-header
