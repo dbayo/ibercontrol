@@ -15,7 +15,6 @@ class ClientsController < ApplicationController
   # GET /clients/1.json
   def show
     @places = @client.places.page params[:place_page]
-    @bill_dates = @client.bill_dates.page params[:bill_date_page]
   end
 
   # GET /clients/new

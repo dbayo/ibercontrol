@@ -6,6 +6,7 @@ class ServicesController < ApplicationController
   # GET /services/1
   # GET /services/1.json
   def show
+    @bill_dates = @service.bill_dates.page params[:bill_date_page]
   end
 
   # GET /services/new
@@ -80,6 +81,9 @@ class ServicesController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:nombre, :baja, :enero, :febrero, :marzo, :abril, :mayo, :junio, :julio, :agosto, :septiembre, :octubre, :noviembre, :diciembre)
+      params.require(:service).permit(:nombre, :baja,
+        :enero, :febrero, :marzo, :abril, :mayo, :junio, :julio, :agosto, :septiembre, :octubre, :noviembre, :diciembre,
+        :factura_enero, :factura_febrero, :factura_marzo, :factura_abril, :factura_mayo, :factura_junio, :factura_julio, :factura_agosto, :factura_septiembre, :factura_octubre, :factura_noviembre, :factura_diciembre
+        )
     end
 end

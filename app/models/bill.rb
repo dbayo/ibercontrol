@@ -39,8 +39,7 @@ class Bill
   field :morosa, type: String
   field :extras, type: Hash
 
-  belongs_to :contract
-  belongs_to :client
+  belongs_to :bill_date
 
   def self.import_database
     xml = Nokogiri::XML(open(File.join(Rails.root, 'lib', 'old_database_json', 'Facturas.xml')))

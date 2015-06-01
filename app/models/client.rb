@@ -9,27 +9,16 @@ class Client
   field :telefono_fiscal, type: String
   field :fax, type: String
   field :preguntar_por, type: String
-  field :fecha_contrato, type: Date
-  field :cuota_contrato, type: Integer
-  field :fecha_de_baja, type: Date
-  field :fecha_ultimo_aumento, type: Date
-  field :cantidad_aumentada, type: String
   field :banco, type: String
   field :agencia, type: String
   field :ccc, type: String
   field :nif, type: String
-  field :dia_de_factura, type: Integer
-  field :dias_aplazado, type: Integer
-  field :iva, type: Integer
-  field :descuento, type: Integer
   field :observaciones, type: String
   field :web, type: String
   field :email, type: String
   field :extras, type: Hash
 
   has_many :places
-  has_many :bills
-  has_many :bill_dates
 
   # before_save :create_geolocalizacion
 
@@ -73,22 +62,14 @@ class Client
     client.telefono_fiscal = record.delete "TELF_FIS"
     client.fax = record.delete "FAX"
     client.preguntar_por = record.delete "PREGUN_FIS"
-    client.fecha_contrato = Date.parse(record.delete("FECHA_CONT")) unless record["FECHA_CONT"].blank?
-    client.cuota_contrato = record.delete "CUOTA_CONT"
-    client.fecha_de_baja = Date.parse(record.delete("FECHA_BAJA")) unless record["FECHA_BAJA"].blank?
     # client.???" record.delete "REPRESEN"
     # client.???" record.delete "COMISION"
     client.banco = record.delete "BANCO"
     client.agencia = record.delete "AGENCIA"
     client.ccc = record.delete "CCC"
     client.nif = record.delete "NIF"
-    client.dia_de_factura = record.delete "DIA_FACT"
-    client.dias_aplazado = record.delete "DIA_APLAZ"
-    client.iva = record.delete "IVA"
-    client.descuento = record.delete "Descuento"
     client.observaciones = record.delete "OBSERVFIS"
     client.web = record.delete "Web"
-    client.fecha_ultimo_aumento = Date.parse(record.delete("Fecha_Ult_Aum")) unless record["Fecha_Ult_Aum"].blank?
     client.email = record.delete "EMail"
     client.extras = extras
 

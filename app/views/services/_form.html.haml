@@ -10,21 +10,87 @@
         - @service.errors.full_messages.each do |msg|
           %li= msg
 
-  .form-group
-    = f.label :nombre, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :nombre, :class => 'form-control'
-  .form-group
-    = f.label :baja, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :baja, :class => 'form-control'
-  - %w(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre).each_with_index do |month_title, index|
-    .form-group
-      .col-sm-offset-2.col-sm-10
-        .checkbox
-          %label
-            = f.check_box month_title
-            = month_title.capitalize
-  .form-group
-    .col-sm-offset-2.col-sm-10
-      = f.submit :class => 'btn btn-primary'
+  %div{:role => "tabpanel"}
+    / Nav tabs
+    .pull-right
+      = f.submit 'Guardar cambios', :class => 'btn btn-primary'
+    %ul.nav.nav-tabs{:role => "tablist"}
+      %li.active{:role => "presentation"}
+        %a{"aria-controls" => "info", "data-toggle" => "tab", :href => "#info", :role => "tab"} Datos del servicio
+      %li{:role => "presentation"}
+        %a{"aria-controls" => "contrato", "data-toggle" => "tab", :href => "#contrato", :role => "tab"} Contrato
+      %li{:role => "presentation"}
+        %a{"aria-controls" => "bancarios", "data-toggle" => "tab", :href => "#bancarios", :role => "tab"} Facturación
+      %li{:role => "presentation"}
+        %a{"aria-controls" => "otros", "data-toggle" => "tab", :href => "#otros", :role => "tab"} Otros datos
+    / Tab panes
+    .tab-content
+      %br
+      #info.tab-pane.active{:role => "tabpanel"}
+        .form-group
+          = f.label :nombre, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :nombre, :class => 'form-control'
+        .form-group
+          = f.label :baja, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :baja, :class => 'form-control'
+        %hr
+        %h5 Meses aplicación
+        - %w(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre).each_with_index do |month_title, index|
+          .form-group
+            .col-sm-offset-2.col-sm-10
+              .checkbox
+                %label
+                  = f.check_box month_title
+                  = month_title.capitalize
+      #contrato.tab-pane{:role => "tabpanel"}
+        .form-group
+          = f.label :fecha_contrato, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :fecha_contrato, :class => 'form-control'
+        .form-group
+          = f.label :cuota_contrato, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :cuota_contrato, :class => 'form-control'
+      #bancarios.tab-pane{:role => "tabpanel"}
+        .form-group
+          = f.label :dia_de_factura, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :dia_de_factura, :class => 'form-control'
+        .form-group
+          = f.label :dias_aplazado, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :dias_aplazado, :class => 'form-control'
+        .form-group
+          = f.label :iva, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :iva, :class => 'form-control'
+        .form-group
+          = f.label :descuento, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :descuento, :class => 'form-control'
+        %hr
+        %h5 Elige los meses de facturación
+        .row
+          .col-sm-6
+            = select("facturas", "meses",[['Mensual', 1], ['Bimensual', 2], ['Trimestral', 3], ['Cuatrimestral', 4], ['Semestral', 6], ['Anual', 12]], { include_blank: true })
+          .col-sm-6
+            - %w(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre).each_with_index do |month_title, index|
+              .form-group
+                .col-sm-offset-2.col-sm-10
+                  .checkbox
+                    %label
+                      = f.check_box "factura_#{month_title}"
+                      = month_title.capitalize
+
+      #otros.tab-pane{:role => "tabpanel"}
+        .form-group
+          = f.label :fecha_de_baja, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :fecha_de_baja, :class => 'form-control'
+        .form-group
+          = f.label :fecha_ultimo_aumento, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :fecha_ultimo_aumento, :class => 'form-control'
+

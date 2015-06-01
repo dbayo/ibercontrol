@@ -11,7 +11,8 @@ class BillDate
   field :observaciones, type: String
   field :extras, type: Hash
 
-  belongs_to :client
+  belongs_to :service
+  has_one :bill
 
   def self.import_database
     xml = Nokogiri::XML(open(File.join(Rails.root, 'lib', 'old_database_json', 'Fch_Fact.xml')))
