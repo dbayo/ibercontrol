@@ -1,8 +1,8 @@
 class ServiceDate
   include Mongoid::Document
   field :fecha_servicio, type: Date
-  field :emitida, type: Boolean
-  field :aplicada, type: Boolean
+  field :emitida, type: Boolean, default: false
+  field :aplicada, type: Boolean, default: false
   field :extras, type: Hash
 
   has_and_belongs_to_many :products

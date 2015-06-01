@@ -1,7 +1,7 @@
 class Service
   include Mongoid::Document
   field :nombre, type: String
-  field :baja, type: Boolean
+  field :baja, type: Boolean, default: false
 
   field :enero, type: Boolean, default: false
   field :febrero, type: Boolean, default: false
@@ -21,6 +21,8 @@ class Service
   has_many :dits
   has_and_belongs_to_many :plagues
   has_and_belongs_to_many :employees
+
+  after_create :generate_service_dates
 
   def self.create_services
     Place.all.each do |place|
@@ -52,6 +54,12 @@ class Service
       end
       service.save
       puts "Service #{service.id}"
+    end
+  end
+
+  def generate_service_dates
+    %w(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre).each_with_index do |month, index|
+      self.service_dates.create(fecha_servicio: Date.new(Date.today.year, index - 1, 1)) if self[month]
     end
   end
 end
