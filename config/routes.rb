@@ -16,7 +16,6 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :contracts
     resources :bills
   end
 
