@@ -19,10 +19,14 @@ namespace :import_database do
 
     puts 'Importando Services...'
     Service.create_services
-    ServiceDate.import_database
     puts 'Finalizado Services...'
 
+    puts 'Importando Fecha aplicaciones...'
+    ServiceDate.import_database
+    puts 'Finalizado Fecha aplicaciones...'
+
     puts 'Importando Facturas...'
+    BillDate.import_database
     Bill.import_database
     puts 'Finalizado Facturas...'
 
@@ -66,10 +70,10 @@ namespace :import_database do
 
   desc "Importa locales"
   task :services => :environment do
-    Service.delete_all
+    # Service.delete_all
     Service.create_services
 
-    ServiceDate.delete_all
+    # ServiceDate.delete_all
     ServiceDate.import_database
   end
 

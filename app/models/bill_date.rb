@@ -1,18 +1,17 @@
 class BillDate
   include Mongoid::Document
 
-  field :fecha_de_factura, type: String
-  field :cuota_factura, type: String
-  field :emitida, type: String #Si se ha impreso la Factura
-  field :cobrada, type: String
-  field :recibo, type: String
-  field :periodo_desde, type: String
-  field :periodo_hasta, type: String
+  field :fecha_de_factura, type: Date
+  field :cuota_factura, type: Float, default: 0.0
+  field :emitida, type: Boolean, default: false #Si se ha impreso la Factura
+  field :cobrada, type: Boolean, default: false
+  field :recibo, type: Boolean, default: false
+  field :periodo_desde, type: Date
+  field :periodo_hasta, type: Date
   field :observaciones, type: String
   field :extras, type: Hash
 
   belongs_to :service
-  has_one :bill
 
   def self.import_database
     xml = Nokogiri::XML(open(File.join(Rails.root, 'lib', 'old_database_json', 'Fch_Fact.xml')))
@@ -28,15 +27,16 @@ class BillDate
 
     client = Client.where(id: client_id).first
     if client
-      bill_date = client.bill_dates.new
+      service = client.places.first.services.first
+      bill_date = service.bill_dates.new
       bill_date._id = record.delete "Auto"
-      bill_date.fecha_de_factura = record.delete "FECHAFACT"
-      bill_date.cuota_factura = record.delete "CuotaFactEuro"
-      bill_date.emitida = record.delete "EMITIDA"
-      bill_date.cobrada = record.delete "COBRADA"
-      bill_date.recibo = record.delete "RECIBO"
-      bill_date.periodo_desde = record.delete "PERIODESDE"
-      bill_date.periodo_hasta = record.delete "PERIOHASTA"
+      bill_date.fecha_de_factura = Date.parse(record.delete("FECHAFACT")) unless record["FECHAFACT"].blank?
+      bill_date.cuota_factura = record.delete("CuotaFactEuro").to_s.to_f.round(2)
+      bill_date.emitida = record.delete("EMITIDA") == 'Si'
+      bill_date.cobrada = record.delete("COBRADA") == 'Si'
+      bill_date.recibo = record.delete("RECIBO") == 'Si'
+      bill_date.periodo_desde = Date.parse(record.delete("PERIODESDE")) unless record["PERIODESDE"].blank?
+      bill_date.periodo_hasta = Date.parse(record.delete("PERIOHASTA")) unless record["PERIOHASTA"].blank?
       bill_date.observaciones = record.delete "OBSERFCHFA"
       bill_date.extras = extras
 
