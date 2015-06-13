@@ -87,14 +87,17 @@ development:
 
     # Ensure all times are UTC in the app side. (default: false)
     # use_utc: false
+<% if ENV['OPENSHIFT_MONGODB_DB_HOST'] %>
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGOHQ_URL'] %>
-      options:
-        consistency: :strong
-        max_retries: 1
-        retry_interval: 0
+      database: <%= ENV['OPENSHIFT_APP_NAME'] %>
+      hosts:
+        - <%="#{ENV['OPENSHIFT_MONGODB_DB_HOST']}:#{ENV['OPENSHIFT_MONGODB_DB_PORT']}" %>
+      username: <%= ENV['OPENSHIFT_MONGODB_DB_USERNAME'] %>
+      password: <%= ENV['OPENSHIFT_MONGODB_DB_PASSWORD'] %>
+<% end %>
+
 test:
   sessions:
     default:
