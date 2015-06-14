@@ -10,12 +10,11 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', :platforms => :ruby
+gem 'therubyracer', platforms: :ruby
 
 gem 'geocomplete_rails'
 
 gem 'rest-client', '1.6.0'
-gem 'rake', '10.4.2'
 gem 'rake', '10.4.2'
 
 # Use jquery as the JavaScript library
@@ -75,14 +74,14 @@ end
 
 group :test do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', platforms: :ruby
   # gem 'rspec-its'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'mongoid-rspec', '~> 2.0.0'
   gem 'capybara'
   gem 'poltergeist'
-  gem 'phantomjs', :require => 'phantomjs/poltergeist'
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
   gem 'selenium-webdriver'
   gem 'shoulda'
   gem 'simplecov', :require => false
