@@ -5737,7 +5737,7 @@ tbody.collapse.in {
 /* line 6, /Users/dbayo/.rvm/gems/ruby-2.2.0/gems/bootstrap-generators-3.3.1/vendor/twitter/bootstrap/sass/bootstrap/_breadcrumbs.scss */
 .breadcrumb {
   padding: 8px 15px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   list-style: none;
   background-color: #f5f5f5;
   border-radius: 4px;

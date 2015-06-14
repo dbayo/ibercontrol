@@ -47,5 +47,5 @@
                 %span.sr-only Close
               = msg
           %ol.breadcrumb
-            = render_breadcrumbs tag: :li, separator: ""
+            = render_breadcrumbs(" ", { class: '', item_class: '', divider_class: '', active_class: 'active' })
           = yield
