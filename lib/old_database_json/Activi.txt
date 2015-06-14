@@ -1,0 +1,36 @@
+Alimentación
+Almacen
+Ayuntamiento
+Bar
+Cafeteria
+Carniceria
+Clinica
+Colegio
+Comercio
+Comunidad
+Congelados
+Discoteca
+Edificio
+Farmacia naturalista
+Finca
+Fruteria
+Gasolinera
+Granja
+Mercado
+Nave industrial
+Ocio
+Oficinas
+Panaderia
+Parque
+Pasteleria
+Pescaderia
+Pizzeria
+Residencia
+Restaurante
+Rostiseria
+Solar
+Supermercado
+Taller mecanico
+Tienda
+Via publica
+Vivienda

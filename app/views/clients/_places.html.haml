@@ -1,0 +1,23 @@
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        / %th Numero cliente
+        %th Nombre
+        %th Direccion
+        %th Telefono
+        %th Servicios
+        %th
+
+    %tbody
+      - @places.each do |place|
+        %tr
+          %td= link_to place.nombre, [@client, place]
+          %td= place.full_address
+          %td= place.telefono
+          %td= place.services.map(&:nombre).join(', ')
+          %td
+            = link_to [@client, place], :data => { confirm: 'Are you sure?' }, :method => :delete do
+              %span.glyphicon.glyphicon-trash.text-danger
+
+  = paginate @places, :param_name => :place_page

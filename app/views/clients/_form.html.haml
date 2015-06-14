@@ -1,0 +1,105 @@
+= form_for @client, :html => { :class => "form-horizontal", :role => "form" } do |f|
+  %div{:role => "tabpanel"}
+    / Nav tabs
+    .pull-right
+      = f.submit 'Guardar cambios', :class => 'btn btn-primary'
+    %ul.nav.nav-tabs{:role => "tablist"}
+      %li.active{:role => "presentation"}
+        %a{"aria-controls" => "info", "data-toggle" => "tab", :href => "#info", :role => "tab"} Nombre y direccion
+      %li{:role => "presentation"}
+        %a{"aria-controls" => "bancarios", "data-toggle" => "tab", :href => "#bancarios", :role => "tab"} Datos bancarios
+      %li{:role => "presentation"}
+        %a{"aria-controls" => "otros", "data-toggle" => "tab", :href => "#otros", :role => "tab"} Otros datos
+      %li{:role => "presentation"}
+        %a{"aria-controls" => "observaciones", "data-toggle" => "tab", :href => "#observaciones", :role => "tab"} Observaciones
+    / Tab panes
+    .tab-content
+      %br
+      #info.tab-pane.active{:role => "tabpanel"}
+        .form-group
+          = f.label :nombre_fiscal, 'Nombre de la empresa', :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :nombre_fiscal, :class => 'form-control'
+        .form-group
+          = f.label :geolocalizacion, 'Geolocalizacion', :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :geolocalizacion, :class => 'form-control ui-autocomplete-input', :id => "geocomplete", :autocomplete => "off"
+        .row
+          .col-sm-offset-2.col-sm-10
+            #my_map{style: "height: 300px;" }
+        %hr
+
+        .details
+          .form-group
+            = f.label :direccion_fiscal, :class => 'col-sm-2 control-label'
+            .col-sm-10
+              = f.text_field :direccion_fiscal, :class => 'form-control', "data-geo" => "formatted_address"
+          .form-group
+            = f.label :poblacion_fiscal, :class => 'col-sm-2 control-label'
+            .col-sm-10
+              = f.text_field :poblacion_fiscal, :class => 'form-control', "data-geo" => "locality"
+          .form-group
+            = f.label :provincia_fiscal, :class => 'col-sm-2 control-label'
+            .col-sm-10
+              = f.text_field :provincia_fiscal, :class => 'form-control', "data-geo" => ""
+          .form-group
+            = f.label :codigo_postal, :class => 'col-sm-2 control-label'
+            .col-sm-10
+              = f.text_field :codigo_postal, :class => 'form-control', "data-geo" => "postal_code"
+
+        .form-group
+          = f.label :telefono_fiscal, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :telefono_fiscal, :class => 'form-control'
+        .form-group
+          = f.label :fax, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :fax, :class => 'form-control'
+        %hr
+        .form-group
+          = f.label :preguntar_por, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :preguntar_por, :class => 'form-control'
+      #bancarios.tab-pane{:role => "tabpanel"}
+        .form-group
+          = f.label :banco, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :banco, :class => 'form-control'
+        .form-group
+          = f.label :agencia, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :agencia, :class => 'form-control'
+        .form-group
+          = f.label :ccc, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :ccc, :class => 'form-control'
+        .form-group
+          = f.label :nif, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :nif, :class => 'form-control'
+      #otros.tab-pane{:role => "tabpanel"}
+        .form-group
+          = f.label :web, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :web, :class => 'form-control'
+        .form-group
+          = f.label :email, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :email, :class => 'form-control'
+      #observaciones.tab-pane{:role => "tabpanel"}
+        .form-group
+          = f.label :observaciones, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_area :observaciones, :class => 'form-control'
+
+
+  -if @client.errors.any?
+    .alert.alert-danger.alert-dismissable{:role => "alert"}
+      %button.close{:type => "button", :data => {:dismiss => "alert"} }
+        span{:aria => {:hidden => "true"} } &times;
+        span.sr-only Close
+      %h4= "#{pluralize(@client.errors.count, "error")} prohibited this client from being saved:"
+
+      %ul
+        - @client.errors.full_messages.each do |msg|
+          %li= msg

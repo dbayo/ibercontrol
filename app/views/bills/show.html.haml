@@ -1,0 +1,84 @@
+.page-header
+  = link_to client_bills_path(@client), :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_client_bill_path(@client, @bill), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show bill
+
+%dl.dl-horizontal
+  %dt Numero factura:
+  %dd= @bill.numero_factura
+  %dt Estado:
+  %dd= @bill.estado
+  %dt Fecha factura:
+  %dd= @bill.fecha_factura
+  %dt Year:
+  %dd= @bill.year
+  %dt Nif:
+  %dd= @bill.nif
+  %dt Nombre fis:
+  %dd= @bill.nombre_fis
+  %dt Direccion fis:
+  %dd= @bill.direccion_fis
+  %dt Poblacion fis:
+  %dd= @bill.poblacion_fis
+  %dt Provincia fis:
+  %dd= @bill.provincia_fis
+  %dt Dpostal fis:
+  %dd= @bill.dpostal_fis
+  %dt Periodo desde:
+  %dd= @bill.periodo_desde
+  %dt Periodo hasta:
+  %dd= @bill.periodo_hasta
+  %dt Tipo servicio:
+  %dd= @bill.tipo_servicio
+  %dt Nombre apl:
+  %dd= @bill.nombre_apl
+  %dt Direccion apl:
+  %dd= @bill.direccion_apl
+  %dt Poblacion apl:
+  %dd= @bill.poblacion_apl
+  %dt Provincia apl:
+  %dd= @bill.provincia_apl
+  %dt Dpostal apl:
+  %dd= @bill.dpostal_apl
+  %dt Base imponible:
+  %dd= @bill.base_imponible
+  %dt Base impuestos sin descuentos:
+  %dd= @bill.base_impuestos_sin_descuentos
+  %dt Descuento:
+  %dd= @bill.descuento
+  %dt Total descuento:
+  %dd= @bill.total_descuento
+  %dt Iva:
+  %dd= @bill.iva
+  %dt Total iva:
+  %dd= @bill.total_iva
+  %dt Total factura:
+  %dd= @bill.total_factura
+  %dt Numero recibo:
+  %dd= @bill.numero_recibo
+  %dt Fecha vencimiento:
+  %dd= @bill.fecha_vencimiento
+  %dt Banco:
+  %dd= @bill.banco
+  %dt Agencia:
+  %dd= @bill.agencia
+  %dt Ccc:
+  %dd= @bill.ccc
+  %dt Observaciones:
+  %dd= @bill.observaciones
+  %dt Cobrada:
+  %dd= @bill.cobrada
+  %dt Fecha cobrada:
+  %dd= @bill.fecha_cobrada
+  %dt Abonada:
+  %dd= @bill.abonada
+  %dt Morosa:
+  %dd= @bill.morosa
+  %dt Extras:
+  %dd= @bill.extras
+  %dt Client:
+  %dd= @bill.client

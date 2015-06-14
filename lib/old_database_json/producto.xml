@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" generated="2015-04-11T23:13:35">
+<producto>
+<Auto>1</Auto>
+<NUMERO>10</NUMERO>
+<PRODUCTO>Nexa</PRODUCTO>
+<NUM_REG>07-30-02109-HA</NUM_REG>
+<MAT_ACTIVA>Fipronil  0,02 %</MAT_ACTIVA>
+<TECNICA>Pulverización</TECNICA>
+<PLZSEG>12</PLZSEG>
+</producto>
+<producto>
+<Auto>2</Auto>
+<NUMERO>11</NUMERO>
+<PRODUCTO>Nexa</PRODUCTO>
+<NUM_REG>07-30-02109-HA</NUM_REG>
+<MAT_ACTIVA>Fipronil  0,02 %</MAT_ACTIVA>
+<TECNICA>Distribución</TECNICA>
+<PLZSEG>12</PLZSEG>
+</producto>
+<producto>
+<Auto>6</Auto>
+<NUMERO>40</NUMERO>
+<PRODUCTO>Tenopa</PRODUCTO>
+<NUM_REG>07-30-01843-HA</NUM_REG>
+<MAT_ACTIVA>Alfacipermetrina    3 %</MAT_ACTIVA>
+<DISOLUCION>25 c.c. x 5 l.</DISOLUCION>
+<TECNICA>Pulverización</TECNICA>
+<PLZSEG> 12</PLZSEG>
+</producto>
+<producto>
+<Auto>13</Auto>
+<NUMERO>90</NUMERO>
+<PRODUCTO>Solfac A.Forte</PRODUCTO>
+<NUM_REG>06-30-00294</NUM_REG>
+<MAT_ACTIVA>Ciflutrin              0&apos;1 gr.</MAT_ACTIVA>
+<DISOLUCION>150 c.c.X100 m3</DISOLUCION>
+<TECNICA>Pulverización</TECNICA>
+<PLZSEG>12</PLZSEG>
+</producto>
+<producto>
+<Auto>14</Auto>
+<NUMERO>100</NUMERO>
+<PRODUCTO>Termidor SC</PRODUCTO>
+<NUM_REG>09-30-03048</NUM_REG>
+<MAT_ACTIVA>Fipronil  9,09 %</MAT_ACTIVA>
+<DISOLUCION>0,25 x 25 l.</DISOLUCION>
+<TECNICA>Inyección</TECNICA>
+<PLZSEG>24</PLZSEG>
+</producto>
+<producto>
+<Auto>15</Auto>
+<NUMERO>110</NUMERO>
+<MAT_ACTIVA>1,2-benzisothiozolin-3-ona 0,1</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>19</Auto>
+<NUMERO>120</NUMERO>
+<PRODUCTO>Actibiol Fogging</PRODUCTO>
+<NUM_REG>06-30-01718 HA</NUM_REG>
+<MAT_ACTIVA>Alfacipermetrina 0&apos;13%</MAT_ACTIVA>
+<DISOLUCION>1 l. x 3000 m3</DISOLUCION>
+<TECNICA>Termonebulización</TECNICA>
+<PLZSEG>12</PLZSEG>
+</producto>
+<producto>
+<Auto>22</Auto>
+<NUMERO>150</NUMERO>
+<PRODUCTO>Garant-OL HP</PRODUCTO>
+<NUM_REG>07-30-01867 HA R</NUM_REG>
+<MAT_ACTIVA>High-Cis Cipermetrina  1&apos;00 %</MAT_ACTIVA>
+<TECNICA>Pulverización</TECNICA>
+<PLZSEG> 12</PLZSEG>
+</producto>
+<producto>
+<Auto>23</Auto>
+<NUMERO>151</NUMERO>
+<MAT_ACTIVA>Tetrametrina           0&apos;20 %</MAT_ACTIVA>
+<PLZSEG> </PLZSEG>
+</producto>
+<producto>
+<Auto>24</Auto>
+<NUMERO>152</NUMERO>
+<MAT_ACTIVA>Butoxido Piperon.   0&apos;60 %</MAT_ACTIVA>
+<PLZSEG> </PLZSEG>
+</producto>
+<producto>
+<Auto>25</Auto>
+<NUMERO>160</NUMERO>
+<PRODUCTO>Trampas Feromonas</PRODUCTO>
+<TECNICA>Trampas</TECNICA>
+<PLZSEG> </PLZSEG>
+</producto>
+<producto>
+<Auto>26</Auto>
+<NUMERO>170</NUMERO>
+<PRODUCTO>Goliath Gel</PRODUCTO>
+<NUM_REG>09-30-01343-HA</NUM_REG>
+<MAT_ACTIVA>Fipronil                 0,05%</MAT_ACTIVA>
+<TECNICA>Gel</TECNICA>
+<PLZSEG> </PLZSEG>
+</producto>
+<producto>
+<Auto>30</Auto>
+<NUMERO>210</NUMERO>
+<PRODUCTO>Serpalac Delta</PRODUCTO>
+<NUM_REG>09-30-01650 HA</NUM_REG>
+<MAT_ACTIVA>Deltametrina           0,25%</MAT_ACTIVA>
+<TECNICA>Pulverización</TECNICA>
+<PLZSEG>12</PLZSEG>
+</producto>
+<producto>
+<Auto>32</Auto>
+<NUMERO>220</NUMERO>
+<PRODUCTO>Maxforce prime</PRODUCTO>
+<NUM_REG>08-30-04961 HA</NUM_REG>
+<MAT_ACTIVA>Imidacloprid 2,15%</MAT_ACTIVA>
+<TECNICA>Gel</TECNICA>
+<PLZSEG> </PLZSEG>
+</producto>
+<producto>
+<Auto>33</Auto>
+<NUMERO>500</NUMERO>
+<PRODUCTO>B.D. Raticida Cl.  7</PRODUCTO>
+<NUM_REG>08-10-00022 HA</NUM_REG>
+<MAT_ACTIVA>Clorofacinona      0,007 %</MAT_ACTIVA>
+<TECNICA>Cebo bolsas</TECNICA>
+</producto>
+<producto>
+<Auto>39</Auto>
+<NUMERO>590</NUMERO>
+<PRODUCTO>Sorexa Gel</PRODUCTO>
+<NUM_REG>ES/RM-2012-14-00036</NUM_REG>
+<MAT_ACTIVA>Difenacoum          0,005 %</MAT_ACTIVA>
+<TECNICA>Cebo fresco</TECNICA>
+<PLZSEG> </PLZSEG>
+</producto>
+<producto>
+<Auto>43</Auto>
+<NUMERO>502</NUMERO>
+<PRODUCTO>B.D. Raticida Broma. 5</PRODUCTO>
+<NUM_REG>08-10-00027 HA</NUM_REG>
+<MAT_ACTIVA>Bromadiolona       0`005%</MAT_ACTIVA>
+<TECNICA>Cebo bolsas</TECNICA>
+<PLZSEG> </PLZSEG>
+</producto>
+<producto>
+<Auto>44</Auto>
+<NUMERO>230</NUMERO>
+<PRODUCTO>Faslane</PRODUCTO>
+<NUM_REG>04-30-00809 HA</NUM_REG>
+<MAT_ACTIVA>Hidrametilnona     2 %</MAT_ACTIVA>
+<TECNICA>Gel</TECNICA>
+<PLZSEG> </PLZSEG>
+</producto>
+<producto>
+<Auto>45</Auto>
+<NUMERO>240</NUMERO>
+<PRODUCTO>Trampas Rayas Negras</PRODUCTO>
+<TECNICA>Trampas</TECNICA>
+</producto>
+<producto>
+<Auto>49</Auto>
+<NUMERO>3</NUMERO>
+<PRODUCTO>Victor Gel Cucarachas</PRODUCTO>
+<NUM_REG>11-30-01553 HA</NUM_REG>
+<MAT_ACTIVA>Imidacloprid         2,15%</MAT_ACTIVA>
+<TECNICA>Gel</TECNICA>
+</producto>
+<producto>
+<Auto>50</Auto>
+<NUMERO>280</NUMERO>
+<PRODUCTO>Blattanex</PRODUCTO>
+<NUM_REG>11-30-00217</NUM_REG>
+<MAT_ACTIVA>Imiprotrim        0&apos;10 %</MAT_ACTIVA>
+<TECNICA>Pulverización</TECNICA>
+<PLZSEG>12</PLZSEG>
+</producto>
+<producto>
+<Auto>51</Auto>
+<NUMERO>281</NUMERO>
+<MAT_ACTIVA>Cifenotrin          0&apos;30 %</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>53</Auto>
+<NUMERO>290</NUMERO>
+<PRODUCTO>Fendona 6 FC</PRODUCTO>
+<NUM_REG>11-30-00006 HA</NUM_REG>
+<MAT_ACTIVA>Alfacipermetrina   6%</MAT_ACTIVA>
+<DISOLUCION>25 c.c. x 5 L.</DISOLUCION>
+<TECNICA>Pulverización perimetral</TECNICA>
+<PLZSEG> 12</PLZSEG>
+</producto>
+<producto>
+<Auto>54</Auto>
+<NUMERO>291</NUMERO>
+<MAT_ACTIVA>1&apos;2 Benzisotiazolin  1&apos;5%</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>55</Auto>
+<NUMERO>610</NUMERO>
+<PRODUCTO>Warin&apos;s Block</PRODUCTO>
+<NUM_REG>09-10-00449 HA</NUM_REG>
+<MAT_ACTIVA>Bromadiolona       0,005%</MAT_ACTIVA>
+<TECNICA>Bloque parafinado</TECNICA>
+</producto>
+<producto>
+<Auto>58</Auto>
+<NUMERO>310</NUMERO>
+<PRODUCTO>Corpofen Profesional</PRODUCTO>
+<NUM_REG>08-80-02720</NUM_REG>
+<MAT_ACTIVA>Permetrina               0&apos;35%</MAT_ACTIVA>
+<TECNICA>Inyectado</TECNICA>
+<PLZSEG>24</PLZSEG>
+</producto>
+<producto>
+<Auto>59</Auto>
+<NUMERO>620</NUMERO>
+<PRODUCTO>Trampas adhesivas</PRODUCTO>
+<NUM_REG>           --</NUM_REG>
+<MAT_ACTIVA>             --</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>65</Auto>
+<NUMERO>630</NUMERO>
+<PRODUCTO>Trampas mecánicas</PRODUCTO>
+<NUM_REG>           --</NUM_REG>
+<MAT_ACTIVA>             --</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>69</Auto>
+<NUMERO>360</NUMERO>
+<PRODUCTO>Magnum Gel Hormigas</PRODUCTO>
+<NUM_REG>12-30-06468-HA</NUM_REG>
+<MAT_ACTIVA>Imidacloprid       0,01 %</MAT_ACTIVA>
+<TECNICA>Gel</TECNICA>
+</producto>
+<producto>
+<Auto>70</Auto>
+<NUMERO>640</NUMERO>
+<PRODUCTO>Ratonex Líquido</PRODUCTO>
+<NUM_REG>04-10-01578 HA/R</NUM_REG>
+<MAT_ACTIVA>Difenacoum          0,005%</MAT_ACTIVA>
+<TECNICA>Cebo líquido</TECNICA>
+</producto>
+<producto>
+<Auto>73</Auto>
+<NUMERO>91</NUMERO>
+<MAT_ACTIVA>Isopropanol        3&apos;35%</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>78</Auto>
+<NUMERO>17</NUMERO>
+<PRODUCTO>Germosan Nor-Ter</PRODUCTO>
+<NUM_REG>07-20/40-01935 HA R</NUM_REG>
+<MAT_ACTIVA>Clo. Didecildimerilamonio 0,25</MAT_ACTIVA>
+<TECNICA>Termonebulización</TECNICA>
+<PLZSEG>3</PLZSEG>
+</producto>
+<producto>
+<Auto>79</Auto>
+<NUMERO>390</NUMERO>
+<PRODUCTO>Serpalac Gel</PRODUCTO>
+<NUM_REG>08-30-01306 HA</NUM_REG>
+<MAT_ACTIVA>Alfacipermetrina 2,05%</MAT_ACTIVA>
+<TECNICA>Gel</TECNICA>
+</producto>
+<producto>
+<Auto>82</Auto>
+<NUMERO>410</NUMERO>
+<PRODUCTO>Aqua K-Otrine</PRODUCTO>
+<NUM_REG>08-30-05204 HA</NUM_REG>
+<MAT_ACTIVA>Deltametrina   2,3%</MAT_ACTIVA>
+<DISOLUCION>50 cc x 12,5 l.</DISOLUCION>
+<TECNICA>Nebulización</TECNICA>
+<PLZSEG>24</PLZSEG>
+</producto>
+<producto>
+<Auto>83</Auto>
+<NUMERO>660</NUMERO>
+<PRODUCTO>Talon Block</PRODUCTO>
+<NUM_REG>10-10-01493 HA</NUM_REG>
+<MAT_ACTIVA>Brodifacoum      0,005 %</MAT_ACTIVA>
+<TECNICA>Cebo bloques</TECNICA>
+</producto>
+<producto>
+<Auto>84</Auto>
+<NUMERO>420</NUMERO>
+<PRODUCTO>Aqua Flow</PRODUCTO>
+<NUM_REG>00-30-01903 HA</NUM_REG>
+<MAT_ACTIVA>Tetrametrina  4 %</MAT_ACTIVA>
+<DISOLUCION>25 cc x 5 l.</DISOLUCION>
+<TECNICA>Pulverización</TECNICA>
+<PLZSEG>12</PLZSEG>
+</producto>
+<producto>
+<Auto>85</Auto>
+<NUMERO>421</NUMERO>
+<MAT_ACTIVA>Permetrina  4 %</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>87</Auto>
+<NUMERO>41</NUMERO>
+<MAT_ACTIVA>Flufenoxuron    3 %</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>93</Auto>
+<NUMERO>430</NUMERO>
+<PRODUCTO>Bio-Termistator Cebo</PRODUCTO>
+<NUM_REG>11-30-01665</NUM_REG>
+<MAT_ACTIVA>Diflubenzuron    0,08%</MAT_ACTIVA>
+<TECNICA>Cebo Termitas</TECNICA>
+</producto>
+<producto>
+<Auto>97</Auto>
+<NUMERO>450</NUMERO>
+<PRODUCTO>Hipoclorito Sodico</PRODUCTO>
+<NUM_REG>  99-60-0495</NUM_REG>
+</producto>
+<producto>
+<Auto>99</Auto>
+<NUMERO>461</NUMERO>
+<PRODUCTO>Xilix Gel</PRODUCTO>
+<NUM_REG>02-80-02706</NUM_REG>
+<MAT_ACTIVA>Permetrin           0,51 %</MAT_ACTIVA>
+<TECNICA>Pincelado</TECNICA>
+<PLZSEG>24</PLZSEG>
+</producto>
+<producto>
+<Auto>100</Auto>
+<NUMERO>670</NUMERO>
+<PRODUCTO>ibystop cebo fresco</PRODUCTO>
+<NUM_REG>08-10-02410 HA</NUM_REG>
+<MAT_ACTIVA>Brodifacoum      0,005%</MAT_ACTIVA>
+<TECNICA>Cebo fresco</TECNICA>
+</producto>
+<producto>
+<Auto>101</Auto>
+<NUMERO>462</NUMERO>
+<PRODUCTO>Ecorex Gel One</PRODUCTO>
+<NUM_REG>10-30-05727 HA</NUM_REG>
+<MAT_ACTIVA>Cipermetrina      1 %</MAT_ACTIVA>
+<TECNICA>Gel alimenticio</TECNICA>
+</producto>
+<producto>
+<Auto>107</Auto>
+<NUMERO>710</NUMERO>
+<PRODUCTO>Ibystop bloques</PRODUCTO>
+<NUM_REG>08-10-02409 HA</NUM_REG>
+<MAT_ACTIVA>Brodifacoum      0,005%</MAT_ACTIVA>
+<TECNICA>Cebo bloques</TECNICA>
+</producto>
+<producto>
+<Auto>108</Auto>
+<NUMERO>720</NUMERO>
+<PRODUCTO>Detex Block</PRODUCTO>
+<TECNICA>Cebo alimenticio</TECNICA>
+</producto>
+<producto>
+<Auto>111</Auto>
+<NUMERO>422</NUMERO>
+<MAT_ACTIVA>Butoxido de Piperonilo 16 %</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>113</Auto>
+<NUMERO>13</NUMERO>
+<PRODUCTO>Ecorex Alfa</PRODUCTO>
+<NUM_REG>11-30-03034 HA</NUM_REG>
+<MAT_ACTIVA>Alfacipermetrina 6,5%</MAT_ACTIVA>
+<TECNICA>Pulverizado</TECNICA>
+<PLZSEG>12</PLZSEG>
+</producto>
+<producto>
+<Auto>114</Auto>
+<NUMERO>311</NUMERO>
+<MAT_ACTIVA>Propiconazol           0&apos;45%</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>115</Auto>
+<NUMERO>312</NUMERO>
+<MAT_ACTIVA>Tebuconazol           0&apos;45%</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>116</Auto>
+<NUMERO>313</NUMERO>
+<MAT_ACTIVA>IPBC                     0&apos;35%</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>117</Auto>
+<NUMERO>140</NUMERO>
+<PRODUCTO>OX Virin</PRODUCTO>
+<NUM_REG>08-20/40/90-02518-HA</NUM_REG>
+<MAT_ACTIVA>Peroxido Hidrogeno  25%</MAT_ACTIVA>
+<DISOLUCION>10 cc x 1000 cc</DISOLUCION>
+<TECNICA>Pulverización</TECNICA>
+<PLZSEG>3</PLZSEG>
+</producto>
+<producto>
+<Auto>118</Auto>
+<NUMERO>141</NUMERO>
+<MAT_ACTIVA>Acido Perecetico        5%</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>125</Auto>
+<NUMERO>14</NUMERO>
+<PRODUCTO>Big Bag</PRODUCTO>
+<TECNICA>Trampas</TECNICA>
+</producto>
+<producto>
+<Auto>126</Auto>
+<NUMERO>15</NUMERO>
+<PRODUCTO>Trampa para Pulgas</PRODUCTO>
+</producto>
+<producto>
+<Auto>128</Auto>
+<NUMERO>492</NUMERO>
+<PRODUCTO>Nupilac Hidro AZM GREEN</PRODUCTO>
+<NUM_REG>13-30-06623 HA</NUM_REG>
+<MAT_ACTIVA>Permetrina            0,2%</MAT_ACTIVA>
+<TECNICA>Gel</TECNICA>
+</producto>
+<producto>
+<Auto>129</Auto>
+<NUMERO>493</NUMERO>
+<MAT_ACTIVA>Acetamiprid        1 %</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>130</Auto>
+<NUMERO>16</NUMERO>
+<PRODUCTO>Maxforce Quantum</PRODUCTO>
+<NUM_REG>08-30-05092 HA</NUM_REG>
+<MAT_ACTIVA>Imidacloprid       0,03%</MAT_ACTIVA>
+<TECNICA>Gel</TECNICA>
+</producto>
+<producto>
+<Auto>132</Auto>
+<NUMERO>221</NUMERO>
+<MAT_ACTIVA>Benzisothiazolin-3-ona 0,10%</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>134</Auto>
+<NUMERO>12</NUMERO>
+<PRODUCTO>Viribiol</PRODUCTO>
+<NUM_REG>08-20/40-02934 HA</NUM_REG>
+<MAT_ACTIVA>Ortofenilfenol     1,73 %</MAT_ACTIVA>
+<TECNICA>Aerosol</TECNICA>
+<PLZSEG>3</PLZSEG>
+</producto>
+<producto>
+<Auto>135</Auto>
+<NUMERO>6</NUMERO>
+<PRODUCTO>Sumilarv 0.5 G</PRODUCTO>
+<NUM_REG>07-30-00072</NUM_REG>
+<MAT_ACTIVA>Piriproxifen 0,5%</MAT_ACTIVA>
+<TECNICA>Espolvoreo</TECNICA>
+</producto>
+<producto>
+<Auto>136</Auto>
+<NUMERO>494</NUMERO>
+<PRODUCTO>Odeon-4</PRODUCTO>
+<NUM_REG>04-80-03721</NUM_REG>
+<MAT_ACTIVA>Tebuconazol 1 %</MAT_ACTIVA>
+<TECNICA>Inyección</TECNICA>
+<PLZSEG>24</PLZSEG>
+</producto>
+<producto>
+<Auto>137</Auto>
+<NUMERO>495</NUMERO>
+<MAT_ACTIVA>Permetrina 0,45 %</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>138</Auto>
+<NUMERO>501</NUMERO>
+<PRODUCTO>B.D. Raticida Cl.  7</PRODUCTO>
+<NUM_REG>08-10-00022</NUM_REG>
+<MAT_ACTIVA>Clorofacinona      0,007 %</MAT_ACTIVA>
+<TECNICA>Cebo bolsas</TECNICA>
+</producto>
+<producto>
+<Auto>141</Auto>
+<NUMERO>661</NUMERO>
+<PRODUCTO>Talon Block</PRODUCTO>
+<NUM_REG>10-10-01493</NUM_REG>
+<MAT_ACTIVA>Brodifacoum      0,005 %</MAT_ACTIVA>
+<TECNICA>Cebo bloques</TECNICA>
+</producto>
+<producto>
+<Auto>142</Auto>
+<NUMERO>711</NUMERO>
+<PRODUCTO>Ibystop bloques</PRODUCTO>
+<NUM_REG>08-10-02409</NUM_REG>
+<MAT_ACTIVA>Brodifacoum      0,005%</MAT_ACTIVA>
+<TECNICA>Cebo bloques</TECNICA>
+</producto>
+<producto>
+<Auto>143</Auto>
+<NUMERO>222</NUMERO>
+<PRODUCTO>Maxforce Withe</PRODUCTO>
+<NUM_REG>08-30-05044 HA</NUM_REG>
+<MAT_ACTIVA>Imidacloprid 2,15%</MAT_ACTIVA>
+<TECNICA>Gel</TECNICA>
+</producto>
+<producto>
+<Auto>144</Auto>
+<NUMERO>1</NUMERO>
+<PRODUCTO>Maxforce LN</PRODUCTO>
+<NUM_REG>09-30-05283 HA</NUM_REG>
+<MAT_ACTIVA>Imidacloprid       0,052%</MAT_ACTIVA>
+<TECNICA>Distribución</TECNICA>
+</producto>
+<producto>
+<Auto>145</Auto>
+<NUMERO>496</NUMERO>
+<PRODUCTO>K.Othrine SC25</PRODUCTO>
+<NUM_REG>09-30-00866 HA</NUM_REG>
+<MAT_ACTIVA>Deltametrina  2,56 %</MAT_ACTIVA>
+<DISOLUCION>25 ml x 5 l.</DISOLUCION>
+<TECNICA>Pulverización</TECNICA>
+<PLZSEG>12</PLZSEG>
+</producto>
+<producto>
+<Auto>146</Auto>
+<NUMERO>9000</NUMERO>
+<PRODUCTO>Trampas Pulgas</PRODUCTO>
+</producto>
+<producto>
+<Auto>147</Auto>
+<NUMERO>9001</NUMERO>
+<PRODUCTO>Trampas Avispas</PRODUCTO>
+</producto>
+<producto>
+<Auto>148</Auto>
+<NUMERO>9002</NUMERO>
+<PRODUCTO>Cebo liquido avispas</PRODUCTO>
+</producto>
+<producto>
+<Auto>149</Auto>
+<NUMERO>260</NUMERO>
+<PRODUCTO>Feromonas para Ephestia</PRODUCTO>
+</producto>
+<producto>
+<Auto>150</Auto>
+<NUMERO>2</NUMERO>
+<PRODUCTO>Dupont Advion</PRODUCTO>
+<NUM_REG>ES/RM-2011-18-00003</NUM_REG>
+<MAT_ACTIVA>Indoxacarb         0,6 %</MAT_ACTIVA>
+<TECNICA>Gel</TECNICA>
+</producto>
+<producto>
+<Auto>151</Auto>
+<NUMERO>730</NUMERO>
+<PRODUCTO>Roedofin Bloque</PRODUCTO>
+<NUM_REG>09-10-03443-HA</NUM_REG>
+<MAT_ACTIVA>Brodifacoum      0,005%</MAT_ACTIVA>
+<TECNICA>Cebo bloques</TECNICA>
+</producto>
+<producto>
+<Auto>152</Auto>
+<NUMERO>731</NUMERO>
+<PRODUCTO>Roedofin Bloque</PRODUCTO>
+<NUM_REG>09-10-03443</NUM_REG>
+<MAT_ACTIVA>Brodifacoum      0,005%</MAT_ACTIVA>
+<TECNICA>Cebo bloques</TECNICA>
+</producto>
+<producto>
+<Auto>153</Auto>
+<NUMERO>611</NUMERO>
+<PRODUCTO>Warin&apos;s Block</PRODUCTO>
+<NUM_REG>09-10-00449</NUM_REG>
+<MAT_ACTIVA>Bromadiolona       0,005%</MAT_ACTIVA>
+<TECNICA>Bloque parafinado</TECNICA>
+</producto>
+<producto>
+<Auto>154</Auto>
+<NUMERO>641</NUMERO>
+<PRODUCTO>Ratonex Líquido</PRODUCTO>
+<NUM_REG>04-10-01578 R</NUM_REG>
+<MAT_ACTIVA>Difenacoum          0,005%</MAT_ACTIVA>
+<TECNICA>Cebo líquido</TECNICA>
+</producto>
+<producto>
+<Auto>155</Auto>
+<NUMERO>671</NUMERO>
+<PRODUCTO>ibystop cebo fresco</PRODUCTO>
+<NUM_REG>08-10-02410</NUM_REG>
+<MAT_ACTIVA>Brodifacoum      0,005%</MAT_ACTIVA>
+<TECNICA>Cebo fresco</TECNICA>
+</producto>
+<producto>
+<Auto>156</Auto>
+<NUMERO>9003</NUMERO>
+<PRODUCTO>Tablas adhesivas</PRODUCTO>
+</producto>
+<producto>
+<Auto>157</Auto>
+<NUMERO>9004</NUMERO>
+<PRODUCTO>Tubos actinicos</PRODUCTO>
+</producto>
+<producto>
+<Auto>158</Auto>
+<NUMERO>4</NUMERO>
+<PRODUCTO>Maxforce Fusion</PRODUCTO>
+<NUM_REG>11-30-06085 HA</NUM_REG>
+<MAT_ACTIVA>Imidacloprid         2,15 %</MAT_ACTIVA>
+<TECNICA>Gel</TECNICA>
+</producto>
+<producto>
+<Auto>159</Auto>
+<NUMERO>497</NUMERO>
+<PRODUCTO>Kill-Lak</PRODUCTO>
+<NUM_REG>08-30-01257 HA</NUM_REG>
+<MAT_ACTIVA>Cipermetrina        1,00%</MAT_ACTIVA>
+<TECNICA>Pulverización</TECNICA>
+<PLZSEG>12</PLZSEG>
+</producto>
+<producto>
+<Auto>160</Auto>
+<NUMERO>498</NUMERO>
+<MAT_ACTIVA>Tetrametrina        0,30 %</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>161</Auto>
+<NUMERO>499</NUMERO>
+<MAT_ACTIVA>Butóxido piperonilo 0,6 %</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>162</Auto>
+<NUMERO>7</NUMERO>
+<PRODUCTO>Aquapy NF</PRODUCTO>
+<NUM_REG>08-30-01308 / HA</NUM_REG>
+<MAT_ACTIVA>Extrato de pelitre  3 %</MAT_ACTIVA>
+<TECNICA>Pulverización</TECNICA>
+<PLZSEG>12</PLZSEG>
+</producto>
+<producto>
+<Auto>163</Auto>
+<NUMERO>7.5</NUMERO>
+<MAT_ACTIVA>Butóxido piperonilo 13,5 %</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>164</Auto>
+<NUMERO>5</NUMERO>
+<PRODUCTO>Wadix 650</PRODUCTO>
+<NUM_REG>08-20/40-05181</NUM_REG>
+<MAT_ACTIVA>Cloruro de</MAT_ACTIVA>
+<DISOLUCION>6 %</DISOLUCION>
+<TECNICA>Pulverización</TECNICA>
+</producto>
+<producto>
+<Auto>165</Auto>
+<NUMERO>5.1</NUMERO>
+<MAT_ACTIVA>alquildimetilbencilamonio 11,6</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>167</Auto>
+<NUMERO>18</NUMERO>
+<PRODUCTO>Air Dybac TP</PRODUCTO>
+<NUM_REG>08-20/40-05245 HA</NUM_REG>
+<MAT_ACTIVA>Bifenil-2-ol          0,29%</MAT_ACTIVA>
+<TECNICA>Aerosol Descarga Total</TECNICA>
+<PLZSEG>3</PLZSEG>
+</producto>
+<producto>
+<Auto>168</Auto>
+<NUMERO>19</NUMERO>
+<MAT_ACTIVA>Amonio cuaternario  0,71%</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>169</Auto>
+<NUMERO>20</NUMERO>
+<PRODUCTO>Ficam D</PRODUCTO>
+<NUM_REG>12-30-00061</NUM_REG>
+<MAT_ACTIVA>Bendiocarb         1,25%</MAT_ACTIVA>
+<TECNICA>Polvo</TECNICA>
+</producto>
+<producto>
+<Auto>170</Auto>
+<NUMERO>8</NUMERO>
+<PRODUCTO>Nupilac Aqua Shock</PRODUCTO>
+<NUM_REG>08-30-03165-HA</NUM_REG>
+<MAT_ACTIVA>Deltametrina        0,15 %</MAT_ACTIVA>
+<TECNICA>Pulverización</TECNICA>
+<PLZSEG>12</PLZSEG>
+</producto>
+<producto>
+<Auto>171</Auto>
+<NUMERO>8.1</NUMERO>
+<MAT_ACTIVA>Praletrina            0,25 %</MAT_ACTIVA>
+</producto>
+<producto>
+<Auto>172</Auto>
+<NUMERO>740</NUMERO>
+<PRODUCTO>Serpa Rat Block Brodi.</PRODUCTO>
+<NUM_REG>07-10-02141 HA</NUM_REG>
+<MAT_ACTIVA>Brodifacoum      0,005%</MAT_ACTIVA>
+<TECNICA>Cebo Bloques</TECNICA>
+</producto>
+</dataroot>

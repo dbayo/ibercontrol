@@ -1,0 +1,94 @@
+.page-header
+  = link_to new_client_bill_path(@client), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Bill
+  %h1 Listing bills
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Numero factura
+        %th Estado
+        %th Fecha factura
+        %th Year
+        %th Nif
+        %th Nombre fis
+        %th Direccion fis
+        %th Poblacion fis
+        %th Provincia fis
+        %th Dpostal fis
+        %th Periodo desde
+        %th Periodo hasta
+        %th Tipo servicio
+        %th Nombre apl
+        %th Direccion apl
+        %th Poblacion apl
+        %th Provincia apl
+        %th Dpostal apl
+        %th Base imponible
+        %th Base impuestos sin descuentos
+        %th Descuento
+        %th Total descuento
+        %th Iva
+        %th Total iva
+        %th Total factura
+        %th Numero recibo
+        %th Fecha vencimiento
+        %th Banco
+        %th Agencia
+        %th Ccc
+        %th Observaciones
+        %th Cobrada
+        %th Fecha cobrada
+        %th Abonada
+        %th Morosa
+        %th Extras
+        %th Client
+        %th
+        %th
+        %th
+
+    %tbody
+      - @bills.each do |bill|
+        %tr
+          %td= bill.numero_factura
+          %td= bill.estado
+          %td= bill.fecha_factura
+          %td= bill.year
+          %td= bill.nif
+          %td= bill.nombre_fis
+          %td= bill.direccion_fis
+          %td= bill.poblacion_fis
+          %td= bill.provincia_fis
+          %td= bill.dpostal_fis
+          %td= bill.periodo_desde
+          %td= bill.periodo_hasta
+          %td= bill.tipo_servicio
+          %td= bill.nombre_apl
+          %td= bill.direccion_apl
+          %td= bill.poblacion_apl
+          %td= bill.provincia_apl
+          %td= bill.dpostal_apl
+          %td= bill.base_imponible
+          %td= bill.base_impuestos_sin_descuentos
+          %td= bill.descuento
+          %td= bill.total_descuento
+          %td= bill.iva
+          %td= bill.total_iva
+          %td= bill.total_factura
+          %td= bill.numero_recibo
+          %td= bill.fecha_vencimiento
+          %td= bill.banco
+          %td= bill.agencia
+          %td= bill.ccc
+          %td= bill.observaciones
+          %td= bill.cobrada
+          %td= bill.fecha_cobrada
+          %td= bill.abonada
+          %td= bill.morosa
+          %td= bill.extras
+          %td= bill.client
+          %td= link_to 'Show', [@client, bill]
+          %td= link_to 'Edit', edit_client_bill_path(@client, bill)
+          %td= link_to 'Destroy', [@client, bill], :data => { confirm: 'Are you sure?' }, :method => :delete

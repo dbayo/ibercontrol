@@ -1,0 +1,7 @@
+.page-header
+  = link_to [@client, @place], :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  %h1= "Editar local #{@place.nombre}"
+
+= render 'form'

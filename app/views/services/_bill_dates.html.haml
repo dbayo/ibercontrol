@@ -1,0 +1,18 @@
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        / %th Numero cliente
+        %th Fecha factura
+        %th Emitida
+        %th
+    %tbody
+      - @bill_dates.each do |bill_date|
+        %tr
+          %td= bill_date.fecha_de_factura
+          %td= bill_date.emitida
+          %td
+            = link_to [@client, @place, @service, bill_date], :data => { confirm: 'Are you sure?' }, :method => :delete do
+              %span.glyphicon.glyphicon-trash.text-danger
+
+  = paginate @bill_dates, :param_name => :bill_date_page

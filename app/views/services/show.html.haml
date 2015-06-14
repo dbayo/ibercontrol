@@ -1,0 +1,69 @@
+.page-header
+  = link_to [@client, @place], :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Atras
+  = link_to edit_client_place_service_path(@client, @place, @service), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Editar
+  %h1= "Servicio #{@service.nombre}"
+
+%dl.dl-horizontal
+  %dt Nombre:
+  %dd= @service.nombre
+  %dt Baja?:
+  %dd= @service.baja
+  %dt Fecha aplicaciones:
+  %dd= @service.service_dates.count
+
+
+
+.row
+  .col-md-12
+    .page-header
+      = link_to generate_next_bills_client_place_service_path(@client, @place, @service), :class => 'btn btn-primary pull-right' do
+        %span.glyphicon.glyphicon-pencil
+        Generar facturas proximo año
+      %h1 Listing Facturas
+    = render partial: 'bill_dates'
+
+.page-header
+  = link_to generate_next_service_dates_client_place_service_path(@client, @place, @service), :class => 'btn btn-primary pull-right' do
+    %span.glyphicon.glyphicon-pencil
+    Generar fechas aplicaciones proximo año
+  %h1 Listing Fecha aplicaciones
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th fecha_servicio
+        %th emitida
+        %th aplicada
+        %th
+
+    %tbody
+      - @service.service_dates.each do |service_date|
+        %tr
+          %td= link_to service_date.fecha_servicio, [@client, @place, @service, service_date]
+          %td= service_date.emitida
+          %td= service_date.aplicada
+          %td
+            = link_to [@client, @place, @service, service_date], :data => { confirm: 'Are you sure?' }, :method => :delete do
+              %span.glyphicon.glyphicon-trash.text-danger
+
+
+.page-header
+  %h1 Listing DIT'S
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Fecha Tratamiento
+        %th Estado
+
+    %tbody
+      - @service.dits.each do |dit|
+        %tr
+          %td= dit.fecha_tratamiento
+          %td= dit.estado

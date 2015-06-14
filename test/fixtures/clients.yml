@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_fiscal: MyString
+  direccion_fiscal: MyString
+  poblacion_fiscal: MyString
+  telefono_fiscal: MyString
+  codigo_postal: MyString
+  fax: MyString
+  preguntar_por: MyString
+  fecha_contrato: MyString
+  cuota_contrato: MyString
+  fecha_de_baja: MyString
+  fecha_ultimo_aumento: MyString
+  cantidad_aumentada: MyString
+  banco: MyString
+  agencia: MyString
+  ccc: MyString
+  nif: MyString
+  dia_de_factura: MyString
+  dias_aplazado: MyString
+  iva: MyString
+  descuento: MyString
+  observaciones: MyString
+  web: MyString
+  email: MyString
+
+two:
+  nombre_fiscal: MyString
+  direccion_fiscal: MyString
+  poblacion_fiscal: MyString
+  telefono_fiscal: MyString
+  codigo_postal: MyString
+  fax: MyString
+  preguntar_por: MyString
+  fecha_contrato: MyString
+  cuota_contrato: MyString
+  fecha_de_baja: MyString
+  fecha_ultimo_aumento: MyString
+  cantidad_aumentada: MyString
+  banco: MyString
+  agencia: MyString
+  ccc: MyString
+  nif: MyString
+  dia_de_factura: MyString
+  dias_aplazado: MyString
+  iva: MyString
+  descuento: MyString
+  observaciones: MyString
+  web: MyString
+  email: MyString

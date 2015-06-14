@@ -1,0 +1,10 @@
+.page-header
+  = link_to @client, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Atras
+
+  %h1 Direccion de Clientes
+
+= render 'form'
+
+/ link_to 'Destroy', client, :data => { confirm: 'Are you sure?' }, :method => :delete

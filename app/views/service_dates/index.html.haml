@@ -1,0 +1,26 @@
+.page-header
+  = link_to new_service_date_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Service date
+  %h1 Listing service_dates
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Fecha servicio
+        %th Emitida
+        %th Aplicada
+        %th
+        %th
+        %th
+
+    %tbody
+      - @service_dates.each do |service_date|
+        %tr
+          %td= service_date.fecha_servicio
+          %td= service_date.emitida
+          %td= service_date.aplicada
+          %td= link_to 'Show', service_date
+          %td= link_to 'Edit', edit_service_date_path(service_date)
+          %td= link_to 'Destroy', service_date, :data => { confirm: 'Are you sure?' }, :method => :delete

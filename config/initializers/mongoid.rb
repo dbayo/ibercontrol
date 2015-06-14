@@ -1,0 +1,1 @@
+# Mongoid.load!("/app/config/mongoid.yml", :production)

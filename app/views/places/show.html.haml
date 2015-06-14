@@ -1,0 +1,34 @@
+.page-header
+  = link_to client_path(@client), :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Atras
+  = link_to edit_client_place_path(@client, @place), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Editar
+
+  %h1= "Local #{@place.nombre}"
+
+
+.page-header
+  = link_to new_client_place_service_path(@client, @place), :class => 'btn btn-primary pull-right' do
+    %span.glyphicon.glyphicon-plus
+    Nuevo Service
+  %h3 Listing services
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Nombre servicio
+        %th Baja?
+        %th
+
+    %tbody
+      - @services.each do |service|
+        %tr
+          %td= link_to service.nombre, [@client, @place, service]
+          %td= service.baja
+          %td
+            = link_to [@client, @place, service], :data => { confirm: 'Are you sure?' }, :method => :delete do
+              %span.glyphicon.glyphicon-trash.text-danger
+

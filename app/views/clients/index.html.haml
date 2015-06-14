@@ -1,0 +1,26 @@
+.page-header
+  = link_to new_client_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    Nuevo Client
+  %h1= "Lista de Clientes (#{@clients.count})"
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Num Cliente
+        %th Empresa
+        %th Direccion
+        %th Telefono
+        %th Numero locales
+
+    %tbody
+      - @clients.each do |client|
+        %tr
+          %td= client.id
+          %td= link_to client.nombre_fiscal, client
+          %td= client.direccion_fiscal
+          %td= client.telefono_fiscal
+          %td= client.places.count
+
+  = paginate @clients

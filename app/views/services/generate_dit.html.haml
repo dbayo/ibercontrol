@@ -1,0 +1,21 @@
+%h1 Nuevo DIT
+.page-header
+  %h3
+    Datos Cliente
+
+%pre
+  = JSON.pretty_generate(@client.as_json)
+
+
+.page-header
+  %h3
+    Datos Local
+%pre
+  = JSON.pretty_generate(@place.as_json)
+
+.page-header
+  %h3
+    Datos del servicio
+
+%pre
+  = JSON.pretty_generate(@service.as_json)

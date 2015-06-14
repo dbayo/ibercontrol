@@ -1,0 +1,22 @@
+.page-header
+  = link_to new_service_type_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Service type
+  %h1 Listing service_types
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th
+        %th
+        %th
+
+    %tbody
+      - @service_types.each do |service_type|
+        %tr
+          %td= service_type.name
+          %td= link_to 'Show', service_type
+          %td= link_to 'Edit', edit_service_type_path(service_type)
+          %td= link_to 'Destroy', service_type, :data => { confirm: 'Are you sure?' }, :method => :delete
