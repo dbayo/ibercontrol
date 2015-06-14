@@ -15,6 +15,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'geocomplete_rails'
 
 gem 'rest-client', '1.6.0'
+gem 'rake', '10.4.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
