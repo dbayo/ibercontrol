@@ -82,7 +82,7 @@ group :test do
   gem 'mongoid-rspec', '~> 2.0.0'
   gem 'capybara'
   gem 'poltergeist'
-  gem 'phantomjs', require: 'phantomjs/poltergeist'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
   gem 'selenium-webdriver'
   gem 'shoulda'
   gem 'simplecov', :require => false
