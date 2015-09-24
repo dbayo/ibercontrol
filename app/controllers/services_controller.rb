@@ -93,7 +93,8 @@ class ServicesController < ApplicationController
     def service_params
       params.require(:service).permit(:nombre, :baja,
         :enero, :febrero, :marzo, :abril, :mayo, :junio, :julio, :agosto, :septiembre, :octubre, :noviembre, :diciembre,
-        :factura_enero, :factura_febrero, :factura_marzo, :factura_abril, :factura_mayo, :factura_junio, :factura_julio, :factura_agosto, :factura_septiembre, :factura_octubre, :factura_noviembre, :factura_diciembre
+        :factura_enero, :factura_febrero, :factura_marzo, :factura_abril, :factura_mayo, :factura_junio, :factura_julio, :factura_agosto, :factura_septiembre, :factura_octubre, :factura_noviembre, :factura_diciembre,
+        :plano
         )
     end
 end

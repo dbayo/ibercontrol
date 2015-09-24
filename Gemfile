@@ -49,6 +49,13 @@ gem "breadcrumbs_on_rails"
 
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem 'aws-sdk', '~> 1.3.4'
+
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

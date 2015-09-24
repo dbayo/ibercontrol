@@ -93,3 +93,8 @@
           = f.label :fecha_ultimo_aumento, :class => 'col-sm-2 control-label'
           .col-sm-10
             = f.text_field :fecha_ultimo_aumento, :class => 'form-control'
+        .form-group
+          = f.label :plano, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.file_field :plano, :class => 'form-control'
+        = image_tag @service.plano.url

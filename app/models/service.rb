@@ -1,5 +1,11 @@
 class Service
   include Mongoid::Document
+  include Mongoid::Paperclip
+
+  has_mongoid_attached_file :plano
+  do_not_validate_attachment_file_type :plano
+  # mount_uploaders :planos, PlanoUploader
+
   field :nombre, type: String
   field :baja, type: Boolean, default: false
 
