@@ -18,8 +18,6 @@
       %li.active{:role => "presentation"}
         %a{"aria-controls" => "info", "data-toggle" => "tab", :href => "#info", :role => "tab"} Datos del servicio
       %li{:role => "presentation"}
-        %a{"aria-controls" => "contrato", "data-toggle" => "tab", :href => "#contrato", :role => "tab"} Contrato
-      %li{:role => "presentation"}
         %a{"aria-controls" => "bancarios", "data-toggle" => "tab", :href => "#bancarios", :role => "tab"} Facturación
       %li{:role => "presentation"}
         %a{"aria-controls" => "otros", "data-toggle" => "tab", :href => "#otros", :role => "tab"} Otros datos
@@ -36,7 +34,26 @@
           .col-sm-10
             = f.text_field :baja, :class => 'form-control'
         %hr
+        .form-group
+          = f.label :fecha_contrato, :class => 'col-sm-2 control-label'
+          .col-sm-4
+            = f.text_field :fecha_contrato, :class => 'form-control'
+          %label.col-sm-2.control-label{:for => "service_fecha_contrato"} Periodo
+          .col-sm-4
+            = select("facturas", "meses",[['Mensual', 1], ['Bimensual', 2], ['Trimestral', 3], ['Cuatrimestral', 4], ['Semestral', 6], ['Anual', 12]], { include_blank: true }, class: 'form-control')
+        .form-group
+          = f.label :cuota_contrato, :class => 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :cuota_contrato, :class => 'form-control'
+        %hr
         %h5 Meses aplicación
+
+        .btn-group.col-sm-12{"data-toggle" => "buttons"}
+          - %w(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre).each_with_index do |month_title, index|
+            %label.btn.btn-default.col-sm-1
+              %input{id: "service_#{month_title}", :name => "service[#{month_title}]", :type => "checkbox"}
+                = month_title.capitalize
+
         - %w(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre).each_with_index do |month_title, index|
           .form-group
             .col-sm-offset-2.col-sm-10
@@ -44,15 +61,6 @@
                 %label
                   = f.check_box month_title
                   = month_title.capitalize
-      #contrato.tab-pane{:role => "tabpanel"}
-        .form-group
-          = f.label :fecha_contrato, :class => 'col-sm-2 control-label'
-          .col-sm-10
-            = f.text_field :fecha_contrato, :class => 'form-control'
-        .form-group
-          = f.label :cuota_contrato, :class => 'col-sm-2 control-label'
-          .col-sm-10
-            = f.text_field :cuota_contrato, :class => 'form-control'
       #bancarios.tab-pane{:role => "tabpanel"}
         .form-group
           = f.label :dia_de_factura, :class => 'col-sm-2 control-label'
