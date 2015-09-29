@@ -59,7 +59,7 @@
             .col-sm-offset-2.col-sm-10
               .checkbox
                 %label
-                  = f.check_box month_title
+                  = f.check_box month_title, class: 'checkbox_application', month: index + 1
                   = month_title.capitalize
       #bancarios.tab-pane{:role => "tabpanel"}
         .form-group
