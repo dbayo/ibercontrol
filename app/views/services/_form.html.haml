@@ -48,19 +48,17 @@
         %hr
         %h5 Meses aplicación
 
-        .btn-group.col-sm-12{"data-toggle" => "buttons"}
+        .btn-group.buttons-application.col-sm-12{"data-toggle" => "buttons"}
           - %w(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre).each_with_index do |month_title, index|
-            %label.btn.btn-default.col-sm-1
-              %input{id: "service_#{month_title}", :name => "service[#{month_title}]", :type => "checkbox"}
-                = month_title.capitalize
+            %label.btn.btn-default.col-sm-1{ :class => ('active' if @service.send(month_title)) }
+              = f.check_box month_title, {type: 'checkbox', autocomplete: "off", month: index + 1, class: 'checkbox_application checkbox'}
+              = month_title.capitalize
 
-        - %w(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre).each_with_index do |month_title, index|
-          .form-group
-            .col-sm-offset-2.col-sm-10
-              .checkbox
-                %label
-                  = f.check_box month_title, class: 'checkbox_application', month: index + 1
-                  = month_title.capitalize
+        / - %w(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre).each_with_index do |month_title, index|
+        /   .col-sm-1
+        /     %label.checkbox-inline
+        /       = f.check_box month_title, class: 'checkbox_application checkbox', month: index + 1
+        /       = month_title.capitalize
       #bancarios.tab-pane{:role => "tabpanel"}
         .form-group
           = f.label :dia_de_factura, :class => 'col-sm-2 control-label'
