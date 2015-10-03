@@ -15,13 +15,17 @@
     .col-sm-10
       = f.text_field :fecha_servicio, :class => 'form-control'
   .form-group
-    = f.label :emitida, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :emitida, :class => 'form-control'
+    .col-sm-offset-2.col-sm-10
+      .checkbox
+        %label
+          = f.check_box :emitida
+          Emitida
   .form-group
-    = f.label :aplicada, :class => 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :aplicada, :class => 'form-control'
+    .col-sm-offset-2.col-sm-10
+      .checkbox
+        %label
+          = f.check_box :aplicada
+          Aplicada
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit :class => 'btn btn-primary'
