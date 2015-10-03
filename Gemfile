@@ -17,6 +17,8 @@ gem 'geocomplete_rails'
 gem 'rest-client', '1.6.0'
 gem 'rake', '10.4.2'
 
+gem 'multi_xml', '0.5.5'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

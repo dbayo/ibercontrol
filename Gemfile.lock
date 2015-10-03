@@ -367,6 +367,7 @@ DEPENDENCIES
   mongoid-grid_fs!
   mongoid-paperclip
   mongoid-rspec (~> 2.0.0)
+  multi_xml (= 0.5.5)
   nokogiri
   phantomjs
   poltergeist
@@ -389,3 +390,6 @@ DEPENDENCIES
   web-console (~> 2.0)
   wicked_pdf
   wkhtmltopdf-binary
+
+BUNDLED WITH
+   1.10.6
