@@ -11,9 +11,9 @@
   %dt Fecha servicio:
   %dd= @service_date.fecha_servicio
   %dt Emitida:
-  %dd= @service_date.emitida
+  %dd= boolean_to_icons(@service_date.emitida)
   %dt Aplicada:
-  %dd= @service_date.aplicada
+  %dd= boolean_to_icons(@service_date.aplicada)
 
 
 .page-header

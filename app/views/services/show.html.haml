@@ -11,7 +11,7 @@
   %dt Nombre:
   %dd= @service.nombre
   %dt Baja?:
-  %dd= @service.baja
+  %dd= boolean_to_icons(@service.baja)
   %dt Fecha aplicaciones:
   %dd= @service.service_dates.count
 
@@ -45,8 +45,8 @@
       - @service.service_dates.each do |service_date|
         %tr
           %td= link_to service_date.fecha_servicio, [@client, @place, @service, service_date]
-          %td= service_date.emitida
-          %td= service_date.aplicada
+          %td= boolean_to_icons(service_date.emitida)
+          %td= boolean_to_icons(service_date.aplicada)
           %td
             = link_to [@client, @place, @service, service_date], :data => { confirm: 'Are you sure?' }, :method => :delete do
               %span.glyphicon.glyphicon-trash.text-danger

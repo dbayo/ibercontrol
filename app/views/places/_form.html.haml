@@ -82,9 +82,11 @@
           .col-sm-10
             = f.text_field :observaciones, :class => 'form-control'
         .form-group
-          = f.label :plano, :class => 'col-sm-2 control-label'
-          .col-sm-10
-            = f.text_field :plano, :class => 'form-control'
+          .col-sm-offset-2.col-sm-10
+            .checkbox
+              %label
+                = f.check_box :plano
+                Plano?
 
   -if @place.errors.any?
     .alert.alert-danger.alert-dismissable{:role => "alert"}
