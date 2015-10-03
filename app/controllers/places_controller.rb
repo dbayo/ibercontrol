@@ -57,7 +57,7 @@ class PlacesController < ApplicationController
     def set_place
       @place = Place.find(params[:id])
       add_breadcrumb "Local"
-      add_breadcrumb @place.nombre, [@client, @place]
+      add_breadcrumb "#{@place.nombre} (#{@place.direccion})", [@client, @place]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

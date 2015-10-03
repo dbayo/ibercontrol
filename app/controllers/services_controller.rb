@@ -80,7 +80,7 @@ class ServicesController < ApplicationController
     def set_place
       @place = Place.find(params[:place_id])
       add_breadcrumb "Local"
-      add_breadcrumb @place.nombre, [@client, @place]
+      add_breadcrumb "#{@place.nombre} (#{@place.direccion})", [@client, @place]
     end
 
     # Use callbacks to share common setup or constraints between actions.

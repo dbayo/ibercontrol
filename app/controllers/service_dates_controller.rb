@@ -83,7 +83,7 @@ class ServiceDatesController < ApplicationController
     def set_place
       @place = Place.find(params[:place_id])
       add_breadcrumb "Local"
-      add_breadcrumb @place.nombre, [@client, @place]
+      add_breadcrumb "#{@place.nombre} (#{@place.direccion})", [@client, @place]
     end
 
     def set_service
