@@ -8,11 +8,11 @@
   %h1= "Servicio #{@service.nombre}"
 
 %dl.dl-horizontal
-  %dt Nombre:
+  %dt Servicio:
   %dd= @service.nombre
   %dt Baja?:
   %dd= boolean_to_icons(@service.baja)
-  %dt Fecha aplicaciones:
+  %dt Número aplicaciones:
   %dd= @service.service_dates.count
 
 
