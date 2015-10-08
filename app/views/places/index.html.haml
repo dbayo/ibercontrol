@@ -1,0 +1,23 @@
+.page-header
+  %h1= "Lista de Locales (#{@places.count})"
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Num Local
+        %th Nombre Local
+        %th Nombre Cliente
+        %th Direccion
+        %th Poblacion
+
+    %tbody
+      - @places.each do |place|
+        %tr
+          %td= place.id
+          %td= link_to place.nombre, [place.client, place]
+          %td= link_to place.client.nombre_fiscal, place.client
+          %td= place.direccion
+          %td= place.poblacion
+
+  = paginate @places

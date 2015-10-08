@@ -22,6 +22,11 @@ class Place
   has_many :service_types
   belongs_to :activity
 
+  def self.search(search)
+    search_condition = /#{search}/i
+    any_of({:nombre => search_condition}, {:id => search_condition}, {:direccion => search_condition})
+  end
+
   def full_address
     out = [self.direccion.to_s.scan(/^\D*\d*/)]
     out << self.poblacion

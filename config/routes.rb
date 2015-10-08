@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   root 'clients#index'
-
+  get 'places' => 'places#index'
   get 'services_date/current_month' => 'service_dates#current_month'
 
   # The priority is based upon order of creation: first created -> highest priority.

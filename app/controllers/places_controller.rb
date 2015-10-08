@@ -1,6 +1,14 @@
 class PlacesController < ApplicationController
-  before_action :set_client
+  before_action :set_client, except: [:index]
   before_action :set_place, only: [:show, :edit, :update, :destroy]
+
+  def index
+    if params[:place_search]
+      @places = Place.search(params[:place_search]).page params[:page]
+    else
+      @places = Place.page params[:page]
+    end
+  end
 
   # GET /places/1
   # GET /places/1.json
