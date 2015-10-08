@@ -16,6 +16,7 @@ class Client
   field :observaciones, type: String
   field :web, type: String
   field :email, type: String
+  field :client_ids, type: Array, default: []
   field :extras, type: Hash
 
   has_many :places
@@ -24,7 +25,7 @@ class Client
 
   def self.search(search)
     search_condition = /#{search}/i
-    any_of({:nombre_fiscal => search_condition}, {:id => search_condition})
+    any_of({:nombre_fiscal => search_condition}, {:id => search_condition}, :client_ids.in => [search])
   end
 
   def create_geolocalizacion
@@ -81,14 +82,17 @@ class Client
   def self.join_duplicates
     self.all.group_by(&:nif).values.each do |clients_array|
       final_client = clients_array.shift
+      final_client.client_ids << final_client.id
       clients_array.each do |client|
         client.places.each do |place|
           place.client = final_client
           place.save
         end
         final_client.places.concat(client.places)
+        final_client.client_ids << client.id
         client.delete
       end
+      final_client.save
     end
   end
 end
