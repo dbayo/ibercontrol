@@ -1,0 +1,14 @@
+.page-header
+  = link_to plagues_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_plague_path(@plague), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show plague
+
+%dl.dl-horizontal
+  %dt Name:
+  %dd= @plague.name
+  %dt Plagues:
+  %dd= @plague.plagues

@@ -1,0 +1,23 @@
+= form_for @plague, :html => { :class => "form-horizontal", :role => "form" } do |f|
+  -if @plague.errors.any?
+    .alert.alert-danger.alert-dismissable{:role => "alert"}
+      %button.close{:type => "button", :data => {:dismiss => "alert"} }
+        span{:aria => {:hidden => "true"} } &times;
+        span.sr-only Close
+      %h4= "#{pluralize(@plague.errors.count, "error")} prohibited this plague from being saved:"
+
+      %ul
+        - @plague.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :name, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :name, :class => 'form-control'
+  .form-group
+    = f.label :plagues, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :plagues, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => 'btn btn-primary'

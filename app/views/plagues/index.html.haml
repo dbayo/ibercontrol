@@ -1,0 +1,24 @@
+.page-header
+  = link_to new_plague_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Plague
+  %h1 Listing plagues
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Plagues
+        %th
+        %th
+        %th
+
+    %tbody
+      - @plagues.each do |plague|
+        %tr
+          %td= plague.name
+          %td= plague.plagues
+          %td= link_to 'Show', plague
+          %td= link_to 'Edit', edit_plague_path(plague)
+          %td= link_to 'Destroy', plague, :data => { confirm: 'Are you sure?' }, :method => :delete
