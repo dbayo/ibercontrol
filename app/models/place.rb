@@ -124,6 +124,20 @@ class Place
     service.employees << Employee.find_or_create_by(name: aplicador1) unless aplicador1.blank?
     service.employees << Employee.find_or_create_by(name: aplicador2) unless aplicador2.blank?
   end
+
+  def self.create_from_client_info(client)
+    place = client.places.new
+    place.nombre = client.nombre_fiscal
+    place.geolocalizacion = client.geolocalizacion
+    place.direccion = client.direccion_fiscal
+    place.poblacion = client.poblacion_fiscal
+    place.provincia = client.provincia_fiscal
+    place.dpostal = client.codigo_postal
+    place.telefono = client.telefono_fiscal
+    place.fax = client.fax
+    place.save
+    place
+  end
 end
 
 # <Aplica>

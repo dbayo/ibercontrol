@@ -21,6 +21,11 @@ class PlacesController < ApplicationController
     @place = Place.new
   end
 
+  def fill_as_client
+    place = Place.create_from_client_info(@client)
+    redirect_to edit_client_place_path(@client, place), notice: 'Place was successfully created.'
+  end
+
   # GET /places/1/edit
   def edit
   end
@@ -70,6 +75,9 @@ class PlacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:numero_cliente, :nombre, :direccion, :poblacion, :provincia, :dpostal, :zona, :telefono, :fax, :preguntar_por, :reclamacion, :actividad, :plaga, :area, :observaciones, :plano, :aplicador1, :aplicador2)
+      params.require(:place).permit(:numero_cliente, :nombre, :direccion,
+        :poblacion, :provincia, :dpostal, :zona, :telefono, :fax, :preguntar_por,
+        :reclamacion, :actividad, :plaga, :area, :observaciones, :plano,
+        :aplicador1, :aplicador2, :geolocalizacion, :activity)
     end
 end

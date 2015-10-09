@@ -16,6 +16,9 @@ Rails.application.routes.draw do
           get 'generate_next_service_dates'
         end
       end
+      collection do
+        get :fill_as_client
+      end
     end
 
     resources :bills

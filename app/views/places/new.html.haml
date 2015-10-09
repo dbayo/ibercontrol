@@ -1,8 +1,10 @@
 .page-header
   = link_to client_path(@client), :class => 'btn btn-default' do
     %span.glyphicon.glyphicon-list-alt
-    Back
+    Atras
+  = link_to fill_as_client_client_places_path(@client), :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Usar info cliente
   %h1 New place
 
 = render 'form'
-
