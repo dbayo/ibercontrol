@@ -1,0 +1,43 @@
+= form_for @product, :html => { :class => "form-horizontal", :role => "form" } do |f|
+  -if @product.errors.any?
+    .alert.alert-danger.alert-dismissable{:role => "alert"}
+      %button.close{:type => "button", :data => {:dismiss => "alert"} }
+        span{:aria => {:hidden => "true"} } &times;
+        span.sr-only Close
+      %h4= "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
+
+      %ul
+        - @product.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :producto, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :producto, :class => 'form-control'
+  .form-group
+    = f.label :numero_registro, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :numero_registro, :class => 'form-control'
+  .form-group
+    = f.label :material_activo, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :material_activo, :class => 'form-control'
+  .form-group
+    = f.label :disolucion, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :disolucion, :class => 'form-control'
+  .form-group
+    = f.label :tecnica, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :tecnica, :class => 'form-control'
+  .form-group
+    = f.label :plazo_seguridad, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :plazo_seguridad, :class => 'form-control'
+  .form-group
+    = f.label :extras, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :extras, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => 'btn btn-primary'

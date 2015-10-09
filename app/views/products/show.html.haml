@@ -1,0 +1,24 @@
+.page-header
+  = link_to products_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_product_path(@product), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show product
+
+%dl.dl-horizontal
+  %dt Producto:
+  %dd= @product.producto
+  %dt Numero registro:
+  %dd= @product.numero_registro
+  %dt Material activo:
+  %dd= @product.material_activo
+  %dt Disolucion:
+  %dd= @product.disolucion
+  %dt Tecnica:
+  %dd= @product.tecnica
+  %dt Plazo seguridad:
+  %dd= @product.plazo_seguridad
+  %dt Extras:
+  %dd= @product.extras
