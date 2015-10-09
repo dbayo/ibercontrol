@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :activities
+
   resources :plagues
 
   resources :service_types
