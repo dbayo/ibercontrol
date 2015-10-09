@@ -1,0 +1,22 @@
+.page-header
+  = link_to new_employee_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Employee
+  %h1 Listing employees
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th
+        %th
+        %th
+
+    %tbody
+      - @employees.each do |employee|
+        %tr
+          %td= employee.name
+          %td= link_to 'Show', employee
+          %td= link_to 'Edit', edit_employee_path(employee)
+          %td= link_to 'Destroy', employee, :data => { confirm: 'Are you sure?' }, :method => :delete
