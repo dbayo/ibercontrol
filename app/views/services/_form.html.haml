@@ -26,13 +26,15 @@
       %br
       #info.tab-pane.active{:role => "tabpanel"}
         .form-group
-          = f.label :nombre, :class => 'col-sm-2 control-label'
+          %label.col-sm-2.control-label{:for => "service_nombre"} Servicio
           .col-sm-10
-            = f.text_field :nombre, :class => 'form-control'
+            = select("service", "nombre", Service.pluck(:nombre).uniq, { include_blank: true }, class: 'form-control')
         .form-group
-          = f.label :baja, :class => 'col-sm-2 control-label'
-          .col-sm-10
-            = f.text_field :baja, :class => 'form-control'
+          .col-sm-offset-2.col-sm-10
+            .checkbox
+              %label
+                = f.check_box 'baja', {type: 'checkbox'}
+                Baja?
         %hr
         .form-group
           = f.label :fecha_contrato, :class => 'col-sm-2 control-label'
