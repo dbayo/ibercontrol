@@ -19,6 +19,7 @@ class Service
   field :dias_aplazado, type: Integer
   field :iva, type: Integer
   field :descuento, type: Integer
+  field :area, type: String
 
   # Meses que se realiza la aplicación (fecha aplicacion)
   field :enero, type: Boolean, default: false

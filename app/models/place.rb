@@ -12,7 +12,6 @@ class Place
   field :fax, type: String
   field :preguntar_por, type: String
   field :reclamacion, type: Integer
-  field :area, type: String
   field :observaciones, type: String
   field :plano, type: Boolean
   field :extras, type: Hash
@@ -61,7 +60,6 @@ class Place
       place.fax = record.delete "Fax"
       place.preguntar_por = record.delete "Pregun_Apl"
       place.reclamacion = record.delete "Reclamacio"
-      place.area = record.delete "Area"
       place.observaciones = record.delete "Observ_apl"
       # place.observaciones_parti = record.delete "ObserParti"
       place.plano = record.delete("Plano") == 'Si'
@@ -92,6 +90,7 @@ class Place
         places_array.each do |place|
           place.move_plague_to_service
           place.move_employee_to_service
+          place.move_area_to_service
 
           place.services.each do |service|
             service.place = final_place
@@ -123,6 +122,12 @@ class Place
 
     service.employees << Employee.find_or_create_by(name: aplicador1) unless aplicador1.blank?
     service.employees << Employee.find_or_create_by(name: aplicador2) unless aplicador2.blank?
+  end
+
+  def move_area_to_service
+    area = self.extras['Area']
+    service = self.services.first
+    service.update_attributes(area: area)
   end
 
   def self.create_from_client_info(client)
