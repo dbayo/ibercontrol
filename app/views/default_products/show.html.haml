@@ -1,0 +1,57 @@
+.page-header
+  = link_to default_products_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_default_product_path(@default_product), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show default_product
+
+
+%dl.dl-horizontal
+  %dt Name:
+  %dd= @default_product.name
+%hr
+
+.page-header
+  %h1 Listing productos
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th ID
+        %th Producto
+        %th Numero Registro
+        %th Material Activo
+        %th Disolucion
+        %th Tecnica
+        %th Plazo Seguridad
+        %th
+
+    %tbody
+      - @default_product.products.each do |product|
+        %tr
+          %td= product.id
+          %td= product.producto
+          %td= product.numero_registro
+          %td= product.material_activo
+          %td= product.disolucion
+          %td= product.tecnica
+          %td= product.plazo_seguridad
+          %td
+            = link_to "/default_products/#{@default_product.id}/remove_product/#{product.id}", :data => { confirm: 'Estas seguro?' }, :method => :delete do
+              %span.glyphicon.glyphicon-trash.text-danger
+
+
+.page-header
+  %h3 Añadir nuevo producto
+
+= form_tag "/default_products/#{@default_product.id}/add_product", :class => "form-horizontal", :role => "form" do
+  .form-group
+    = label_tag :product, :id, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = text_field_tag :product_id, nil, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = submit_tag 'Añadir', :class => 'btn btn-primary'

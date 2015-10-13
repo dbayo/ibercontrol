@@ -1,0 +1,22 @@
+.page-header
+  = link_to new_default_product_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Default product
+  %h1 Listing default_products
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th
+        %th
+        %th
+
+    %tbody
+      - @default_products.each do |default_product|
+        %tr
+          %td= default_product.name
+          %td= link_to 'Show', default_product
+          %td= link_to 'Edit', edit_default_product_path(default_product)
+          %td= link_to 'Destroy', default_product, :data => { confirm: 'Are you sure?' }, :method => :delete

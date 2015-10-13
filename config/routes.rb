@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :default_products do
+    member do
+      delete 'remove_product/:product_id' => 'default_products#remove_product'
+      post 'add_product'
+    end
+  end
+
   resources :products
 
   resources :employees

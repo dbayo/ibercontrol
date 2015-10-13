@@ -1,0 +1,10 @@
+.page-header
+  = link_to default_products_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to @default_product, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-info-sign
+    Show
+  %h1 Editing default_product
+
+= render 'form'
