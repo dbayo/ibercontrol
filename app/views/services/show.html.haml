@@ -51,8 +51,11 @@
             %td= boolean_to_icons(service_date.emitida)
             %td= boolean_to_icons(service_date.aplicada)
             %td
-              = link_to [@client, @place, @service, service_date], :data => { confirm: 'Are you sure?' }, :method => :delete do
-                %span.glyphicon.glyphicon-trash.text-danger
+              .span.pull-right
+                = link_to edit_client_place_service_service_date_path(@client, @place, @service, service_date) do
+                  %span.glyphicon.glyphicon-pencil.text-info
+                = link_to [@client, @place, @service, service_date], :data => { confirm: 'Are you sure?' }, :method => :delete do
+                  %span.glyphicon.glyphicon-trash.text-danger
 
 
 .page-header
