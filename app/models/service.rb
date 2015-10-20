@@ -11,6 +11,7 @@ class Service
 
   field :fecha_contrato, type: Date
   field :cuota_contrato, type: Integer
+  field :fecha_inicio, type: Date
   field :fecha_de_baja, type: Date
   field :fecha_ultimo_aumento, type: Date
   # field :cantidad_aumentada, type: String

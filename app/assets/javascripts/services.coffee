@@ -3,15 +3,14 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-  $('#service_fecha_contrato, #service_fecha_de_baja, #service_fecha_ultimo_aumento').
-    datetimepicker format: 'DD/MM/YYYY'
+  $('#service_fecha_contrato, #service_fecha_inicio, #service_fecha_de_baja, #service_fecha_ultimo_aumento').datetimepicker(format: 'DD/MM/YYYY', defaultDate: '')
 
-  $('#service_fecha_contrato').on 'dp.hide', (e) ->
-    get_date_service_fecha_contrato()
+  $('#service_fecha_inicio').on 'dp.hide', (e) ->
+    get_date_service_fecha_inicio()
     return
 
   $('#facturas_meses').change ->
-    get_date_service_fecha_contrato()
+    get_date_service_fecha_inicio()
     value = parseInt($(this).val())
     current = parseInt($('input.checkbox_application:checked:visible:first').attr('month'))
 
@@ -44,9 +43,8 @@ ready = ->
     el.find('input[type=hidden]').attr 'value', 1
     el.find('input[type=checkbox]').attr 'checked', 'checked'
 
-  get_date_service_fecha_contrato = ->
-    debugger
-    from = $('#service_fecha_contrato').val().split('/');
+  get_date_service_fecha_inicio = ->
+    from = $('#service_fecha_inicio').val().split('/');
     f = new Date(from[2], from[1] - 1, from[0]);
     currMonth = f.getMonth() + 1
     $('.buttons-application label.active').click()

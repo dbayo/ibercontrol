@@ -35,12 +35,16 @@
               %label
                 = f.check_box 'baja', {type: 'checkbox'}
                 Baja?
-        %hr
         .form-group
           = f.label :fecha_contrato, :class => 'col-sm-2 control-label'
           .col-sm-4
             = f.text_field :fecha_contrato, :class => 'form-control'
-          %label.col-sm-2.control-label{:for => "service_fecha_contrato"} Periodo
+        %hr
+        .form-group
+          = f.label :fecha_inicio, :class => 'col-sm-2 control-label'
+          .col-sm-4
+            = f.text_field :fecha_inicio, :class => 'form-control'
+          %label.col-sm-2.control-label{:for => "service_fecha_inicio"} Periodo
           .col-sm-4
             = select("facturas", "meses",[['Mensual', 1], ['Bimensual', 2], ['Trimestral', 3], ['Cuatrimestral', 4], ['Semestral', 6], ['Anual', 12]], { include_blank: true }, class: 'form-control')
         .form-group
