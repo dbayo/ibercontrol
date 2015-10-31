@@ -134,5 +134,9 @@ class Service
       self.bill_dates.find_or_create_by(fecha_de_factura: Date.new(Date.today.year, index + 1, 1), cuota_factura: (self.cuota_contrato.to_i / self.total_months_bills)) if self["factura_#{month}"]
     end
   end
+
+  def sort_service_dates
+    service_dates.limit(total_months_service_dates)
+  end
 end
 

@@ -46,7 +46,7 @@
             = f.text_field :fecha_inicio, :class => 'form-control'
           %label.col-sm-2.control-label{:for => "service_fecha_inicio"} Periodo
           .col-sm-4
-            = select("facturas", "meses",[['Mensual', 1], ['Bimensual', 2], ['Trimestral', 3], ['Cuatrimestral', 4], ['Semestral', 6], ['Anual', 12]], { include_blank: true }, class: 'form-control')
+            = select("service", "total_months_service_dates",[['Mensual', 12], ['Bimensual', 6], ['Trimestral', 4], ['Cuatrimestral', 3], ['Semestral', 2], ['Anual', 1]], { include_blank: true }, class: 'form-control')
         .form-group
           = f.label :cuota_contrato, :class => 'col-sm-2 control-label'
           .col-sm-10

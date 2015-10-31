@@ -9,9 +9,9 @@ ready = ->
     get_date_service_fecha_inicio()
     return
 
-  $('#facturas_meses').change ->
+  $('#service_total_months_service_dates').change ->
     get_date_service_fecha_inicio()
-    value = parseInt($(this).val())
+    value = 12 / parseInt($(this).val())
     current = parseInt($('input.checkbox_application:checked:visible:first').attr('month'))
 
     i = 0

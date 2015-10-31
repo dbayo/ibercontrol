@@ -13,7 +13,7 @@
   %dt Baja?:
   %dd= boolean_to_icons(@service.baja)
   %dt Número aplicaciones:
-  %dd= @service.service_dates.count
+  %dd= @service_dates.count
 
 .row
   .col-md-12
@@ -32,9 +32,9 @@
   = link_to new_client_place_service_service_date_path(@client, @place, @service), :class => 'btn btn-default pull-right' do
     %span.glyphicon.glyphicon-plus
     Crear nuevo fecha de servicio
-  %h3= "Fecha aplicaciones (#{@service.service_dates.count})"
+  %h3= "Fecha aplicaciones (#{@service_dates.count})"
 
-- if @service.service_dates.count > 0
+- if @service_dates.count > 0
   .table-responsive
     %table.table
       %thead
@@ -45,7 +45,7 @@
           %th
 
       %tbody
-        - @service.service_dates.each do |service_date|
+        - @service_dates.each do |service_date|
           %tr
             %td= link_to service_date.fecha_servicio, [@client, @place, @service, service_date]
             %td= boolean_to_icons(service_date.emitida)
